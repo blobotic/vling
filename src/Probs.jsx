@@ -8,7 +8,7 @@ function Probs() {
 			{data.map(comp => (
 				<div>
 					<h2>{comp["name"]}</h2>
-					<a href={comp["site"]}>Reference</a>
+					<a href={comp["site"]} target="_blank">Reference</a>
 
 					{comp["yrs"].map(yr => (
 						<div>

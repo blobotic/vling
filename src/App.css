@@ -3,14 +3,15 @@
 }
 
 nav {
-    position: fixed;
-    right: 5em;
+    position: absolute;
+    right: 5vw;
     background-color: #f9f9f9;
     width:100%;
     top: 0;
     padding-top: 1em;
     height: 3em;
 }
+
 
 nav ul {
     display: flex;
@@ -20,6 +21,35 @@ nav ul {
 nav li {
     list-style: none;
     margin: 0.5em;
+}
+
+li ul {
+    margin-bottom: 0;
+}
+
+p + ul {
+    margin-top: -2rem;
+}
+
+table {
+    margin-bottom: 1em;
+}
+
+@media (max-width: 684px) {
+    nav ul {
+/*        display: table;*/
+        margin: 0 auto;
+    }
+    nav li {
+        float: none;
+    }
+}
+
+img {
+    margin: 0 auto;
+    float: none;
+    display: block;
+    width: 70%;
 }
 
 input {
@@ -32,20 +62,34 @@ input {
 
 .home {
     padding: 5rem;
+    overflow-wrap: anywhere;
 }
 
 .center {
     text-align: center;
 }
 
-.small {
+/* .small  */
+input {
     width: 7rem;
     margin: 0 3em 0 1em;
+    height: 1.5em;
+    padding: 0.5em;
+}
+
+textarea {
+/*    rows: 5;*/
+    height: 10em;
 }
 
 .large {
     width: 80%;
     display: block;
+}
+
+.table {
+    width: 8rem;
+    margin: 0;
 }
 
 .probButton {

@@ -4,10 +4,15 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkDirective from 'remark-directive';
 import remarkDirectiveRehype from 'remark-directive-rehype';
+import remarkMath from 'remark-math';
 import rehypeRaw from "rehype-raw";
+import rehypeKatex from 'rehype-katex';
 import { visit } from "unist-util-visit";
 import Answerbox from "./Answerbox";
+import ExplBox from "./ExplBox";
 import Probs from "./Probs";
+
+import 'katex/dist/katex.min.css'
 
 // import raw from "raw.macro";
 
@@ -107,9 +112,9 @@ function Problem() {
 		<h1 className="center">{comp.toUpperCase()} {year} {problem.toUpperCase()}: {metaData.title} ({metaData.points} points)</h1>
 		<ReactMarkdown 
 			children={readable.md} 
-			components={{'answer': AnsBox}}
-			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype]} 
-			rehypePlugins={[rehypeRaw]} 
+			components={{'ans': AnsBox}, {'expl': ExplBox}}
+			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
+			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 		/>
 		{/* Reference: https://www.w3schools.com/react/react_forms.asp */}
 		</div>
