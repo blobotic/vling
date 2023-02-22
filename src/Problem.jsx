@@ -88,7 +88,7 @@ function Problem() {
 	let [metaData, setMetadata] = React.useState({metadata: {}});
 
 	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
-		let path = "../"+comp+"/"+year+"/"+problem+".md";
+		// let path = "../"+comp+"/"+year+"/"+problem+".md";
 		let post;
 		let temp = false;
 		try { 
@@ -116,7 +116,12 @@ function Problem() {
 
 	let result = data.find(obj => { return obj.name.toLowerCase()==comp.toLowerCase()})["yrs"].find(obj => {return obj.yr == year})["ps"];
 
-	
+	// https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react
+	const childRef = useRef();
+	const handleSubmit = (event) => {
+		// call the child function
+		childRef.current.checkAnswer(event);
+	}
 
 	return (
 		<div className="home">
@@ -133,7 +138,7 @@ function Problem() {
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 		/>
 
-		<input type="submit" />
+		{/*<input type="submit" />*/}
 		</form>
 
 		{/* Reference: https://www.w3schools.com/react/react_forms.asp */}
