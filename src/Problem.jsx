@@ -7,7 +7,7 @@ import remarkDirectiveRehype from 'remark-directive-rehype';
 import rehypeRaw from "rehype-raw";
 import { visit } from "unist-util-visit";
 import Answerbox from "./Answerbox";
-
+import Probs from "./Probs";
 
 // import raw from "raw.macro";
 
@@ -21,10 +21,8 @@ function extractMetaData(text) {
     let keyValues;
 
     if (rawMetaData) {
-    	console.log("hi")
       // rawMeta[1] are the stuff between "---"
       keyValues = rawMetaData[1].split("\n");
-      console.log(keyValues)
 
       // which returns a list of key values: ["key1: value", "key2: value"]
       keyValues.forEach((keyValue) => {
@@ -34,7 +32,6 @@ function extractMetaData(text) {
 	        metaData[key] = value.trim();
 	    }
 
-        // console.log("hi")
       });
     }
     return [rawMetaData, metaData];
@@ -79,9 +76,16 @@ function Problem() {
 	let [metaData, setMetadata] = React.useState({metadata: {}});
 
 	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
+		let path = "./"+comp+"/"+year+"/"+problem+".md";
+		let post;
+		let temp = false;
+		try { 
+			post = require(`./${comp}/${year}/${problem}.md`);//"./naclo/2022/j.md");
+  	} catch(e) {
+  		// return <Home />
+  		temp = true;
+  	}
 	React.useEffect(() => {
-		// let path = "./"+comp+"/"+year+"/"+problem+".md";
-		let post = require("./naclo/2022/j.md");
     	fetch(post)
 		      .then((res) => res.text())
 		      .then((md) => { 
@@ -95,6 +99,8 @@ function Problem() {
 		      }
 		);
 	}, []);
+
+	if (temp) return <Probs />
 
 	return (
 		<div className="home">

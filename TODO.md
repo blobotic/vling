@@ -7,8 +7,8 @@
 	- [ ] [paraphrasing](https://en.wikipedia.org/wiki/Paraphrasing_(computational_linguistics))
 - [ ] way to record scrapwork...?
 - [ ] random
-	- [ ] get list of problems (perhaps from _files_?)
-	- [ ] pick a random one
+	- [x] get list of problems (perhaps from _files_?)
+	- [x] pick a random one
 	- [ ] completion: y/n
 - [ ] stats
 	- [ ] settings

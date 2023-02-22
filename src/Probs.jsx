@@ -1,18 +1,25 @@
 function Probs() {
+	var data = require("./problem_index.json");
+
 	return (
 		<div className="home">
 			<h1 className="center">Problems</h1>
 			
-			<h2>NACLO</h2>
-			<a href="https://www.nacloweb.org/practice.php" target="_blank">Reference</a>
+			{data.map(comp => (
+				<div>
+					<h2>{comp["name"]}</h2>
+					<a href={comp["site"]}>Reference</a>
 
-			{/* 2022 */}
-			<div>
-				2022: <a href="./naclo/2022/j">J</a>
-			</div>
-
-			<h2>IOL</h2>
-			<h2>Miscellaneous</h2>
+					{comp["yrs"].map(yr => (
+						<div>
+							<b>{yr["yr"]}: </b>
+							{yr["ps"].map(prob => (
+								<a className="probButton" href={"./"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+prob.toLowerCase()}>{prob}</a> 
+							))}
+						</div>
+					))}
+				</div>
+			))}
 		</div>
 		)
 }

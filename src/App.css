@@ -3,19 +3,31 @@
 }
 
 nav {
-/*    float: right;*/
-/*    padding-right: 5em;*/
     position: fixed;
     right: 5em;
+    background-color: #f9f9f9;
+    width:100%;
+    top: 0;
+    padding-top: 1em;
+    height: 3em;
 }
 
 nav ul {
     display: flex;
+    float: right;
 }
 
 nav li {
     list-style: none;
     margin: 0.5em;
+}
+
+input {
+/*    color: #be0000; darkish red*/
+    color: #1d7484; 
+/*    background-color: #f9f9f9;*/
+/*    border-color: black;*/
+/*    border-width: 3px;*/
 }
 
 .home {
@@ -36,6 +48,36 @@ nav li {
     display: block;
 }
 
+.probButton {
+    padding: 0.5em;
+}
+
+/* number table rows */
+/* https://stackoverflow.com/questions/17012421/auto-number-table-rows */
+
+table {
+    counter-reset: rowNumber;
+}
+
+table tr > td:first-child {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child:nth-last-child(2)::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+    font-size: 90%;
+    color: #a9a9a9;
+}
+
+table td:nth-child(2):nth-last-child(1)::before {
+    content: counter(rowNumber, lower-alpha);
+    min-width: 1em;
+    margin-right: 0.5em;
+    font-size: 90%;
+    color: #a9a9a9;
+}
 
 
 /* typewriter effect */

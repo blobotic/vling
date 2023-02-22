@@ -32,16 +32,16 @@ indicates a long vowel. Note that the data comes from a British child, so the r 
 **J1.** How would you predict that Scott would pronounce the following words? (Your answers should include
 vowels, but you will not be graded on the specific vowels that you use.)
 
-(a) little :answer{ans=one, cl=small}
+> (a) little :answer{ans=one, cl=small} 
 (b) friends :answer{cl=small}
 (c) please :answer{cl=small}
 (d) chunky :answer{cl=small}
-
-(e) quiz :answer{cl=small}
+> 
+> (e) quiz :answer{cl=small}
 (f) smash :answer{cl=small}
 (g) shrimps :answer{cl=small}
 
 **J2.** What do you think Scott is saying here? Give one likely interpretation for each.
 
-(a) danɁ ju bewi mux :answer{cl=large} 
-(b) wox jo: hanɣ an bux jo: di:x :answer{cl=large}
+> (a) danɁ ju bewi mux :answer{cl=large} 
+> (b) wox jo: hanɣ an bux jo: di:x :answer{cl=large}
