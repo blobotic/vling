@@ -14,7 +14,7 @@ function Probs() {
 						<div>
 							<b>{yr["yr"]}: </b>
 							{yr["ps"].map(prob => (
-								<a className="probButton" href={"./"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+prob.toLowerCase()}>{prob}</a> 
+								<a className="probButton" href={"../../../"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+prob.toLowerCase()}>{prob}</a> 
 							))}
 						</div>
 					))}

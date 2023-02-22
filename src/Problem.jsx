@@ -81,7 +81,7 @@ function Problem() {
 	let [metaData, setMetadata] = React.useState({metadata: {}});
 
 	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
-		let path = "./"+comp+"/"+year+"/"+problem+".md";
+		let path = "../"+comp+"/"+year+"/"+problem+".md";
 		let post;
 		let temp = false;
 		try { 
