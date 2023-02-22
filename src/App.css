@@ -1,38 +1,67 @@
 .App {
-  text-align: center;
+/*    text-align: center;*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+/*    float: right;*/
+/*    padding-right: 5em;*/
+    position: fixed;
+    right: 5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav ul {
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav li {
+    list-style: none;
+    margin: 0.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.home {
+    padding: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.center {
+    text-align: center;
+}
+
+.small {
+    width: 7rem;
+    margin: 0 3em 0 1em;
+}
+
+.large {
+    width: 80%;
+    display: block;
+}
+
+
+
+/* typewriter effect */
+/* reference: https://www.sitepoint.com/css-typewriter-effect/ */
+/* https://css-tricks.com/snippets/css/typewriter-effect/ */
+
+.typed-out-container {
+    display: inline-block;
+}
+
+.typed-out {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    width: 0;
+    animation:  typing 2s steps(30) forwards, 
+                blink 800ms steps(44) infinite normal;
+
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from { border-color: orange }
+  to { border-color: transparent; }
 }

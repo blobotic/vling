@@ -1,0 +1,16 @@
+- [ ] custom character entry
+- [ ] populate questions
+	- [ ] PDF scraping
+- [ ] answer validation
+	- [ ] do something with the {ans} prop
+	- [ ] LCS
+	- [ ] [paraphrasing](https://en.wikipedia.org/wiki/Paraphrasing_(computational_linguistics))
+- [ ] way to record scrapwork...?
+- [ ] random
+	- [ ] get list of problems (perhaps from _files_?)
+	- [ ] pick a random one
+	- [ ] completion: y/n
+- [ ] stats
+	- [ ] settings
+		- [ ] light vs. dark?
+	- [ ] completion
