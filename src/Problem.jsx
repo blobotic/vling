@@ -118,10 +118,10 @@ function Problem() {
 
 	// https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react
 	// const childRef = useRef();
-	// const handleSubmit = (event) => {
+	const handleSubmit = (event) => {
 	// 	// call the child function
 	// 	childRef.current.checkAnswer(event);
-	// }
+	}
 
 	return (
 		<div className="home">
