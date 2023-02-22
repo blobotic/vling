@@ -117,11 +117,11 @@ function Problem() {
 	let result = data.find(obj => { return obj.name.toLowerCase()==comp.toLowerCase()})["yrs"].find(obj => {return obj.yr == year})["ps"];
 
 	// https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react
-	const childRef = useRef();
-	const handleSubmit = (event) => {
-		// call the child function
-		childRef.current.checkAnswer(event);
-	}
+	// const childRef = useRef();
+	// const handleSubmit = (event) => {
+	// 	// call the child function
+	// 	childRef.current.checkAnswer(event);
+	// }
 
 	return (
 		<div className="home">
