@@ -12,7 +12,7 @@ function Layout() {
 			yr = comp["yrs"].random(), 
 			ps = yr["ps"].random();
 
-		let path = "./"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+ps.toLowerCase();
+		let path = "../../../"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+ps.toLowerCase();
 		
 		console.log(path)
 		navigate(path);
