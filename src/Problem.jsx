@@ -11,6 +11,7 @@ import { visit } from "unist-util-visit";
 import Answerbox from "./Answerbox";
 import ExplBox from "./ExplBox";
 import Probs from "./Probs";
+import { Outlet, Link } from "react-router-dom";
 
 import 'katex/dist/katex.min.css'
 
@@ -70,12 +71,18 @@ function extractMetaData(text) {
 // 	);
 // }
 
-const AnsBox = ({cl, ans}) => {
-	return <Answerbox ans={ans} className={cl}/>
+const AnsBox = ({cl}) => {
+	return <Answerbox className={cl}/>
+}
+
+const ExBox = ({cl}) => {
+	return <ExplBox className={cl}/>
 }
 
 function Problem() {
 	const { comp, year, problem } = useParams();
+
+	let data = require("./problem_index.json");
 
 	let [readable, setReadable] = React.useState({md: ""});
 	let [metaData, setMetadata] = React.useState({metadata: {}});
@@ -107,15 +114,28 @@ function Problem() {
 
 	if (temp) return <Probs />
 
+	let result = data.find(obj => { return obj.name.toLowerCase()==comp.toLowerCase()})["yrs"].find(obj => {return obj.yr == year})["ps"];
+
+	
+
 	return (
 		<div className="home">
 		<h1 className="center">{comp.toUpperCase()} {year} {problem.toUpperCase()}: {metaData.title} ({metaData.points} points)</h1>
+		
+{/*answer validation: https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react */}
+		<a className={(problem == result[0].toLowerCase()) ? 'disabled linkbutton' : 'linkbutton'} href={(problem == result[0].toLowerCase()) ? "" : "/"+comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return problem ==obj.toLowerCase()})-1].toLowerCase()}>Previous</a>
+		<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton right' : 'linkbutton right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
+		<form onSubmit={handleSubmit}>
 		<ReactMarkdown 
 			children={readable.md} 
-			components={{'ans': AnsBox}, {'expl': ExplBox}}
+			components={{'expl': ExBox, 'ans': AnsBox}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 		/>
+
+		<input type="submit" />
+		</form>
+
 		{/* Reference: https://www.w3schools.com/react/react_forms.asp */}
 		</div>
 	);

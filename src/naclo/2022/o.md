@@ -21,19 +21,29 @@ linguist working with one of the varieties of Iyo’awujwa’ obtains the follow
 | j. | si’weneɬ | you (pl.) see me |
 | k. | hi’weneɬ | you (pl.) see him/her/them |
 | l. | kasi’weneɬ | you (pl.) see us |
+
+
 The linguist then starts asking for other tenses. She asks how to say ‘you (sg.) are going to see me’ and gets
-the form si’wehnayi’ from her consultant.
+the form s*i’wehnayi’* from her consultant.
+
 She says to herself, “I got this.” She asks her consultant, “Is ‘you (pl.) are going to see him/her/them’
-hi’wehnayiweɬ?”
-To her surprise, the form she gets is in’wehnayiweɬ. The consultant adds the following explanation: “it can
-also mean ‘he/she/they are going to see you (pl.)’; and si’wehnayi’ can also mean a few other things, by the
-way: ‘I am going to see you (sg.)’, ‘I am going to see him/her/them’, and ‘he/she/they are going to see me’.”1
-O1. Translate into Iyo’awujwa’:
-a. you (sg.) are going to see him/her/them
-b. he/she/they are going to see you (sg.)
-c. you (sg.) are going to see us
-d. you (pl.) are going to see us
-e. we are going to see you (pl.)
-O2. Describe how to form the Iyo’awujwa’ verb meaning “see”. Be sure to reference the present (“see”) and
+*hi’wehnayiweɬ?*”
+
+To her surprise, the form she gets is *in’wehnayiweɬ*. The consultant adds the following explanation: “it can
+also mean ‘he/she/they are going to see you (pl.)’; and *si’wehnayi’* can also mean a few other things, by the
+way: ‘I am going to see you (sg.)’, ‘I am going to see him/her/them’, and ‘he/she/they are going to see me’.”[^1]
+
+**O1.** Translate into Iyo’awujwa’:
+
+> a. you (sg.) are going to see him/her/them :ans{cl=large}
+> b. he/she/they are going to see you (sg.) :ans{cl=large}
+> c. you (sg.) are going to see us :ans{cl=large}
+> d. you (pl.) are going to see us :ans{cl=large}
+> e. we are going to see you (pl.) :ans{cl=large}
+
+**O2.** Describe how to form the Iyo’awujwa’ verb meaning “see”. Be sure to reference the present (“see”) and
 future (“going to see”) tenses in your answer.
-1. You may assume that in all cases, all the possible translations of a certain Iyo’awujwa’ form are given.
+
+> :expl
+
+[1]: You may assume that in all cases, all the possible translations of a certain Iyo’awujwa’ form are given.
