@@ -76,6 +76,7 @@ hr {
 
 a {
   text-decoration: none;
+  cursor: pointer;
   color: #1d7484;
 }
 a:visited {

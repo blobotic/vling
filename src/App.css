@@ -49,8 +49,15 @@ input {
 }
 
 .probButton {
-    padding: 0.5em;
+    padding: 0.1em 0.3em 0.1em 0.3em;
+    margin: 0.2em;
 }
+.probButton:hover {
+    border: none;
+    background-color: #982c61;
+    color: #f9f9f9;
+}
+
 
 /* number table rows */
 /* https://stackoverflow.com/questions/17012421/auto-number-table-rows */
