@@ -114,7 +114,7 @@ function Problem() {
 		hasSol = false;
 	}
 
-	React.useEffect(() => {
+	React.useLayoutEffect(() => {
     	fetch(post)
 		      .then((res) => res.text())
 		      .then((md) => { 
@@ -171,10 +171,10 @@ function Problem() {
 	}
 
 	const savedHandler = React.useRef();
-	React.useEffect(() => {
+	React.useLayoutEffect(() => {
 		savedHandler.current = handler;
 	})
-	React.useEffect(() => {
+	React.useLayoutEffect(() => {
 		const eventListener = event => savedHandler.current(event);
 		window.addEventListener("keydown", eventListener);
 		return () => { window.removeEventListener("keydown", eventListener);}
@@ -216,6 +216,7 @@ function Problem() {
 		{/* solution: */}
 		{showSol ? <div className="solutionbox"><ReactMarkdown
 			children={solution.md}
+			// components = {{'sol': <span className="solText"></span>}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 		
 		/></div> : null}

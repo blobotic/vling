@@ -36,11 +36,15 @@ their English translations, in a scrambled order.
 **K1.** Determine the correct correspondences. In each box, write the letter of the English word/phrase that
 corresponds to the Wik-Mungkan word/phrase of that number.
 
-> 1. :ans 2. :ans 3. :ans 4. :ans 5. :ans 
-> 6. :ans 7. :ans 8. :ans 9. :ans 10. :ans 
-> 11. :ans 12. :ans 13. :ans 14. :ans 15. :ans 
-> 16. :ans 17. :ans 18. :ans 19. :ans 20. :ans 
-> 21. :ans 22. :ans 23. :ans
+> 1\. :ans 2. :ans 3. :ans 4. :ans 5. :ans 
+>
+> 6\. :ans 7. :ans 8. :ans 9. :ans 10. :ans 
+>
+> 11\. :ans 12. :ans 13. :ans 14. :ans 15. :ans 
+>
+> 16\. :ans 17. :ans 18. :ans 19. :ans 20. :ans 
+>
+> 21\. :ans 22. :ans 23. :ans
 
 **K2.** Translate into Wik-Mungkan: 
 

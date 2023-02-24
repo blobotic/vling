@@ -139,7 +139,7 @@ textarea {
     padding: 2em;
     border: 4px solid #1d7484;
 }
-.solText {
+.solText, .st {
     color: red;
 }
 
