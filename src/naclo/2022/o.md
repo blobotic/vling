@@ -46,4 +46,4 @@ future (“going to see”) tenses in your answer.
 
 > :expl
 
-[1]: You may assume that in all cases, all the possible translations of a certain Iyo’awujwa’ form are given.
+[^1]: You may assume that in all cases, all the possible translations of a certain Iyo’awujwa’ form are given.

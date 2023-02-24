@@ -68,5 +68,5 @@ sequence of letters does the system say would be pronounced RUHFLEA?
 
 > :ans{cl=large}
 
-[1]: It is possible to create an FST that gives more than one output for a given input. However, for all cases used in this contest, a
+[^1]: It is possible to create an FST that gives more than one output for a given input. However, for all cases used in this contest, a
 given input will have at most one output. 

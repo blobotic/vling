@@ -107,5 +107,5 @@ need to repeat your rules from **R1** and **R2**.
 
 > :expl
 
-[1]: G2P also showed up in problem (L), Stopping for a Spell. However, solving problem (L) will give you no advantage in solving this
+[^1]: G2P also showed up in problem (L), Stopping for a Spell. However, solving problem (L) will give you no advantage in solving this
 problem, and vice versa.

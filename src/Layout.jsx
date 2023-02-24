@@ -1,9 +1,16 @@
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+// import { useIsFocused } from '@react-navigation/native';
+
 
 
 function Layout() {
 	let navigate = useNavigate();
+	// let history = useHistory();
+
+	const [value, setValue] = useState(0);
+
 
 	const randRouteChange = () => {
 		var data = require("./problem_index.json");
@@ -12,11 +19,23 @@ function Layout() {
 			yr = comp["yrs"].random(), 
 			ps = yr["ps"].random();
 
-		let path = "../../../"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+ps.toLowerCase();
+		let path = "/"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+ps.toLowerCase();
 		
 		console.log(path)
-		navigate(path);
+		// React.useEffect(() => {
+		// 	useNavigate(path);
+		// })
+		navigate("../../"+path, {replace: true});
+		// reload page (to refresh component)
+		// reference:
+		// https://stackoverflow.com/questions/46820682/how-do-i-reload-a-page-with-react-router
+		navigate(0);
+
+		// history.push(path)
 	}
+
+	// const isFocused = useIsFocused();
+	// useEffect(()=>{}, [isFocused]);
 
 	return (
 		<div>

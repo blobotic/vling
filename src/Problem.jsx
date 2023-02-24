@@ -12,6 +12,8 @@ import Answerbox from "./Answerbox";
 import ExplBox from "./ExplBox";
 import Probs from "./Probs";
 import { Outlet, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 import 'katex/dist/katex.min.css'
 
@@ -85,18 +87,33 @@ function Problem() {
 	let data = require("./problem_index.json");
 
 	let [readable, setReadable] = React.useState({md: ""});
+	let [solution, setSolution] = React.useState({md: ""});
 	let [metaData, setMetadata] = React.useState({metadata: {}});
+	let [showSol, setShowSol] = React.useState();
+
+	let navigate = useNavigate();
+
+	// TODO: 
+	// check settings for value
+	// let showSol = false;
 
 	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
 		// let path = "../"+comp+"/"+year+"/"+problem+".md";
-		let post;
-		let temp = false;
-		try { 
+	let post, post2;
+	let temp = false, hasSol = true;
+	try { 
 			post = require(`./${comp}/${year}/${problem}.md`);//"./naclo/2022/j.md");
   	} catch(e) {
   		// return <Home />
   		temp = true;
   	}
+
+	try {
+		post2 = require(`./${comp}/${year}/${problem}-sol.md`);
+	} catch(e) {
+		hasSol = false;
+	}
+
 	React.useEffect(() => {
     	fetch(post)
 		      .then((res) => res.text())
@@ -110,18 +127,71 @@ function Problem() {
 		      	setReadable({ md }); 
 		      }
 		);
+
+		fetch(post2)
+			.then((res) => res.text())
+			.then((md) => {
+				setSolution({md});
+			})
 	}, []);
 
+
+	// eventlistener
+	// hotKEYS!!!
+	// reference: 
+	// https://stackoverflow.com/questions/29069639/listen-to-keypress-for-document-in-reactjs
+	const LEFT_KEYS = ['37', 'ArrowLeft'], RIGHT_KEYS = ['39', 'ArrowRight'], ENTER_KEYS = ['13', 'Enter'];
+	function handler({key}) {
+		if (LEFT_KEYS.includes(String(key))) {
+			// go to prev
+			if (problem != result[0].toLowerCase()) {
+				let path = "../../" + comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})-1].toLowerCase();
+				// console.log(path)
+				navigate(path, {replace: true});
+				navigate(0);
+			}
+		}
+		else if (RIGHT_KEYS.includes(String(key))) {
+			if (problem != result[result.length-1].toLowerCase()) {
+				let path = "../../" + comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase();
+				// console.log(path)
+				navigate(path, {replace: true});
+				navigate(0);
+			}
+			// go to next
+		}
+		else if (ENTER_KEYS.includes(String(key))) {
+			// show solution
+			console.log("enter")
+			if (hasSol) {
+			console.log(showSol)
+				setShowSol(!showSol);
+			}
+		}
+	}
+
+	const savedHandler = React.useRef();
+	React.useEffect(() => {
+		savedHandler.current = handler;
+	})
+	React.useEffect(() => {
+		const eventListener = event => savedHandler.current(event);
+		window.addEventListener("keydown", eventListener);
+		return () => { window.removeEventListener("keydown", eventListener);}
+	}, ["keydown", window]);
+
+
 	if (temp) return <Probs />
+
 
 	let result = data.find(obj => { return obj.name.toLowerCase()==comp.toLowerCase()})["yrs"].find(obj => {return obj.yr == year})["ps"];
 
 	// https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react
 	// const childRef = useRef();
-	const handleSubmit = (event) => {
+	// const handleSubmit = (event) => {
 	// 	// call the child function
 	// 	childRef.current.checkAnswer(event);
-	}
+	// }
 
 	return (
 		<div className="home">
@@ -130,8 +200,8 @@ function Problem() {
 {/*answer validation: https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react */}
 		<a className={(problem == result[0].toLowerCase()) ? 'disabled linkbutton' : 'linkbutton'} href={(problem == result[0].toLowerCase()) ? "" : "/"+comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return problem ==obj.toLowerCase()})-1].toLowerCase()}>Previous</a>
 		<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton right' : 'linkbutton right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
-		<form onSubmit={handleSubmit}>
-		<ReactMarkdown 
+{/*		<form onSubmit={handleSubmit}>
+*/}		<ReactMarkdown 
 			children={readable.md} 
 			components={{'expl': ExBox, 'ans': AnsBox}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
@@ -139,7 +209,19 @@ function Problem() {
 		/>
 
 		{/*<input type="submit" />*/}
-		</form>
+		{/*</form>*/}
+
+		<button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button">Show solution</button>
+
+		{/* solution: */}
+		{showSol ? <div className="solutionbox"><ReactMarkdown
+			children={solution.md}
+			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
+			rehypePlugins={[rehypeRaw, rehypeKatex]} 		
+		/></div> : null}
+
+
+		{/*<a className={(hasSol ? 'linkbutton' : 'linkbutton disabled')} href="/">Show solution</a>*/}
 
 		{/* Reference: https://www.w3schools.com/react/react_forms.asp */}
 		</div>

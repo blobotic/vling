@@ -27,7 +27,7 @@ li ul {
     margin-bottom: 0;
 }
 
-p + ul {
+p + ul, p+ol {
     margin-top: -2rem;
 }
 
@@ -131,6 +131,20 @@ textarea {
 
 .right {
     float: right;
+}
+
+
+.solutionbox {
+    margin-top: 1em;
+    padding: 2em;
+    border: 4px solid #1d7484;
+}
+.solText {
+    color: red;
+}
+
+.none {
+    display: none;
 }
 
 
