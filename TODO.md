@@ -1,6 +1,6 @@
 - [ ] custom character entry
 - [ ] populate questions
-	- [ ] PDF scraping
+	- [ ] PDF scraping?
 - [ ] answer validation
 	- [ ] do something with the {ans} prop
 	- [ ] LCS

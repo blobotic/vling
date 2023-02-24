@@ -14,7 +14,7 @@ The prefix indicates a pronoun (our first thought is that it indicates the objec
 1. `a-` = `you` 
 2. `i-` = `me`
 
-Note that if the verb root begins with `h`, we add `n` to the prefix (i.e. `inhê`, rather than `ihê`).
+Note that if the verb root begins with `h`, we add `n` to the prefix (i.e. `inhê`, rather than `ihê`) (from {2,7}.
 
 The only phrases of confusion are thus `mẽ`, `ba`, `ga`, `ije`, and `aje`. 
 
