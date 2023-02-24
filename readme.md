@@ -4,7 +4,7 @@ A portal for linguistic competitions practice, in the ilk of NACLO/IOL, built wi
 
 Contains problems (retyped into markdown format) and my own solutions/walkthroughs: my intent is to contribute a resource to any aspiring linguist-er interested in competitions, particularly since in my own prep I found resources scarce and intuition nonexistent. 
 
-My methods of solving are not necessarily the most efficient, and I likely won't get around to writing solutions for every single problem. Hence, if you'd like to contribute, just make a [pull request](https://github.com/blobotic/vling/pulls. Any new solutions, alternate solutions, or problem writeups (existing or your own!) are welcome. 
+My methods of solving are not necessarily the most efficient, and I likely won't get around to writing solutions for every single problem. Hence, if you'd like to contribute, just make a [pull request](https://github.com/blobotic/vling/pulls). Any new solutions, alternate solutions, or problem writeups (existing or your own!) are welcome. 
 
 If you'd like to contribute code, make a pull request addressing any [open issues](https://github.com/blobotic/vling/issues).
 
