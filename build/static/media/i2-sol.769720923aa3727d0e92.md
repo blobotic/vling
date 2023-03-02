@@ -1,3 +1,5 @@
+WIP
+
 We notice that the first half-ish of words in Alabama look similar, and they end in either `-ka` or `-i`, which, combined with a skim over the unsorted English translations, suggests that each word has a "root" and that the suffixes imply singular/plural **OR** active/passive voice. 
 
 Counting, we get the following groups:

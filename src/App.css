@@ -153,11 +153,18 @@ textarea {
 
 table {
     counter-reset: rowNumber;
+    display: table;
 }
 
 th, td {
-  width: 5em;
-  min-width: fit-content;
+    width: 5em;
+    min-width: fit-content;
+}
+
+table tr > td:first-child:nth-last-child(2), table tr > td:first-child:nth-last-child(1) {
+    text-indent: -1em;
+    padding-left: 1em;
+
 }
 
 table tr > td:first-child {
@@ -174,10 +181,14 @@ table tr td:first-child:nth-last-child(2)::before {
 
 table td:nth-child(2):nth-last-child(1)::before {
     content: counter(rowNumber, upper-alpha);
-    min-width: 1em;
-    margin-right: 0.5em;
+/*    min-width: 1em;*/
+    width: 1em;
+/*    margin-right: 0.5em;*/
     font-size: 90%;
     color: #a9a9a9;
+
+    display: inline-block;
+/*    display: table-cell;*/
 }
 
 
