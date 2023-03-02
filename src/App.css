@@ -133,6 +133,10 @@ textarea {
     float: right;
 }
 
+.center {
+    text-align: center;
+    margin: auto;
+}
 
 .solutionbox {
     margin-top: 1em;
