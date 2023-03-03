@@ -15,7 +15,7 @@ numerals, and they were recommended for use in Canada. If you walk into a math c
 Alaska today, you might well see a blackboard that looks like the one below, which features Kaktovik Iñupiaq
 numerals, Iñupiaq words, and a few places intentionally left blank:
 
-![Kavtovik numerals](../../pimg/naclo2022d-1.png)
+:div[![Kavtovik numerals](../../pimg/naclo2022d-1.png)]{.width-50}
 
 **D1.** Fill in the blanks a., b., and c. from the blackboard with Kaktovik Iñupiaq numerals. Remember to record
 your answers on your Answer Sheet.

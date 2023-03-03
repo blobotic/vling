@@ -49,7 +49,9 @@ img {
     margin: 0 auto;
     float: none;
     display: block;
-    width: 70%;
+    max-width: 70%;
+    min-width: 50%;
+    max-height: 90%;
 }
 
 input {
@@ -85,6 +87,14 @@ textarea {
 .large {
     width: 80%;
     display: block;
+}
+
+.med {
+    width: 28rem;
+}
+
+.sm {
+    width: 14rem;
 }
 
 .table {
@@ -165,7 +175,7 @@ th, td {
     min-width: fit-content;
 }
 
-table tr > td:first-child:nth-last-child(2), table tr > td:first-child:nth-last-child(1) {
+table tr > td:first-child:nth-last-child(2), table tr > td:nth-child(2):nth-last-child(1) {
     text-indent: -1em;
     padding-left: 1em;
 

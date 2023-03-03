@@ -141,8 +141,11 @@ function Problem() {
 	// reference: 
 	// https://stackoverflow.com/questions/29069639/listen-to-keypress-for-document-in-reactjs
 	const LEFT_KEYS = ['37', 'ArrowLeft'], RIGHT_KEYS = ['39', 'ArrowRight'], ENTER_KEYS = ['13', 'Enter'];
-	function handler({key}) {
-		if (LEFT_KEYS.includes(String(key))) {
+	function handler(event) {
+		if (["input", "textarea"].includes(event.target.tagName.toLowerCase())) {
+			return;
+		}
+		if (LEFT_KEYS.includes(String(event.key))) {
 			// go to prev
 			if (problem != result[0].toLowerCase()) {
 				let path = "../../" + comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})-1].toLowerCase();
@@ -151,7 +154,7 @@ function Problem() {
 				navigate(0);
 			}
 		}
-		else if (RIGHT_KEYS.includes(String(key))) {
+		else if (RIGHT_KEYS.includes(String(event.key))) {
 			if (problem != result[result.length-1].toLowerCase()) {
 				let path = "../../" + comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase();
 				// console.log(path)
@@ -160,7 +163,7 @@ function Problem() {
 			}
 			// go to next
 		}
-		else if (ENTER_KEYS.includes(String(key))) {
+		else if (ENTER_KEYS.includes(String(event.key))) {
 			// show solution
 			console.log("enter")
 			if (hasSol) {
