@@ -10,9 +10,7 @@ function Stats() {
 	let [showSol, setShowSol] = React.useState(() => {
 		const localData = JSON.parse(localStorage.getItem('settings'));
 		return localData["showSol"] || false;
-	}
-			// JSON.parse(localStorage.getItem('settings')["showSol"]) || false
-	);
+	});
 
 	// let [showSol, setShowSol] = React.useState();
 	console.log(showSol)

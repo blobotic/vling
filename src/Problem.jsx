@@ -89,19 +89,18 @@ function Problem() {
 	let [readable, setReadable] = React.useState({md: ""});
 	let [solution, setSolution] = React.useState({md: ""});
 	let [metaData, setMetadata] = React.useState({metadata: {}});
+	
+	// this exists in Stats.jsx
+	// reference:
+	// https://stackoverflow.com/questions/60688411/assign-local-storage-to-react-state-react-hooks
+	// https://stackoverflow.com/questions/49122280/react-native-onpress-how-can-i-toggle-the-button-text-and-function-call
 	let [showSol, setShowSol] = React.useState([], () => {
 		const localData = localStorage.getItem('settings');
 		return localData["showSol"] ? JSON.parse(localData["showSol"]) : false;
-	}
-			// JSON.parse(localStorage.getItem('settings')["showSol"]) || false
-			);
+	});
 
 
 	let navigate = useNavigate();
-
-	// TODO: 
-	// check settings for value
-	// let showSol = false;
 
 	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
 		// let path = "../"+comp+"/"+year+"/"+problem+".md";
