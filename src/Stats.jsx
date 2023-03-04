@@ -9,7 +9,7 @@ function changeSetting(settingName, setting) {
 function Stats() {
 	let [showSol, setShowSol] = React.useState(() => {
 		const localData = JSON.parse(localStorage.getItem('settings'));
-		return localData["showSol"] || false;
+		return localData ? localData["showSol"] || false : false;
 	});
 
 	// let [showSol, setShowSol] = React.useState();

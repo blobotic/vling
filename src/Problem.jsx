@@ -93,9 +93,9 @@ function Problem() {
 	// reference:
 	// https://stackoverflow.com/questions/60688411/assign-local-storage-to-react-state-react-hooks
 	// https://stackoverflow.com/questions/49122280/react-native-onpress-how-can-i-toggle-the-button-text-and-function-call
-	let [showSol, setShowSol] = React.useState([], () => {
-		const localData = localStorage.getItem('settings');
-		return localData["showSol"] ? JSON.parse(localData["showSol"]) : false;
+	let [showSol, setShowSol] = React.useState(() => {
+		const localData = JSON.parse(localStorage.getItem('settings'));
+		return localData ? localData["showSol"] || false : false;
 	});
 
 
