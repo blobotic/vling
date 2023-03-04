@@ -89,7 +89,13 @@ function Problem() {
 	let [readable, setReadable] = React.useState({md: ""});
 	let [solution, setSolution] = React.useState({md: ""});
 	let [metaData, setMetadata] = React.useState({metadata: {}});
-	let [showSol, setShowSol] = React.useState();
+	let [showSol, setShowSol] = React.useState([], () => {
+		const localData = localStorage.getItem('settings');
+		return localData["showSol"] ? JSON.parse(localData["showSol"]) : false;
+	}
+			// JSON.parse(localStorage.getItem('settings')["showSol"]) || false
+			);
+
 
 	let navigate = useNavigate();
 
@@ -214,10 +220,10 @@ function Problem() {
 		{/*<input type="submit" />*/}
 		{/*</form>*/}
 
-		<button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button">Show solution</button>
+		<button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button">{hasSol && showSol ? "Hide solution" : "Show solution"}</button>
 
 		{/* solution: */}
-		{showSol ? <div className="solutionbox"><ReactMarkdown
+		{hasSol && showSol ? <div className="solutionbox"><ReactMarkdown
 			children={solution.md}
 			// components = {{'sol': <span className="solText"></span>}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
