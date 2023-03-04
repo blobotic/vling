@@ -21,19 +21,19 @@ We note that the object usually takes on the vowel `ə` unless the indirect obje
 **(a)** The last of the nine forms above can actually be translated into English in two ways.
 What is its other translation?
 
-> :sol[I give them to you$_\text{pl}$]{.solText}
+> :sol[I give them to you:sub[pl]]
 
 
 **(b)** Translate into English:
 
-> 10. ašʼəntʷən :sol[They give him to us]{.st}
-> 11. səŝʷtʷan :sol[You$_\text{pl}$ give me to him]{.st}
-> 12. šʼəwənatʷan :sol[They give us to you$_\text{sg}$]{.st}
+> 10. ašʼəntʷən :sol[They give him to us]
+> 11. səŝʷtʷan :sol[You:sub[pl] give me to him]
+> 12. šʼəwənatʷan :sol[They give us to you:sub[sg]]
 
 **(c)** Translate into Ubykh:
 
-> 13. they give you$_\text{pl}$ to me :sol[šʷəsənatʷan]{.st}
-> 14. you$_\text{pl}$ give him to me :sol[asəšʷtʷan]{.st}
-> 15. you$_\text{sg}$ give us to him :sol[šʼəwtʷan]{.st}
-> 16. we give you$_\text{sg}$ to them :sol[wašʼtʷən]{.st}
-> 17. he gives them to us :sol[ašʼəntʷan]{.st}
+> 13. they give you:sub[pl] to me :sol[šʷəsənatʷan]
+> 14. you:sub[pl] give him to me :sol[asəšʷtʷan]
+> 15. you:sub[sg] give us to him :sol[šʼəwtʷan]
+> 16. we give you:sub[sg] to them :sol[wašʼtʷən]
+> 17. he gives them to us :sol[ašʼəntʷan]

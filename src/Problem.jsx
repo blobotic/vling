@@ -1,5 +1,5 @@
 import * as  React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Outlet, Link, useNavigate } from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkDirective from 'remark-directive';
@@ -11,8 +11,7 @@ import { visit } from "unist-util-visit";
 import Answerbox from "./Answerbox";
 import ExplBox from "./ExplBox";
 import Probs from "./Probs";
-import { Outlet, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import SolText from "./SolText";
 
 
 import 'katex/dist/katex.min.css'
@@ -216,6 +215,8 @@ function Problem() {
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 		/>
 
+		{/* Reference FOR FUTURE: */}
+		{/* https://stackoverflow.com/questions/48356854/storing-data-in-react */}
 		{/*<input type="submit" />*/}
 		{/*</form>*/}
 
@@ -224,7 +225,7 @@ function Problem() {
 		{/* solution: */}
 		{hasSol && showSol ? <div className="solutionbox"><ReactMarkdown
 			children={solution.md}
-			// components = {{'sol': <span className="solText"></span>}}
+			components = {{'sol': SolText}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 		
 		/></div> : null}
