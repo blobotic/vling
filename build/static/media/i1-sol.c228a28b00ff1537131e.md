@@ -67,7 +67,7 @@ It's thus simple to answer **(a)**:
 and **(b)**:
 > 1 = :sol[ena]{.st}
 >
-> 19 = :sol[ije mepina]{.st}
+> 19 = :sol[ije mepina]{.st} *or* :sol[ijema rati]
 >
 > 26 = :sol[benomima mepina]{.st} 
 > 
