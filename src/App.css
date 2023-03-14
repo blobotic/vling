@@ -205,6 +205,10 @@ table td:nth-child(2):nth-last-child(1)::before {
 /*    display: table-cell;*/
 }
 
+.no2Count table td:nth-child(2):nth-last-child(1)::before {
+    content: none;
+}
+
 
 /* typewriter effect */
 /* reference: https://www.sitepoint.com/css-typewriter-effect/ */
