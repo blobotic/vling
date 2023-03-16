@@ -27,7 +27,7 @@ function Stats() {
 			<p><b>/Random/ set:</b> <button>All / Incomplete only</button> </p>
 
 			<h1>Note</h1>
-			<p>This page is still WIP and as of 3/4/23, <b>none</b> only the show/hide answers function actually functions.</p>
+			<p>This page is still WIP and as of 3/4/23, only the show/hide answers function actually functions.</p>
 			<p>For buttons, click to toggle through options.</p>
 		</div>
 	);
