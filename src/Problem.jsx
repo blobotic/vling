@@ -213,6 +213,7 @@ function Problem() {
 			components={{'expl': ExBox, 'ans': AnsBox}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
+			className="lmargin2 rmargin2"
 		/>
 
 		{/* Reference FOR FUTURE: */}
@@ -223,11 +224,12 @@ function Problem() {
 		<button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button">{hasSol && showSol ? "Hide solution" : "Show solution"}</button>
 
 		{/* solution: */}
-		{hasSol && showSol ? <div className="solutionbox"><ReactMarkdown
+		{hasSol && showSol ? <div className="solutionbox lmargin2 rmargin2"><ReactMarkdown
 			children={solution.md}
 			components = {{'sol': SolText}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
-			rehypePlugins={[rehypeRaw, rehypeKatex]} 		
+			rehypePlugins={[rehypeRaw, rehypeKatex]}
+			// className="lmargin3 rmargin3" 		
 		/></div> : null}
 
 

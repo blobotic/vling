@@ -62,6 +62,14 @@ input {
 /*    border-width: 3px;*/
 }
 
+input:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-width: 2px;
+}
+
 .home {
     padding: 5rem;
     overflow-wrap: anywhere;
@@ -161,6 +169,39 @@ textarea {
     display: none;
 }
 
+.lmargin3 {
+    margin-left: 3em;
+}
+
+.rmargin3 {
+    margin-right: 3em;
+}
+
+.lmargin2 {
+    margin-left: 2em;
+}
+
+.rmargin2 {
+    margin-right: 2em;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+.dashed > ul {
+    list-style-type: none;
+}
+
+.dashed > ul > li {
+    text-indent: -5px;
+}
+
+.dashed > ul > li:before {
+    content: "− ";
+    text-indent: -10px;
+}
+
 
 /* number table rows */
 /* https://stackoverflow.com/questions/17012421/auto-number-table-rows */
@@ -168,6 +209,8 @@ textarea {
 table {
     counter-reset: rowNumber;
     display: table;
+    margin-left: 2em;
+/*    margin-right: 2em;*/
 }
 
 th, td {
@@ -207,6 +250,16 @@ table td:nth-child(2):nth-last-child(1)::before {
 
 .no2Count table td:nth-child(2):nth-last-child(1)::before {
     content: none;
+    width: 0;
+}
+
+.no2Count table td:nth-child(2):nth-last-child(1) {
+    text-indent: 0;
+    padding-left: 0.7em;
+}
+
+.lh1 {
+    line-height: 1em;
 }
 
 

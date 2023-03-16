@@ -24,9 +24,9 @@ function Probs() {
 			))}
 
 			<h1>Notes</h1>
-			<p>If anyone has non-official contest problems (NACLO/IOL) written and would like me to add them here, please create a pull request or DM me!</p>
+			<p>If anyone has non-official contest problems written and would like me to add them here, please create a pull request or DM me!</p>
 
-			<p>In the meantime, I'll slowly be adding existing NACLO and IOL problems with solutions—solutions will likely come out at a <i>much</i> slower rate than problem statements.</p>
+			<p>In the meantime, I'll slowly be adding existing NACLO, IOL, and APLO problems with solutions—solutions will likely come out at a <i>much</i> slower rate than problem statements.</p>
 
 			<h3>Contributing</h3>
 			<p><b>Adding questions:</b> All pull requests to add questions are welcome! The only guideline is to ensure that everything in the <i>original question statement/PDF</i> exists in the <code>.md</code> file you create; as long as it reasonably mimics the original and is readable, we will accept it.</p>
