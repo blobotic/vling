@@ -82,7 +82,7 @@ input:focus {
 /* .small  */
 input {
     width: 7rem;
-    margin: 0 3em 0 1em;
+    margin: 0 1em 0 1em;
     height: 1.5em;
     padding: 0.5em;
 }
@@ -214,9 +214,10 @@ table {
 }
 
 th, td {
-    width: 5em;
+    max-width: 5em;
     min-width: fit-content;
 }
+
 
 table tr > td:first-child:nth-last-child(2), table tr > td:nth-child(2):nth-last-child(1) {
     text-indent: -1em;
@@ -248,18 +249,41 @@ table td:nth-child(2):nth-last-child(1)::before {
 /*    display: table-cell;*/
 }
 
-.no2Count table td:nth-child(2):nth-last-child(1)::before {
+
+.no2Count table td:nth-child(2):nth-last-child(1)::before, table.no2Count td:nth-child(2):nth-last-child(1)::before {
     content: none;
     width: 0;
 }
 
-.no2Count table td:nth-child(2):nth-last-child(1) {
+.no2Count table td:nth-child(2):nth-last-child(1), table.no2Count td:nth-child(2):nth-last-child(1) {
     text-indent: 0;
     padding-left: 0.7em;
 }
 
+.no1Count table td:first-child:nth-last-child(2)::before, table.no1Count td:first-child:nth-last-child(2)::before {
+    content: none;
+    width: 0;
+}
+
+
 .lh1 {
     line-height: 1em;
+}
+
+.width-800 {
+    max-width: 800px;
+}
+
+.width-1500 {
+    max-width: 1500px;
+}
+
+.border-hidden, .border-hidden tr {
+    border: hidden;
+}
+
+.padding-none td {
+    padding: 0 0 0 0;
 }
 
 
