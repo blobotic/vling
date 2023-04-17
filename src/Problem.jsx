@@ -81,8 +81,8 @@ const ExBox = ({cl}) => {
 	return <ExplBox className={cl}/>
 }
 
-const MatchBox = ({num, cl}) => {
-	return <MatchingAnswerBox num={num} className={cl}/>
+const MatchBox = ({num, start, cl}) => {
+	return <MatchingAnswerBox num={num} start={start} className={cl}/>
 }
 
 function Problem() {

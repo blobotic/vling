@@ -1,11 +1,13 @@
 import Answerbox from "./Answerbox"
 
-function MatchingAnswerBox({num, ks}) {
+function MatchingAnswerBox({num,start,ks}) {
+	start = start-1 || 0
+
 	num = parseInt(num)
 	if (num <= 7) {
 		let rows = []
 		for (let i = 1; i <= num; i++) {
-			rows.push(<td>{i}.</td>)
+			rows.push(<td>{i+start}.</td>)
 			rows.push(<td><Answerbox /></td>)
 		}
 		return(
@@ -18,12 +20,12 @@ function MatchingAnswerBox({num, ks}) {
 		let rows1 = []
 		let rows2 = []
 		for (let i = 1; i <= (num+1)/2; i++) {
-			rows1.push(<td>{i}.</td>)
+			rows1.push(<td>{i+start}.</td>)
 			rows1.push(<td><Answerbox /></td>)
 		}
 
 		for (let i = Math.floor((num+1)/2)+1; i <= num; i++) {
-			rows2.push(<td>{i}.</td>)
+			rows2.push(<td>{i+start}.</td>)
 			rows2.push(<td><Answerbox /></td>)
 		}
 
@@ -38,7 +40,7 @@ function MatchingAnswerBox({num, ks}) {
 			let tmprow = []
 
 			for (let j = 1; j <= Math.min(7, num-i*7); j++) {
-				tmprow.push(<td>{i*7+j}.</td>)
+				tmprow.push(<td>{i*7+j+start}.</td>)
 				tmprow.push(<td><Answerbox/></td>)
 			}
 
