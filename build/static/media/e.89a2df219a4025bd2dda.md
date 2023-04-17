@@ -32,11 +32,7 @@ English translation.
 
 **E1.** Match the words written in Mandombe (1-22) to their Romanized equivalents (A-V).
 
-:::table{.borders-hidden}
-::tr[:td[1.] :td[:ans] :td[2.] :td[:ans] :td[3.] :td[:ans] :td[4.] :td[:ans] :td[5.] :td[:ans] :td[6.] :td[:ans] :td[7.] :td[:ans] :td[8.] :td[:ans]]
-::tr[:td[9.] :td[:ans] :td[10.] :td[:ans] :td[11.] :td[:ans] :td[12.] :td[:ans] :td[13.] :td[:ans] :td[14.] :td[:ans] :td[15.] :td[:ans] :td[16.] :td[:ans]]
-::tr[:td[17.] :td[:ans] :td[18.] :td[:ans] :td[19.] :td[:ans] :td[20.] :td[:ans] :td[21.] :td[:ans] :td[22.] :td[:ans]]
-:::
+:match{num=22}
 
 [^2]: Kongo, also called Kikongo, is a language of the Bantu family spoken natively by about 7 million people in central Africa. It is also widely learned and
 used as a second language in the Democratic Republic of the Congo, and has served as a basis of several creole languages in Africa and the Americas.

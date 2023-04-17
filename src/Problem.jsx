@@ -10,6 +10,7 @@ import rehypeKatex from 'rehype-katex';
 import { visit } from "unist-util-visit";
 import Answerbox from "./Answerbox";
 import ExplBox from "./ExplBox";
+import MatchingAnswerBox from "./MatchingAnswerBox";
 import Probs from "./Probs";
 import SolText from "./SolText";
 
@@ -78,6 +79,10 @@ const AnsBox = ({cl}) => {
 
 const ExBox = ({cl}) => {
 	return <ExplBox className={cl}/>
+}
+
+const MatchBox = ({num, cl}) => {
+	return <MatchingAnswerBox num={num} className={cl}/>
 }
 
 function Problem() {
@@ -210,7 +215,7 @@ function Problem() {
 {/*		<form onSubmit={handleSubmit}>
 */}		<ReactMarkdown 
 			children={readable.md} 
-			components={{'expl': ExBox, 'ans': AnsBox}}
+			components={{'expl': ExBox, 'ans': AnsBox, 'match': MatchBox}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 			className="lmargin2 rmargin2"

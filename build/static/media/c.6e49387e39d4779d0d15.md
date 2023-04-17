@@ -29,11 +29,7 @@ of these sentences in English appear *in a scrambled order*.
 
 **C1.** Match sentences 1-15 to their English translations.
 
-:::table{.width-1500 .border-hidden}
-::tr[:td[1.] :td[:ans] :td[2.] :td[:ans] :td[3.] :td[:ans] :td[4.] :td[:ans] :td[5.] :td[:ans]]
-::tr[:td[6.] :td[:ans] :td[7.] :td[:ans] :td[8.] :td[:ans] :td[9.] :td[:ans] :td[10.] :td[:ans]]
-::tr[:td[11.] :td[:ans] :td[12.] :td[:ans] :td[13.] :td[:ans] :td[14.] :td[:ans] :td[15.] :td[:ans]]
-:::
+:match{num=15}
 
 **C2.** One of the verbs you encountered in the sentences in the left column above would be used by speakers
 of this language in all 4 sentences below, each of which is translated into English. Which of the verbs you

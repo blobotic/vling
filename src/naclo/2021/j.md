@@ -53,9 +53,7 @@ some pronunciations in the table are missing.
 | pˤek | pjé ‘that’ |
 | mraj | pá ‘to limp’ |
 
-:::table{.border-hidden .width-800}
-:tr[:td[1.] :td[:ans] :td[2.] :td[:ans] :td[3.] :td[:ans] :td[4.] :td[:ans] :td[5.] :td[:ans] :td[6.] :td[:ans]]
-:::
+:match{num=6}
 
 **J3.** Give the Middle Chinese pronunciations of the following Old Chinese words:
 

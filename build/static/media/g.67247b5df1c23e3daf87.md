@@ -30,11 +30,7 @@ and their unmatched English translations in alphabetical order.
 
 **G1.** Determine the correct correspondences. Write one letter (A-R) per square:
 
-:::table{.border-hidden}
-::tr[:td[1.] :td[:ans] :td[2.] :td[:ans] :td[3.] :td[:ans] :td[4.] :td[:ans] :td[5.] :td[:ans] :td[6.] :td[:ans]]
-::tr[:td[7.] :td[:ans] :td[8.] :td[:ans] :td[9.] :td[:ans] :td[10.] :td[:ans] :td[11.] :td[:ans] :td[12.] :td[:ans]]
-::tr[:td[13.] :td[:ans] :td[14.] :td[:ans] :td[15.] :td[:ans] :td[16.] :td[:ans] :td[17.] :td[:ans] :td[18.] :td[:ans]]
-:::
+:match{num=18}
 
 [^1]: Sauk is an Algonquian language spoken in Iowa, Kansas, and Oklahoma. Like many Indigenous languages of North America, Sauk was negatively
 impacted by European colonization and is now at risk of extinction. Today, Sauk is spoken by several hundred people; of these people, only a
