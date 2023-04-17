@@ -81,4 +81,12 @@
 		"yr": "2022",
 		"ps": ["1", "2", "3", "4", "5"]
 	}]
+}, {
+	"name": "UKLO",
+	"site": "https://www.uklo.org/past-exam-papers/",
+	"yrs": []
+}, {
+	"name": "OLCF",
+	"site": "https://kaitire.rdc.uottawa.ca/OLCF/mat/olympiades.html",
+	"yrs": []
 }]
