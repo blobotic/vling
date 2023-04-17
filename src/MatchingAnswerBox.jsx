@@ -1,13 +1,13 @@
 import Answerbox from "./Answerbox"
 
-function MatchingAnswerBox({num,start,ks}) {
+function MatchingAnswerBox({num,start,alpha,ks}) {
 	start = start-1 || 0
 
 	num = parseInt(num)
 	if (num <= 7) {
 		let rows = []
 		for (let i = 1; i <= num; i++) {
-			rows.push(<td>{i+start}.</td>)
+			rows.push(<td>{(alpha ? (i+start+9).toString(36).toUpperCase() : i+start) + "."}</td>)
 			rows.push(<td><Answerbox /></td>)
 		}
 		return(
