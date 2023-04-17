@@ -1,5 +1,5 @@
 ---
-title: Junk Mail: Letters We Don’t Need
+title: Junk Mail—Letters We Don’t Need
 points: 10
 ---
 

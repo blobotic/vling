@@ -202,6 +202,38 @@ textarea {
     text-indent: -10px;
 }
 
+.searchbar {
+    width: 80%;
+    height: 2em;
+    border-bottom: 2px solid;
+    border-radius: 0;
+
+/*    search icon */
+
+    background-image: url("../public/search.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1.5em;
+    padding-left: 2em;
+}
+
+
+.searchToggle {
+    display: inline;
+/*    width: 0.8em;*/
+    margin-top: 0.5em;
+    margin-left: 1em;
+}
+
+.left {
+    text-align: left;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 60%;
+}
+
 
 /* number table rows */
 /* https://stackoverflow.com/questions/17012421/auto-number-table-rows */
@@ -319,3 +351,4 @@ table td:nth-child(2):nth-last-child(1)::before {
   from { border-color: orange }
   to { border-color: transparent; }
 }
+

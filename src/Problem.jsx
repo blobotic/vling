@@ -111,14 +111,14 @@ function Problem() {
 	let post, post2;
 	let temp = false, hasSol = true;
 	try { 
-			post = require(`./${comp}/${year}/${problem}.md`);//"./naclo/2022/j.md");
+			post = require(`./problems/${comp}/${year}/${problem}.md`);//"./naclo/2022/j.md");
   	} catch(e) {
   		// return <Home />
   		temp = true;
   	}
 
 	try {
-		post2 = require(`./${comp}/${year}/${problem}-sol.md`);
+		post2 = require(`./problems/${comp}/${year}/${problem}-sol.md`);
 	} catch(e) {
 		hasSol = false;
 	}

@@ -45,6 +45,7 @@ function Layout() {
 					<li><Link to="/probs">Browse</Link></li>
 					<li><a onClick={randRouteChange}>Random</a></li>
 					<li><Link to="/stats">Stats</Link></li>
+					<li><Link to="/search">Search</Link></li>
 				</ul>
 			</nav>
 

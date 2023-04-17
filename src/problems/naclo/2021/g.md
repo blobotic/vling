@@ -1,5 +1,5 @@
 ---
-title:The Skates of Wrath 
+title: The Skates of Wrath 
 points: 15 
 ---
 

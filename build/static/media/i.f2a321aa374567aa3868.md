@@ -1,6 +1,9 @@
 ---
 title: Non Sequitur
 points: 10
+tags:
+- compression
+- machine
 ---
 
 At this very moment, scientists at NACLO Labs are hard at work on *Def21*, a definition-generating machine for

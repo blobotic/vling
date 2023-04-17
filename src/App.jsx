@@ -6,6 +6,7 @@ import Probs from "./Probs";
 import Problem from "./Problem";
 import Rand from "./Rand";
 import Stats from "./Stats";
+import Search from "./Search";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/probs" element={<Probs />} />
                     {/*<Route path="/rand" element={<Rand />} />*/}
                     <Route path="/stats" element={<Stats />} />
+                    <Route path="/search" element={<Search />} />
                     {/* Reference: https://misscoded.com/react-router-patterns/ */}
                     <Route path="/:comp/:year/:problem" element={<Problem />} />
                     <Route path="/*" element={<Home />} />

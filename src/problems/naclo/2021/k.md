@@ -1,6 +1,8 @@
 ---
 title: Putting a Place to a Name 
 points: 5
+tags: 
+- match
 ---
 
 Tamazight is a family of closely related languages spoken by tens of millions of people across North Africa.
@@ -18,12 +20,7 @@ For two of the places, the names are really quite different.
 
 **K1.** Match up the Tamazight names with their English equivalents.
 
-:::table{.border-none .width-1500}
-::tr[:td[1.] :td[:ans] :td[2. ] :td[:ans]  :td[3.] :td[:ans] :td[4.] :td[:ans] :td[5.] :td[:ans] :td[6.] :td[:ans] :td[7.] :td[:ans]]
-::tr[:td[8.] :td[:ans] :td[9.] :td[:ans] :td[10.] :td[:ans] :td[11.] :td[:ans]   :td[12.] :td[:ans] :td[13.] :td[:ans] :td[14.] :td[:ans]]
-::tr[:td[15.] :td[:ans] :td[16.] :td[:ans] :td[17.] :td[:ans] :td[18.] :td[:ans] :td[19.] :td[:ans] :td[20.] :td[:ans] :td[21.] :td[:ans]]
-::tr[:td[22.] :td[:ans] :td[23.] :td[:ans] :td[24.] :td[:ans] :td[25.] :td[:ans] :td[26.] :td[:ans]]
-:::
+:match{num=26}
 
 **K2.** What do we call the region that in Tamazight is called ⵜⴰⴼⴻⵔⴽⴰ ? :ans{cl=sm}
 
