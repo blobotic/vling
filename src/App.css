@@ -214,8 +214,9 @@ table {
 }
 
 th, td {
-    max-width: 5em;
-    min-width: fit-content;
+/*    max-width: 5em;*/
+/*    min-width: fit-content;*/
+    white-space: nowrap;
 }
 
 
@@ -276,6 +277,10 @@ table td:nth-child(2):nth-last-child(1)::before {
 
 .width-1500 {
     max-width: 1500px;
+}
+
+.width-50 {
+    max-width: 50px;
 }
 
 .border-hidden, .border-hidden tr {
