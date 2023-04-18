@@ -166,9 +166,37 @@ textarea {
     padding: 2em;
     border: 4px solid #1d7484;
 }
-.solText, .st {
-    color: red;
+
+
+/* colors!!!!! */
+
+.solText, .st, .red {
+    color: #ff1d58;
 }
+
+.orange {
+    color: #ef7e56;
+}
+
+.yellow {
+    color: #fede00;
+}
+
+.green {
+    color: #bada55;
+}
+
+.blue {
+    color: #3399ff;
+}
+
+.purple {
+    color: #a393eb;
+}
+
+
+/* colors end.  */
+
 
 .none {
     display: none;

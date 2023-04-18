@@ -73,14 +73,6 @@ function extractMetaData(text) {
 // 	);
 // }
 
-const AnsBox = ({cl}) => {
-	return <Answerbox className={cl}/>
-}
-
-const ExBox = ({cl}) => {
-	return <ExplBox className={cl}/>
-}
-
 const MatchBox = ({num, start, alpha=false, cl}) => {
 	return <MatchingAnswerBox num={num} start={start} alpha={alpha} className={cl}/>
 }
@@ -215,7 +207,7 @@ function Problem() {
 {/*		<form onSubmit={handleSubmit}>
 */}		<ReactMarkdown 
 			children={readable.md} 
-			components={{'expl': ExBox, 'ans': AnsBox, 'match': MatchBox}}
+			components={{'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 			className="lmargin2 rmargin2"
