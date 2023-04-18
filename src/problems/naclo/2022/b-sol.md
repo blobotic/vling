@@ -23,6 +23,6 @@ Virtually every sentence contains the verb *saw*, so :sol[*gördü*=saw]. From A
 
 From sentence 6 in B1, we can deduce :sol["ayı"=bear]. We can now do part b with sentence 4 as reference. Adding the suffix to *ayı*, we finally have "Kim ayıyı gördü?".
 
-We recognize "whom" is our object and "bee" is our subject on line 6, giving us kimi for whom (object). Finally, our response becomes Ayıyı kimi gördü?
+We recognize "whom" is our object and "bee" is our subject on line 6, giving us kimi for whom (object). Finally, our response becomes Ayı kimi gördü?
 
 Solution written by Allen Yang
