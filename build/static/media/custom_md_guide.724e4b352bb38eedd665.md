@@ -19,6 +19,8 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 
 :div[\:div[this is centered]{.center}]{.center}
 
+:div[\:div[this is indented a little]{.lmargin2}]{.lmargin2}
+
 \:::table{.border-hidden .width-800 .no1Count .no2Count}
 <br>\::tr[\:td[row1] \:td[\:ans]]
 <br>\::tr[\:td[row1] \:td[\:ans]]
