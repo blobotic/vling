@@ -19,11 +19,10 @@ We can use sentence 4 to determine :sol[*için*=for] and :sol[*Kaplumbağa*=turt
 
 **B2**
 
-Virtually every sentence contains the verb *saw*, so :sol[*gördü*=saw]. From A, we notice giraffe has a suffix, *yı*, to represent the object. So, we have SOV as this syntax, where the direct object is modified with this suffix.
-
-
-We can now translate a). With sentence 4, we can remove the suffix, giving us :sol[*martı*=seagull], so our answer becomes "The seagull saw the turtle."
+Virtually every sentence contains the verb *saw*, so :sol[*gördü*=saw]. From A, we notice giraffe has a suffix, *yı*, to represent the object. So, we have SOV as this syntax, where the direct object is modified with this suffix. We can now translate a). With sentence 4, we can remove the suffix, giving us :sol[*martı*=seagull], so our answer becomes "The seagull saw the turtle."
 
 From sentence 6 in B1, we can deduce :sol["ayı"=bear]. We can now do part b with sentence 4 as reference. Adding the suffix to *ayı*, we finally have "Kim ayıyı gördü?".
 
-We recognize "whom" is our object and "bee" is our subject on line 6, giving us kimi for who (object). Finally, our response becomes Ayıyı kimi gördü?
+We recognize "whom" is our object and "bee" is our subject on line 6, giving us kimi for whom (object). Finally, our response becomes Ayıyı kimi gördü?
+
+Solution written by Allen Yang
