@@ -278,6 +278,24 @@ textarea {
 }
 
 
+.border {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #747474;
+    margin: auto;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding: 1em;
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.margin-bottom-none {
+    margin-bottom: 0;
+}
+
 /* number table rows */
 /* https://stackoverflow.com/questions/17012421/auto-number-table-rows */
 
@@ -351,6 +369,10 @@ table td:nth-child(2):nth-last-child(1)::before {
     max-width: 800px;
 }
 
+.width-1200 {
+    max-width: 1200px;
+}
+
 .width-400 {
     max-width: 400px;
 }
@@ -371,6 +393,9 @@ table td:nth-child(2):nth-last-child(1)::before {
     padding: 0 0 0 0;
 }
 
+.padding-fourth td {
+    padding: 0.25em;
+}
 
 /* typewriter effect */
 /* reference: https://www.sitepoint.com/css-typewriter-effect/ */

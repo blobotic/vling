@@ -17,9 +17,15 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 
 ## Custom Classes
 
+### Center
+
 :div[\:div[this is centered]{.center}]{.center}
 
+### Indent
+
 :div[\:div[this is indented a little]{.lmargin2}]{.lmargin2}
+
+### Table
 
 \:::table{.border-hidden .width-800 .no1Count .no2Count}
 <br>\::tr[\:td[row1] \:td[\:ans]]
@@ -45,6 +51,26 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 :::
 
 Note: tables with 2 columns automatically number the first column (1-26) and the second column alphanumerically (A-Z). 
+
+### Border/Bounding Box
+
+<div>
+:::div{.border}
+<br>:::table{.no1Count .no2Count .border-hidden .padding-none .margin-bottom-none}
+<br>::tr[:td[row1] :td[row1]]
+<br>::tr[:td[row2] :td[row2]]
+<br>::tr[:td[row3] :td[row3]]
+<br>::tr[:td[row4] :td[row4]]
+<br>:::
+</div>
+
+:::div{.border}
+:::table{.no1Count .no2Count .border-hidden .padding-none .margin-bottom-none}
+::tr[:td[row1] :td[row1]]
+::tr[:td[row2] :td[row2]]
+::tr[:td[row3] :td[row3]]
+::tr[:td[row4] :td[row4]]
+:::
 
 ## Answer boxes
 
