@@ -42,9 +42,9 @@ Piste : les noms des animaux dans ce récit sont les suivants: **rop**, **bri**,
 utilise l’un ou l’autre?
 
 **Note:** Les voyelles « accentuées » représentent des voyelles particulières du mẽbêngôkre : celles avec un
-tilde (~) sont des voyelles nasales, le y est une voyelle entre ou et u, mais avec les lèvres non-arrondies, le ê
-est comme le é du français, le ỳ est une voyelle un peu plus ouverte que y, et le à une voyelle plus ouverte
-que ỳ mais moins que a. Le dj, nh sont des consonnes qui se prononcent comme le j dans jean et comme
-le gn dans oignon, respectivement. Le ’ représente le « coup de glotte », prononcé comme l’interruption
-dans la vibration des cordes vocales qu’on produit entre les voyelles de oh-oh. Le r représente un r comme
-celui de cara en espagnol ou comme les tt de better en anglais.
+tilde **(~)** sont des voyelles nasales, le **y** est une voyelle entre *ou* et *u*, mais avec les lèvres non-arrondies, le **ê**
+est comme le *é* du français, le **ỳ** est une voyelle un peu plus ouverte que *y*, et le **à** une voyelle plus ouverte
+que *ỳ* mais moins que *a*. Le **dj**, **nh** sont des consonnes qui se prononcent comme le *j* dans *jean* et comme
+le *gn* dans *oignon*, respectivement. Le **’** représente le « coup de glotte », prononcé comme l’interruption
+dans la vibration des cordes vocales qu’on produit entre les voyelles de *oh-oh*. Le **r** représente un *r* comme
+celui de *cara* en espagnol ou comme les *tt* de *better* en anglais.
