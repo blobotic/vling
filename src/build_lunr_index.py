@@ -11,21 +11,50 @@ with open("./lunr_index.json", "w") as list_file:
 
 		for root, subdirs, files in os.walk("./problems"):
 
-			for problem in files:
+			if len(files) == 0:
+				continue
+
+			# print(files)
+
+			def my_key(word):
+				print(word)
+				return [alphabet.index(c) for c in word]				
+
+			alphabet = ".1234567890abcdefghijklmnopqrstuvwxyz-/\\"
+			# alphabet = "zyxwvutsrqpomnlkjihgfedcba"
+			# print(sorted(files, key=my_key))
+
+			for problem in sorted(files, key=lambda word: [alphabet.index(c) for c in word]):
+				# print(problem)
 				if "sol" not in problem:
 					er = root.split("\\")
 					# print(er)
 					post = frontmatter.load(os.path.join(root, problem))
+					# print(post)
 
-					tmp = {"name": er[1].upper() + " " + er[2].upper() + " " + problem.split(".")[0].upper() + ": " + post["title"], "text": post["title"]}
+					problem2 = problem.split("-")
+
+					name = er[1].upper() + " " + er[2].upper() + " " + problem2[0].split(".")[0].upper()
+					 # + ": " + post["title"]
+
+					tmp = {}
+					rlyTmp = next((item for item in index if name in item["name"]), None)
+
+					# print(rlyTmp)
+
+					if rlyTmp:
+						tmp = rlyTmp 
+						index[:] = [d for d in index if d.get("name") != name]
+					else:
+						tmp = {"name": name + ": " + post["title"], "text": post["title"]}
+
+						if "tags" in post.keys():
+							tmp["text"] += " " + " ".join(post["tags"]) 
+
+						index2.append(tmp.copy())
 
 
-					if "tags" in post.keys():
-						tmp["text"] += " " + " ".join(post["tags"]) 
-
-					index2.append(tmp.copy())
-
-					tmp["text"] += post.content.translate({ord(c): " " for c in '#|[]—\n*,()'})
+					tmp["text"] += " " + post.content.translate({ord(c): " " for c in '#|[]—\n*,()'})
 
 					# print(tmp)
 

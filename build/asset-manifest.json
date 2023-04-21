@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e5d2a872.css",
-    "main.js": "/static/js/main.c72dee48.js",
+    "main.css": "/static/css/main.18043f05.css",
+    "main.js": "/static/js/main.70fc00f0.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -77,6 +77,7 @@
     "static/media/f.md": "/static/media/f.21911662a007401cc0ff.md",
     "static/media/e.md": "/static/media/e.1d2e772d2402e2f6e99f.md",
     "static/media/KaTeX_Size4-Regular.woff2": "/static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
+    "static/media/d-fr.md": "/static/media/d-fr.d969dfa0f6f3c0e32c62.md",
     "static/media/i1-sol.md": "/static/media/i1-sol.03819087f136563ff746.md",
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/h.md": "/static/media/h.79a4313d5652b69c6679.md",
@@ -84,6 +85,7 @@
     "static/media/s.md": "/static/media/s.1f09d3d460354975e5e6.md",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "static/media/i5.md": "/static/media/i5.e62e41292596c7d0bd89.md",
+    "static/media/c-fr.md": "/static/media/c-fr.f835c60da1a99a0a5608.md",
     "static/media/a.md": "/static/media/a.60c0172983d33e4e7597.md",
     "static/media/o.md": "/static/media/o.dbb567815542365c812b.md",
     "static/media/i4.md": "/static/media/i4.0672e44f7bb54a5a15cc.md",
@@ -93,22 +95,25 @@
     "static/media/i3.md": "/static/media/i3.e2f79d96b75df6f157fb.md",
     "static/media/2.md": "/static/media/2.2cb5386cb7de073ee04c.md",
     "static/media/i2.md": "/static/media/i2.a541e3a4720453b41f39.md",
+    "static/media/b-fr.md": "/static/media/b-fr.7f2cb9148b07a579bd63.md",
     "static/media/custom_md_guide.md": "/static/media/custom_md_guide.dfbbbd6a4cdf0bea9d00.md",
     "static/media/i3-sol.md": "/static/media/i3-sol.7bfbd18a1a44069fb31b.md",
     "static/media/4.md": "/static/media/4.ca4dd9afe46920af0706.md",
+    "static/media/a-fr.md": "/static/media/a-fr.a501427ca8068f91e295.md",
     "static/media/3.md": "/static/media/3.fcaa05b91a928713679c.md",
     "static/media/1.md": "/static/media/1.eab52e4eb44ebd24dce0.md",
     "static/media/a-sol.md": "/static/media/a-sol.b7d661824d5e8c0ded09.md",
     "static/media/r-sol.md": "/static/media/r-sol.aad1f89650a9a9c474b1.md",
+    "static/media/e-fr.md": "/static/media/e-fr.c9a5136e4a425faaaab8.md",
     "static/media/b-sol.md": "/static/media/b-sol.b0847d23a0971743a37b.md",
     "static/media/i1.md": "/static/media/i1.5c8822ca75a1e15e8649.md",
     "static/media/i5-sol.md": "/static/media/i5-sol.fa85b4e71e2dba8ca5e9.md",
     "index.html": "/index.html",
-    "main.e5d2a872.css.map": "/static/css/main.e5d2a872.css.map",
-    "main.c72dee48.js.map": "/static/js/main.c72dee48.js.map"
+    "main.18043f05.css.map": "/static/css/main.18043f05.css.map",
+    "main.70fc00f0.js.map": "/static/js/main.70fc00f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5d2a872.css",
-    "static/js/main.c72dee48.js"
+    "static/css/main.18043f05.css",
+    "static/js/main.70fc00f0.js"
   ]
 }

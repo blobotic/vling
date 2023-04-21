@@ -44,5 +44,8 @@
 }, {
 	"name": "OLCF",
 	"site": "https://kaitire.rdc.uottawa.ca/OLCF/mat/olympiades.html",
-	"yrs": []
+	"yrs": [{
+		"yr": "2023",
+		"ps": ["A", "B", "C", "D", "E"]
+	}]
 }]
