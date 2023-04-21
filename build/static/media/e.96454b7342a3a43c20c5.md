@@ -22,10 +22,10 @@ Here are some accounts where the numbers have been replaced by their Ge'ez equiv
 **E1:** The greatest value in these expressions is 500. Find the value that corresponds to each expression (only the total on each side of the equal symbol). 
 
 :::table{.border-hidden .padding-none .width-800 .no1Count .no2Count .mb2}
-::tr[:td[a.] :td[e.]]
-::tr[:td[b.] :td[f.]]
-::tr[:td[c.] :td[g.]]
-::tr[:td[d.] :td[]]
+::tr[:td[a.] :td[:ans] :td[e.] :td[:ans]]
+::tr[:td[b.] :td[:ans] :td[f.] :td[:ans]]
+::tr[:td[c.] :td[:ans] :td[g.] :td[:ans]]
+::tr[:td[d.] :td[:ans] :td[] :td[]]
 :::
 
 **E2:** Give the missing values (in digits) in the following expressions:

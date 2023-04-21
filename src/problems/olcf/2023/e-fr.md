@@ -19,10 +19,10 @@ Voici quelques comptes où les chiffres ont été remplacés par leurs équivale
 expression (seulement le total de chaque côté du symbole d’égalité). 
 
 :::table{.border-hidden .padding-none .width-800 .no1Count .no2Count .mb2}
-::tr[:td[a.] :td[e.]]
-::tr[:td[b.] :td[f.]]
-::tr[:td[c.] :td[g.]]
-::tr[:td[d.] :td[]]
+::tr[:td[a.] :td[:ans] :td[e.] :td[:ans]]
+::tr[:td[b.] :td[:ans] :td[f.] :td[:ans]]
+::tr[:td[c.] :td[:ans] :td[g.] :td[:ans]]
+::tr[:td[d.] :td[:ans] :td[] :td[]]
 :::
 
 **E2:** Donne les valeurs qui manquent (en chiffres) dans les expressions suivantes:
