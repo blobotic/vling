@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom";
+
 function Probs() {
 	var data = require("./problem_index.json");
 
@@ -31,6 +33,7 @@ function Probs() {
 			<h3>Contributing</h3>
 			<p><b>Adding questions:</b> All pull requests to add questions are welcome! The only guideline is to ensure that everything in the <i>original question statement/PDF</i> exists in the <code>.md</code> file you create; as long as it reasonably mimics the original and is readable, we will accept it.</p>
 			<p><b>Adding solutions:</b> If you are adding a solution to a problem <i>without</i> a solution, create a file called <code>[problem]-sol.md</code> and write up your solution! Make sure to use the sol directive and ensure that everything in the <i>original answer key</i> is contained in your solution somewhere. If the problem already has a solution but you'd like to add a <i>different</i> solution, add a heading labeling each solution with the writer. If you'd like to update/expand on an existing solution, ensure that you are not deleting significant parts of it and submit a pull request!</p>
+			<p>Custom markdown reference <Link to="../cust">here</Link></p>
 			<p><b>Typos/issues/bugs/problems:</b> Please submit a pull request or DM me!</p>
 
 

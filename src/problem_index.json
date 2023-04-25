@@ -9,7 +9,7 @@
 		"ps": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"]
 	}, {
 		"yr": "2020",
-		"ps": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+		"ps": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R"]
 	}, {
 		"yr": "2017",
 		"ps": ["R"]
@@ -44,5 +44,8 @@
 }, {
 	"name": "OLCF",
 	"site": "https://kaitire.rdc.uottawa.ca/OLCF/mat/olympiades.html",
-	"yrs": []
+	"yrs": [{
+		"yr": "2023",
+		"ps": ["A", "B", "C", "D", "E"]
+	}]
 }]

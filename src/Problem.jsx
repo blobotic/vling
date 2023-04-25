@@ -73,14 +73,6 @@ function extractMetaData(text) {
 // 	);
 // }
 
-const AnsBox = ({cl}) => {
-	return <Answerbox className={cl}/>
-}
-
-const ExBox = ({cl}) => {
-	return <ExplBox className={cl}/>
-}
-
 const MatchBox = ({num, start, alpha=false, cl}) => {
 	return <MatchingAnswerBox num={num} start={start} alpha={alpha} className={cl}/>
 }
@@ -93,6 +85,9 @@ function Problem() {
 	let [readable, setReadable] = React.useState({md: ""});
 	let [solution, setSolution] = React.useState({md: ""});
 	let [metaData, setMetadata] = React.useState({metadata: {}});
+	let [otherlangs, setOtherlangs] = React.useState({})
+	let [currentLang, setCurrentLang] = React.useState("en")
+	// let [otherlangsMD, setOtherlangsMD] = React.useState({})
 	
 	// this exists in Stats.jsx
 	// reference:
@@ -105,6 +100,8 @@ function Problem() {
 
 
 	let navigate = useNavigate();
+
+	let langs = ["fr"]
 
 	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
 		// let path = "../"+comp+"/"+year+"/"+problem+".md";
@@ -122,6 +119,23 @@ function Problem() {
 	} catch(e) {
 		hasSol = false;
 	}
+
+	// get in other languages
+	//  important !!
+
+	// let languageComponent = <div></div>
+	// let otherlangs = []
+
+	// for (let i = 0; i < langs.length; i++) {
+	// 	try {
+	// 		let posti = require(`./problems/${comp}/${year}/${problem}-${langs[i]}.md`);
+
+	// 		console.log(posti)
+	// 	} catch(e) {}
+	// }
+
+	// console.log(otherlangs)
+
 
 	React.useLayoutEffect(() => {
     	fetch(post)
@@ -142,9 +156,24 @@ function Problem() {
 			.then((md) => {
 				setSolution({md});
 			})
+
+
+		//  other languages!!!
+		for (let i = 0; i < langs.length; i++) {
+			try {
+				let posti = require(`./problems/${comp}/${year}/${problem}-${langs[i]}.md`);
+				// console.log(langs[i])
+				// console.log("hii?")
+				// if (!otherlangs.includes(langs[i])) {otherlangs.push(langs[i])}
+				// console.log(otherlangs)
+				fetch(posti).then((res)=>res.text()).then((md)=>{otherlangs[langs[i]] = md})
+				// console.log(otherlangs)
+			} catch(e) {}
+		}
 	}, []);
 
 
+	// console.log(otherlangs)
 	// eventlistener
 	// hotKEYS!!!
 	// reference: 
@@ -205,17 +234,37 @@ function Problem() {
 	// 	childRef.current.checkAnswer(event);
 	// }
 
+
+	// LANGUAGES AGAIN!!
+	// we're doing um something?
+	
+	// add english to thing
+	otherlangs["en"] = readable.md
+	// console.log(Object.entries(otherlangs))
+
+
 	return (
 		<div className="home">
 		<h1 className="center">{comp.toUpperCase()} {year} {problem.toUpperCase()}: {metaData.title} ({metaData.points} points)</h1>
 		
+
+		<div className="languageBar">
 {/*answer validation: https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react */}
-		<a className={(problem == result[0].toLowerCase()) ? 'disabled linkbutton' : 'linkbutton'} href={(problem == result[0].toLowerCase()) ? "" : "/"+comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return problem ==obj.toLowerCase()})-1].toLowerCase()}>Previous</a>
-		<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton right' : 'linkbutton right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
+		<a className={(problem == result[0].toLowerCase()) ? 'disabled linkbutton float-left' : 'linkbutton float-left'} href={(problem == result[0].toLowerCase()) ? "" : "/"+comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return problem ==obj.toLowerCase()})-1].toLowerCase()}>Previous</a>
+		<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton float-right' : 'linkbutton float-right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
+
+		{/* language buttons !! */}
+		{(Object.keys(otherlangs).length > 1) ? 
+					Object.entries(otherlangs).map(([key, value]) => <button onClick={() => setCurrentLang(key)}>{key}</button>)
+				 : false}
+		</div>
+
+		{/*actual markdown O_O*/}
+
 {/*		<form onSubmit={handleSubmit}>
 */}		<ReactMarkdown 
-			children={readable.md} 
-			components={{'expl': ExBox, 'ans': AnsBox, 'match': MatchBox}}
+			children={otherlangs[currentLang]} 
+			components={{'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]} 
 			className="lmargin2 rmargin2"

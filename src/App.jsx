@@ -7,6 +7,7 @@ import Problem from "./Problem";
 import Rand from "./Rand";
 import Stats from "./Stats";
 import Search from "./Search";
+import Cust from "./Cust";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     {/*<Route path="/rand" element={<Rand />} />*/}
                     <Route path="/stats" element={<Stats />} />
                     <Route path="/search" element={<Search />} />
+                    <Route path="/cust" element={<Cust />} />
                     {/* Reference: https://misscoded.com/react-router-patterns/ */}
                     <Route path="/:comp/:year/:problem" element={<Problem />} />
                     <Route path="/*" element={<Home />} />
