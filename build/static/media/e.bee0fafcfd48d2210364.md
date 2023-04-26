@@ -46,28 +46,7 @@ appear in a scrambled order.
 
 **E1.** Match the English sentences and phrases to their Ik translations.
 
-> 1\. :ans
-> 2\. :ans
-> 3\. :ans
-> 4\. :ans
-> 5\. :ans
->
-> 6\. :ans
-> 7\. :ans
-> 8\. :ans
-> 9\. :ans
-> 10\. :ans
->
-> 11\. :ans
-> 12\. :ans
-> 13\. :ans
-> 14\. :ans
-> 15\. :ans
->
-> 16\. :ans
-> 17\. :ans
-> 18\. :ans
-> 19\. :ans
+:match{num=19}
 
 
 **E2.** You matched the two Ik sentences below to their well-formed English

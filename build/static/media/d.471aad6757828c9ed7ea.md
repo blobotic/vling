@@ -1,6 +1,8 @@
 ---
 title: Real Numbers 
 points: 10 
+tags:
+- number
 ---
 
 In 1994, the students of a middle-school math class in Kaktovik, Alaska noticed that Arabic numerals (that is,
