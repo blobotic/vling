@@ -22,11 +22,24 @@ let idx2 = lunr(function() {
 })
 
 
+// sort function for search
+function sortResults(arr, s) {
+
+	if (s == "date") {
+		arr.sort(function(a,b) {
+			return a.ref.localeCompare(b.ref);
+		})
+	}
+
+	return arr
+}
+
 function Search() {
 
 	const [query, setQuery] = useState("")
 	const [results, setResults] = useState([])
 	const [tagsOnly, setTagsOnly] = useState(false)
+	const [sortBy, setSortBy] = useState("date")
 
 	// console.log(idx.search("match"))
 
@@ -38,11 +51,20 @@ function Search() {
 		// console.log(idx.search(query))
 		// console.log(query)
 		console.log(tagsOnly)
+		console.log(idx.search(query))
+
+		let tmpResults = idx.search(query)
+
+		if (sortBy == "date") {
+			tmpResults = sortResults(tmpResults)
+		}
+
+		// sort
 		if (!tagsOnly) {
-			setResults(idx.search(query))
+			setResults(sortResults(idx.search(query), sortBy))
 		}
 		else {
-			setResults(idx2.search(query))
+			setResults(sortResults(idx2.search(query), sortBy))
 		}
 
 		console.log(results)
