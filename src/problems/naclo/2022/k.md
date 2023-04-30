@@ -5,7 +5,7 @@ tags:
 - wik-mungkan wik mungkan
 - paman
 - queensland australia
-- match tl
+- match
 ---
 
 Wik-Mungkan (literally: "to swallow one's words") is a Paman language spoken in Queensland, Australia, by

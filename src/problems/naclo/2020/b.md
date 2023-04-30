@@ -3,7 +3,7 @@ title: A Cat in the Hat
 points: 15
 tags:
 - chintang chintan kiranti ahale dhankuta nepal mulgaun sambhugaon ipa
-- match tl
+- match
 ---
 
 Chintang (Chintang: छिन्ताङ् Chintāṅ / Chhintang) is an eastern Kiranti language spoken by 5,000 to 6,000

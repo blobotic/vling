@@ -3,7 +3,7 @@ title: Versatile Web
 points: 10
 tags:
 - gur benin waama yoabu
-- match tl
+- match
 ---
 
 In the left column below appear sentences in Waama, or Yoabu, a Gur language of Benin spoken by roughly

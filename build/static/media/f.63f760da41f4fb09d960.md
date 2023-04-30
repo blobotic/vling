@@ -4,7 +4,7 @@ points: 10
 tags:
 - ende
 - papua new guinea
-- match tl
+- match
 ---
 
 Ende is a Pahoturi River language spoken by 600 to 1,000 people in Western Province, Papua New Guinea.

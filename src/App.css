@@ -345,6 +345,14 @@ th, td {
 }
 
 
+.cs9 {
+    counter-set: rowNumber 8;
+}
+
+.cs6 {
+    counter-set: rowNumber 5;
+}
+
 table tr > td:first-child:nth-last-child(2), table tr > td:nth-child(2):nth-last-child(1) {
     text-indent: -0.8em;
     padding-left: 0.5em;
@@ -391,6 +399,9 @@ table td:nth-child(2):nth-last-child(1)::before {
     width: 0;
 }
 
+.m2n2 {
+    margin-top: -2em;
+}
 
 .lh1 {
     line-height: 1em;

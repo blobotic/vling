@@ -3,7 +3,7 @@ title: Kãa, Kai, and Khai
 points: 10
 tags:
 - kra-dai kra dai thailand cambodia thai
-- match tl
+- match
 ---
 
 Thai is a Kra-Dai language spoken by over 36 million people in Thailand and Cambodia. Below are some
