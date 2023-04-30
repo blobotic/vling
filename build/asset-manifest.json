@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.18043f05.css",
-    "main.js": "/static/js/main.c5f75d6e.js",
+    "main.css": "/static/css/main.c361504e.css",
+    "main.js": "/static/js/main.6a0cc3a4.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -90,18 +90,18 @@
     "static/media/o.md": "/static/media/o.3c2aeba8ccd8a3856e81.md",
     "static/media/i4.md": "/static/media/i4.0f22489d53659e794a58.md",
     "static/media/b.md": "/static/media/b.23045a5dd1a6624fecac.md",
+    "static/media/2.md": "/static/media/2.d6b1569502cc69e487a4.md",
     "static/media/search.svg": "/static/media/search.0b7fc401ecd36981b300.svg",
     "static/media/i3.md": "/static/media/i3.a4f0cd1d7051ac5c588d.md",
-    "static/media/5.md": "/static/media/5.1d95c0b720d93633eb92.md",
-    "static/media/2.md": "/static/media/2.d6b1569502cc69e487a4.md",
+    "static/media/5.md": "/static/media/5.dd60e89cce344a79c1e9.md",
     "static/media/i2.md": "/static/media/i2.014990740315083e2492.md",
     "static/media/b-fr.md": "/static/media/b-fr.7f2cb9148b07a579bd63.md",
     "static/media/custom_md_guide.md": "/static/media/custom_md_guide.dfbbbd6a4cdf0bea9d00.md",
-    "static/media/4.md": "/static/media/4.5f061faf055282c8b846.md",
+    "static/media/4.md": "/static/media/4.0531b312bce03b04ba25.md",
     "static/media/i3-sol.md": "/static/media/i3-sol.7bfbd18a1a44069fb31b.md",
-    "static/media/3.md": "/static/media/3.600a201e25a5ab432a2c.md",
+    "static/media/3.md": "/static/media/3.79fd17ffcb7f5007715f.md",
     "static/media/a-fr.md": "/static/media/a-fr.a501427ca8068f91e295.md",
-    "static/media/1.md": "/static/media/1.3d8049a5ed0d1659664a.md",
+    "static/media/1.md": "/static/media/1.31be690b6136f971b135.md",
     "static/media/e-fr.md": "/static/media/e-fr.56f17294f6ee8f8761d4.md",
     "static/media/a-sol.md": "/static/media/a-sol.b7d661824d5e8c0ded09.md",
     "static/media/r-sol.md": "/static/media/r-sol.aad1f89650a9a9c474b1.md",
@@ -109,11 +109,11 @@
     "static/media/i1.md": "/static/media/i1.0d27718c126858c4f24a.md",
     "static/media/i5-sol.md": "/static/media/i5-sol.fa85b4e71e2dba8ca5e9.md",
     "index.html": "/index.html",
-    "main.18043f05.css.map": "/static/css/main.18043f05.css.map",
-    "main.c5f75d6e.js.map": "/static/js/main.c5f75d6e.js.map"
+    "main.c361504e.css.map": "/static/css/main.c361504e.css.map",
+    "main.6a0cc3a4.js.map": "/static/js/main.6a0cc3a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.18043f05.css",
-    "static/js/main.c5f75d6e.js"
+    "static/css/main.c361504e.css",
+    "static/js/main.6a0cc3a4.js"
   ]
 }

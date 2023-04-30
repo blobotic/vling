@@ -40,7 +40,7 @@ function MatchingAnswerBox({num,start,alpha,ks}) {
 			let tmprow = []
 
 			for (let j = 1; j <= Math.min(6, num-i*6); j++) {
-				tmprow.push(<td>{(alpha ? (i*6+j+start+9).toString(36).toUpperCase() : i+start) + "."}</td>)
+				tmprow.push(<td>{(alpha ? (i*6+j+start+9).toString(36).toUpperCase() : i*6+j+start) + "."}</td>)
 				tmprow.push(<td><Answerbox/></td>)
 			}
 

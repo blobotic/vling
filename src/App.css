@@ -153,6 +153,7 @@ textarea {
 }
 
 .right {
+    float: right;
     text-align: right;
 }
 
@@ -399,8 +400,16 @@ table td:nth-child(2):nth-last-child(1)::before {
     max-width: 800px;
 }
 
+.width-600 {
+    max-width: 600px;
+}
+
 .width-1200 {
     max-width: 1200px;
+}
+
+.width-200 {
+    max-width: 200px;
 }
 
 .width-400 {
