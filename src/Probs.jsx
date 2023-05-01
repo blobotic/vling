@@ -1,7 +1,22 @@
 import { Outlet, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+let tagDescs = [
+	{"name": "script", "desc": "used for problems written in non-alphanumeric scripts"},
+	{"name": "script", "desc": "used for problems written in non-alphanumeric scripts"},
+	{"name": "tl", "desc": "used for problems that ask you to translate full sentences"},
+	{"name": "comp", "desc": "used for computational linguistics-related problems (mostly from NACLO)"},
+	{"name": "number", "desc": "used for problems that ask you to solve for a number system"},
+	{"name": "match", "desc": "used for problems that ask you to match phrases in another language and English, given two lists"},
+	{"name": "tenses", "desc": "used for problems that ask you to cross-reference given phrases and TLs to write phrases in different tenses/forms in the given language"},
+	{"name": "sound", "desc": "used for problems that ask you to examine sound/word changes in languages/over time"},
+	{"name": "family", "desc": "used for problems that involve familial terms/family trees"}
+]
 
 function Probs() {
 	var data = require("./problem_index.json");
+
+	let navigate = useNavigate()
 
 	return (
 		<div className="home">
@@ -38,17 +53,13 @@ function Probs() {
 
 
 			<h3>Search</h3>
+			<p>The search is built with <a href="https://lunrjs.com/guides/searching.html" taget="_blank">lunr</a>, so you can try wildcards (*), fuzzy matches (~), and term presences (+/-).</p> 
+
 			<p>Try "search everything" to search every problem's full text. Try "tags only" to search only through the problem name and my selected tags, which include for now the <i>language used</i>, <i>location</i>, and the <i>type of problem</i>.</p>
 			<p>Tags for types of problems:</p>
+
 			<ul>
-				<li><b>script</b>, used for problems written in non-alphanumeric scripts</li>
-				<li><b>tl</b>, used for problems that ask you to translate full sentences</li>
-				<li><b>comp</b>, used for computational linguistics-related problems (mostly from NACLO)</li>
-				<li><b>number</b>, used for problems that ask you to solve for a number system</li>
-				<li><b>match</b>, used for problems that ask you to match phrases in another language and English, given two lists</li>
-				<li><b>tenses</b>, used for problems that ask you to cross-reference given phrases and TLs to write phrases in different tenses/forms in the given language</li>
-				<li><b>sound</b>, used for problems that ask you to examine sound/word changes in languages/over time</li>
-				<li><b>family</b>, used for problems that involve familial terms/family trees</li>
+			{tagDescs.map(function(item, i) {return <li><b><Link to={"/search?q="+item["name"]}>{item["name"]}</Link></b>, {item["desc"]}</li>})}
 			</ul>
 
 		</div>
