@@ -4,6 +4,8 @@ import useDetectClickOut from "./useDetectClickOut";
 import ToolbarModal from "./ToolbarModal";
 
 
+
+
 function Canvas() {
 	let [canvas, setCanvas] = React.useState();
 	let [clientHeight, setClientHeight] = React.useState(0)
