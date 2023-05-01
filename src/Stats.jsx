@@ -24,6 +24,8 @@ function Stats() {
 
 			<h1 className="center">Settings</h1>
 			<p><b>Show/hide answers by default:</b> <button onClick={() => {changeSetting("showSol", showSol); setShowSol(!showSol); }}>{showSol ? "Show answers (by default)" : "Hide answers (by default)"}</button></p>
+			{/*<p><b>Search everything/tags  by default:</b> <button onClick=(() => {changeSetting("")})*/}
+
 			<p><b>/Random/ set:</b> <button>All / Incomplete only</button> </p>
 
 			<h1>Note</h1>

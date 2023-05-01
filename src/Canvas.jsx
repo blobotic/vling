@@ -9,7 +9,7 @@ function Canvas() {
 	let [clientHeight, setClientHeight] = React.useState(0)
 	// let [otherlangsMD, setOtherlangsMD] = React.useState({})
 	let [currentTool, setCurrentTool] = React.useState("PEN")
-	let [toolOptions, setToolOptions] = React.useState({"PEN": {width: 5, color: "#ff32ee", brush: null}, "ERAS": {width: 15, brush: null}, "HIGH": {width: 20, color: {"r": 251, "g": 247, "b": 25}, brush: null}})
+	let [toolOptions, setToolOptions] = React.useState({"PEN": {width: 5, color: "#ff32ee", brush: null}, "ERAS": {width: 15, brush: null}, "HIGH": {width: 20, color: {r: 251, g: 247, b: 25}, brush: null}})
 	// let [openPenSettings, setOpenPenSettings] = React.useState(false);
 	// let [openErasSettings, setOpenErasSettings] = React.useState(false);
 	// let [openHighSettings, setOpenHighSettings] = React.useState(false);
@@ -45,7 +45,12 @@ function Canvas() {
 			if (toolOptions.hasOwnProperty(key)) {
 				for (let i =0; i < tmpKeys.length; i++) {
 					if (toolOptions[key][tmpKeys[i]]) {
-						tmp1[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]]
+						let tmp2 = toolOptions[key][tmpKeys[i]]
+						if (tmpKeys[i] == "color") {
+							let tmp3 =(tmp2[0] == "#") ? tmp2 : "rgba(" + tmp2["r"] + ", " + tmp2["g"] + ", " + tmp2["b"] + ", 0.5)";
+							tmp1[key]["brush"][tmpKeys[i]] = tmp3 
+						}
+						else tmp1[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]];
 					}
 				}
 			}
@@ -72,16 +77,19 @@ function Canvas() {
 			canvas.freeDrawingBrush = toolOptions[currentTool]["brush"]
 			setCurColor(toolOptions[currentTool]["color"])
 			setCurWid(toolOptions[currentTool]["width"])
+			console.log("useefect currenttool", toolOptions[currentTool])
 		}
 	}, [currentTool])
 
 	React.useEffect(() => {
 		if (toolOptions[currentTool]["brush"] && currentTool != "ERAS") {
-			const tmp2 = {...toolOptions[currentTool], color: (curColor[0] == "#") ? curColor : 
-			"rgba(" + curColor["r"] + "," + curColor["g"] + "," + curColor["b"] + ",0.5)"}
+			const tmp2 = {...toolOptions[currentTool], color: curColor} // (curColor[0] == "#") ? curColor : 
+			// "rgba(" + curColor["r"] + "," + curColor["g"] + "," + curColor["b"] + ",0.5)"}
 		const tmp1 = {...toolOptions}
 		tmp1[currentTool] = tmp2
 		setToolOptions(tmp1)
+
+		console.log(curColor)
 	}
 	}, [curColor])
 
@@ -111,7 +119,17 @@ function Canvas() {
 				if (toolOptions.hasOwnProperty(key)) {
 					for (let i =0; i < tmpKeys.length; i++) {
 						if (toolOptions[key][tmpKeys[i]]) {
-							toolOptions[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]]
+						
+						let tmp2 = toolOptions[key][tmpKeys[i]]
+						if (tmpKeys[i] == "color") {
+							let tmp3 =(tmp2[0] == "#") ? tmp2 : "rgba(" + tmp2["r"] + ", " + tmp2["g"] + ", " + tmp2["b"] + ", 0.5)";
+							toolOptions[key]["brush"][tmpKeys[i]] = tmp3 
+						}
+						else toolOptions[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]];
+
+
+
+							// toolOptions[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]]
 						}
 					}
 				}
