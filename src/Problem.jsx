@@ -13,6 +13,8 @@ import ExplBox from "./ExplBox";
 import MatchingAnswerBox from "./MatchingAnswerBox";
 import Probs from "./Probs";
 import SolText from "./SolText";
+import "./Problem.css"
+import Canvas from "./Canvas";
 
 
 import 'katex/dist/katex.min.css'
@@ -87,8 +89,9 @@ function Problem() {
 	let [metaData, setMetadata] = React.useState({metadata: {}});
 	let [otherlangs, setOtherlangs] = React.useState({})
 	let [currentLang, setCurrentLang] = React.useState("en")
-	// let [otherlangsMD, setOtherlangsMD] = React.useState({})
-	
+
+
+
 	// this exists in Stats.jsx
 	// reference:
 	// https://stackoverflow.com/questions/60688411/assign-local-storage-to-react-state-react-hooks
@@ -110,7 +113,6 @@ function Problem() {
 	try { 
 			post = require(`./problems/${comp}/${year}/${problem}.md`);//"./naclo/2022/j.md");
   	} catch(e) {
-  		// return <Home />
   		temp = true;
   	}
 
@@ -119,22 +121,6 @@ function Problem() {
 	} catch(e) {
 		hasSol = false;
 	}
-
-	// get in other languages
-	//  important !!
-
-	// let languageComponent = <div></div>
-	// let otherlangs = []
-
-	// for (let i = 0; i < langs.length; i++) {
-	// 	try {
-	// 		let posti = require(`./problems/${comp}/${year}/${problem}-${langs[i]}.md`);
-
-	// 		console.log(posti)
-	// 	} catch(e) {}
-	// }
-
-	// console.log(otherlangs)
 
 
 	React.useLayoutEffect(() => {
@@ -170,7 +156,9 @@ function Problem() {
 				// console.log(otherlangs)
 			} catch(e) {}
 		}
+
 	}, []);
+ 
 
 
 	// console.log(otherlangs)
@@ -178,7 +166,7 @@ function Problem() {
 	// hotKEYS!!!
 	// reference: 
 	// https://stackoverflow.com/questions/29069639/listen-to-keypress-for-document-in-reactjs
-	const LEFT_KEYS = ['37', 'ArrowLeft'], RIGHT_KEYS = ['39', 'ArrowRight'], ENTER_KEYS = ['13', 'Enter'];
+	const LEFT_KEYS = ['37', 'ArrowLeft'], RIGHT_KEYS = ['39', 'ArrowRight'], ENTER_KEYS = ['13', 'Enter'], C_KEYS = ['67', 'c'];
 	function handler(event) {
 		if (["input", "textarea"].includes(event.target.tagName.toLowerCase())) {
 			return;
@@ -243,8 +231,13 @@ function Problem() {
 	// console.log(Object.entries(otherlangs))
 
 
+
+
 	return (
 		<div className="home">
+
+		<Canvas />
+		
 		<h1 className="center">{comp.toUpperCase()} {year} {problem.toUpperCase()}: {metaData.title} ({metaData.points} points)</h1>
 		
 
@@ -254,9 +247,10 @@ function Problem() {
 		<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton float-right' : 'linkbutton float-right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
 
 		{/* language buttons !! */}
+		<div style={{marginLeft: "5em"}}>
 		{(Object.keys(otherlangs).length > 1) ? 
 					Object.entries(otherlangs).map(([key, value]) => <button onClick={() => setCurrentLang(key)}>{key}</button>)
-				 : false}
+				 : false}</div>
 		</div>
 
 		{/*actual markdown O_O*/}
@@ -275,7 +269,7 @@ function Problem() {
 		{/*<input type="submit" />*/}
 		{/*</form>*/}
 
-		<button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button">{hasSol && showSol ? "Hide solution" : "Show solution"}</button>
+		<div style={{marginBottom: '6em', marginLeft: '2em'}}><button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button" style={{position: 'absolute'}}>{hasSol && showSol ? "Hide solution" : "Show solution"}</button></div>
 
 		{/* solution: */}
 		{hasSol && showSol ? <div className="solutionbox lmargin2 rmargin2"><ReactMarkdown

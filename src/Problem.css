@@ -1,0 +1,57 @@
+/* toolbar for canvas */
+
+.toolbar {
+	position: fixed;
+	right: 2em;
+	width: 3em;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	top: 10em;
+	z-index: 10;
+}
+
+.toolbar img {
+	all: initial;
+	max-width: 100%;
+}
+
+.toolButton {
+	background-color: initial;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+	padding: 0.75em;
+	border: initial;
+	border-radius: 10px;
+	height: 3em;
+	width: 3em;
+}
+
+button.toolButton:hover {
+	background-color: #c0c0c0;
+}
+
+button.toolButton:focus, button.toolButton:active {
+	background-color: #c0c0c0;
+}
+
+button.toolButton:focus:not(.active), button.toolButton:active:not(.active) {
+	background-color: initial;
+}
+
+button.toolButton:hover:not(.active) {
+	border-color: #d0d0d0;
+	border-width: 1px;
+	border-style: solid;
+	background-color: initial;
+}
+
+.active {
+	background-color: #c0c0c0;
+}
+
+.react-colorful {
+	position: absolute !important;
+	right: 5em;
+	top: 3em;
+}

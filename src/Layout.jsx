@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Outlet, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-// import { useIsFocused } from '@react-navigation/native';
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Layout.css"
 
 
 
@@ -34,14 +34,12 @@ function Layout() {
 		// history.push(path)
 	}
 
-	// const isFocused = useIsFocused();
-	// useEffect(()=>{}, [isFocused]);
 
 	return (
 		<div>
-			<nav>
+			<nav className="navbar">
 				<ul>
-					<li><Link to="/">Home</Link></li>
+					<li><Link className="onLink" to="/">Home</Link></li>
 					<li><Link to="/probs">Browse</Link></li>
 					<li><a onClick={randRouteChange}>Random</a></li>
 					<li><Link to="/stats">Stats</Link></li>

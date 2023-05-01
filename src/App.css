@@ -2,27 +2,6 @@
 /*    text-align: center;*/
 }
 
-nav {
-    position: absolute;
-    right: 5vw;
-    background-color: #f9f9f9;
-    width:100%;
-    top: 0;
-    padding-top: 1em;
-    height: 3em;
-}
-
-
-nav ul {
-    display: flex;
-    float: right;
-}
-
-nav li {
-    list-style: none;
-    margin: 0.5em;
-}
-
 li ul {
     margin-bottom: 0;
 }
@@ -126,7 +105,8 @@ textarea {
 }
 
 .linkbutton {
-    display: inline-block;
+/*    display: inline-block;*/
+position: absolute;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
@@ -146,10 +126,15 @@ textarea {
     color: #f9f9f9;
     outline: 0;
 }
+
 .disabled {
     pointer-events: none;
     opacity: 0.5;
     border: none;
+}
+
+.linkbutton.float-right {
+    right: 6em;
 }
 
 .right {
@@ -242,18 +227,16 @@ textarea {
 .languageBar {
     margin: auto;
 /*    margin-left: 2em;*/
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     margin-top: 1em;
     width: 100%;
     display: inline-block;
-/*    text-align: center;*/
 }
 
 .languageBar button {
     margin-left: 1em;
 /*    min-width: 2em;*/
     padding: 8px 10px;
-
 }
 
 
@@ -475,3 +458,18 @@ table td:nth-child(2):nth-last-child(1)::before {
   to { border-color: transparent; }
 }
 
+
+
+
+
+/* CANVAS - fabric js */
+
+.canvas-container {
+    position: absolute !important;
+    z-index: 5;
+    top: 2em;
+}
+
+a, button {
+    z-index: 6;
+}

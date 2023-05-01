@@ -9,9 +9,11 @@ import Stats from "./Stats";
 import Search from "./Search";
 import Cust from "./Cust";
 
+
 function App() {
     return (
     <div className="App">
+
         {/* Reference: https://www.w3schools.com/react/react_router.asp */}
         <BrowserRouter>
             <Routes>
