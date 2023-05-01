@@ -51,7 +51,36 @@ button.toolButton:hover:not(.active) {
 }
 
 .react-colorful {
-	position: absolute !important;
+	/*position: absolute !important;
+	right: 5em;
+	top: 3em;*/
+	margin: auto;
+}
+
+
+
+/*toolbar modal*/
+
+.toolbarModal {
+	position: absolute;
 	right: 5em;
 	top: 3em;
+	padding: 0.5em 2em 2em 2em;
+	border: 2px #e0e0e0 solid;
+	border-radius: 10px;
+	background-color: white;
+	width: 15em;
+}
+
+.tmtitle {
+	text-align: center;
+	padding-bottom: 0.5em;
+}
+
+.tmfield {
+	padding-top: 1em;
+}
+
+.rs-slider {
+	margin-bottom: 0.2em;
 }

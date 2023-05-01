@@ -237,7 +237,7 @@ function Problem() {
 		<div className="home">
 
 		<Canvas />
-		
+
 		<h1 className="center">{comp.toUpperCase()} {year} {problem.toUpperCase()}: {metaData.title} ({metaData.points} points)</h1>
 		
 

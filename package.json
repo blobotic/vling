@@ -26,6 +26,7 @@
     "remark-directive-rehype": "^0.4.2",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "rsuite": "^5.33.0",
     "tls": "^0.0.1",
     "unist-util-visit": "^4.1.2",
     "url": "^0.11.0",

@@ -1,6 +1,7 @@
 import * as React from "react";
 import {fabric, EraserBrush} from "fabric";
-import {HexColorPicker, RgbColorPicker} from "react-colorful"
+import useDetectClickOut from "./useDetectClickOut";
+import ToolbarModal from "./ToolbarModal";
 
 
 function Canvas() {
@@ -9,12 +10,20 @@ function Canvas() {
 	// let [otherlangsMD, setOtherlangsMD] = React.useState({})
 	let [currentTool, setCurrentTool] = React.useState("PEN")
 	let [toolOptions, setToolOptions] = React.useState({"PEN": {width: 5, color: "#ff32ee", brush: null}, "ERAS": {width: 15, brush: null}, "HIGH": {width: 20, color: "rgba(251,247,25,0.5)", brush: null}})
-	let [openPenSettings, setOpenPenSettings] = React.useState(false);
-	let [openErasSettings, setOpenErasSettings] = React.useState(false);
-	let [openHighSettings, setOpenHighSettings] = React.useState(false);
-	let [penColor, setPenColor] = React.useState("#aabbcc")
-	let [highColor, setHighColor] = React.useState("rgba(251,247,25,0.5)")
+	// let [openPenSettings, setOpenPenSettings] = React.useState(false);
+	// let [openErasSettings, setOpenErasSettings] = React.useState(false);
+	// let [openHighSettings, setOpenHighSettings] = React.useState(false);
+	let [curOpenSettings, setCurOpenSettings] = React.useState("");
+	// let [penColor, setPenColor] = React.useState("#aabbcc")
+	// let [highColor, setHighColor] = React.useState("rgba(251,247,25,0.5)")
+	let [curColor, setCurColor] = React.useState(toolOptions[currentTool]["color"])
+	let [curWid, setCurWid] = React.useState(toolOptions[currentTool]["width"])
+	let [freedrawDisabled, setFreedrawDisabled] = React.useState(true)
 
+
+	const {show, nodeRef, triggerRef} = useDetectClickOut(false, setCurOpenSettings);
+	const {show: show2, nodeRef: nodeRef2, triggerRef: triggerRef2} = useDetectClickOut(false, setCurOpenSettings);
+	const {show: show3, nodeRef: nodeRef3, triggerRef: triggerRef3} = useDetectClickOut(false, setCurOpenSettings);
 
 	// CANVAS - fabric js
 
@@ -60,34 +69,41 @@ function Canvas() {
 
 	React.useEffect(() => {
 		if (canvas != undefined) {
-			console.log(currentTool)
-
 			canvas.freeDrawingBrush = toolOptions[currentTool]["brush"]
-
-			console.log(toolOptions[currentTool]["brush"])
+			setCurColor(toolOptions[currentTool]["color"])
+			setCurWid(toolOptions[currentTool]["width"])
 		}
 	}, [currentTool])
 
 	React.useEffect(() => {
-		if (toolOptions["PEN"]["brush"]) {
-			const tmp2 = {...toolOptions["PEN"], color: penColor}
-		const tmp1 = {...toolOptions, PEN: tmp2}
+		if (toolOptions[currentTool]["brush"] && currentTool != "ERAS") {
+			const tmp2 = {...toolOptions[currentTool], color: (curColor[0] == "#") ? curColor : 
+			"rgba(" + curColor["r"] + "," + curColor["g"] + "," + curColor["b"] + ",0.5)"}
+		const tmp1 = {...toolOptions}
+		tmp1[currentTool] = tmp2
 		setToolOptions(tmp1)
-		console.log(tmp1)
-		console.log("changed pen color...")
 	}
-	}, [penColor])
+	}, [curColor])
 
 	React.useEffect(() => {
-		if (toolOptions["HIGH"]["brush"]) {
-			const tmp2 = {...toolOptions["HIGH"], color: "rgba(" + highColor["r"] + "," + highColor["g"] + "," + highColor["b"] + ",0.5)"}
-			setToolOptions({...toolOptions, HIGH: tmp2})
-		}
-	}, [highColor])
+		if (toolOptions[currentTool]["brush"]) {
+			const tmp2 = {...toolOptions[currentTool], width: curWid}
+		const tmp1 = {...toolOptions}
+		tmp1[currentTool] = tmp2
+		setToolOptions(tmp1)
+	}
+	}, [curWid])
+
+	// React.useEffect(() => {
+	// 	if (toolOptions["HIGH"]["brush"]) {
+	// 		const tmp2 = {...toolOptions["HIGH"], color: "rgba(" + highColor["r"] + "," + highColor["g"] + "," + highColor["b"] + ",0.5)"}
+	// 		setToolOptions({...toolOptions, HIGH: tmp2})
+	// 	}
+	// }, [highColor])
 
 	React.useEffect(() => {
 		if (toolOptions["PEN"]["brush"]) {
-			console.log("???")
+			// console.log("???")
 			let tmpKeys = ["width", "color"]
 
 
@@ -128,6 +144,40 @@ function Canvas() {
 
 
 
+	function tmpFunc(s) {
+		if (freedrawDisabled) {
+			setFreedrawDisabled(false)
+			document.getElementsByClassName('canvas-container')[0].style.pointerEvents = 'auto'
+			canvas.selection = true
+
+			if (currentTool != s) {
+				setCurrentTool(s)
+			}
+			setCurOpenSettings("")
+			return
+		}
+
+		if (currentTool == s) {
+			if (curOpenSettings != s) {
+				setCurOpenSettings(s);
+			}
+			else setCurOpenSettings("")
+		}
+		else {
+			setCurrentTool(s);
+			setCurOpenSettings("");
+		}
+
+
+	}
+
+	function disableCanvas() {
+		setFreedrawDisabled(true)
+		document.getElementsByClassName('canvas-container')[0].style.pointerEvents = "none";
+		canvas.selection = false;
+	}
+
+
 	return (
 		<div>
 		<canvas id="over" style={{overflow: "auto", position: "absolute"}}></canvas>
@@ -135,20 +185,37 @@ function Canvas() {
 
 		<div className="toolbar">
 		
+		{/* pointer to disable events */}
+		<button className={(freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={disableCanvas}><img src="/pointer.svg" /></button>
+
 		{/* pen tool */}
-		<button class={(currentTool == "PEN") ? "toolButton active" : "toolButton"} onClick={() => 
-			(currentTool == "PEN") 
-				? setOpenPenSettings(!openPenSettings)
-				: setCurrentTool('PEN')}
-			><img src="/pen.svg"/></button>
+		<div ref={triggerRef}><button className={(currentTool == "PEN" && !freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc("PEN")}/*{() =>*/
+			// (currentTool == "PEN") 
+			// 	? (curOpenSettings != "PEN") ? setCurOpenSettings("PEN") : setCurOpenSettings("")
+			// 	: setCurrentTool('PEN') && setCurOpenSettings("")}
+			><img src="/pen.svg"/></button></div>
 		{/* pen settings/menu */}
-		{openPenSettings ? <HexColorPicker color={penColor} onChange={setPenColor} /> : null}
+		{/*{openPenSettings ? <HexColorPicker color={penColor} onChange={setPenColor} /> : null}*/}
+			{/*{ openPenSettings ? <ToolbarModal /> : null}*/}
+		{show && curOpenSettings == "PEN" && <ToolbarModal name={currentTool} col={curColor} setCol={setCurColor} wid={curWid} setWid={setCurWid} ref={nodeRef} />}
 
 		{/* eraser tool */}
-		<button class={(currentTool == "ERAS") ? "toolButton active" : "toolButton"} onClick={() => setCurrentTool('ERAS')}><img src="/eraser.svg"/></button>
-		<button class={(currentTool == "HIGH") ? "toolButton active" : "toolButton"} onClick={() => 
-		(currentTool == "HIGH") ? setOpenHighSettings(!openHighSettings) : setCurrentTool('HIGH')}><img src="/highlighter.svg"/></button>
-		{openHighSettings ? <RgbColorPicker color={highColor} onChange={setHighColor} /> : null}
+		<div ref={triggerRef3}><button className={(currentTool == "ERAS" && !freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc("ERAS")}
+		// {() => setCurrentTool('ERAS')}
+			><img src="/eraser.svg"/></button></div>
+		{show3 && curOpenSettings == "ERAS" && <ToolbarModal name={currentTool} col={curColor} setCol={setCurColor} wid={curWid} setWid={setCurWid} ref={nodeRef3} />}
+		
+
+		{/* highlighter tool */}
+		<div ref={triggerRef2}><button className={(currentTool == "HIGH" && !freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc("HIGH")}/*() =>*/ 
+		// (currentTool == "HIGH") 
+			// ? (curOpenSettings != "HIGH") ? setCurOpenSettings("HIGH") : setCurOpenSettings("") 
+			// : setCurrentTool('HIGH')}
+			><img src="/highlighter.svg"/></button></div>
+		{/*{openHighSettings ? <RgbColorPicker color={highColor} onChange={setHighColor} /> : null}*/}
+		{show2 && curOpenSettings == "HIGH" && <ToolbarModal name={currentTool} col={curColor} setCol={setCurColor} wid={curWid} setWid={setCurWid} ref={nodeRef2} />}
+
+
 
 		</div>
 		</div>
