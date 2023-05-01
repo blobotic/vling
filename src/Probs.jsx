@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 let tagDescs = [
 	{"name": "script", "desc": "used for problems written in non-alphanumeric scripts"},
-	{"name": "script", "desc": "used for problems written in non-alphanumeric scripts"},
 	{"name": "tl", "desc": "used for problems that ask you to translate full sentences"},
 	{"name": "comp", "desc": "used for computational linguistics-related problems (mostly from NACLO)"},
 	{"name": "number", "desc": "used for problems that ask you to solve for a number system"},
