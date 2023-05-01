@@ -9,7 +9,7 @@ function Canvas() {
 	let [clientHeight, setClientHeight] = React.useState(0)
 	// let [otherlangsMD, setOtherlangsMD] = React.useState({})
 	let [currentTool, setCurrentTool] = React.useState("PEN")
-	let [toolOptions, setToolOptions] = React.useState({"PEN": {width: 5, color: "#ff32ee", brush: null}, "ERAS": {width: 15, brush: null}, "HIGH": {width: 20, color: "rgba(251,247,25,0.5)", brush: null}})
+	let [toolOptions, setToolOptions] = React.useState({"PEN": {width: 5, color: "#ff32ee", brush: null}, "ERAS": {width: 15, brush: null}, "HIGH": {width: 20, color: {"r": 251, "g": 247, "b": 25}, brush: null}})
 	// let [openPenSettings, setOpenPenSettings] = React.useState(false);
 	// let [openErasSettings, setOpenErasSettings] = React.useState(false);
 	// let [openHighSettings, setOpenHighSettings] = React.useState(false);
