@@ -9,23 +9,32 @@ import ToolbarModal from "./ToolbarModal";
 function Canvas() {
 	let [canvas, setCanvas] = React.useState();
 	let [clientHeight, setClientHeight] = React.useState(0)
-	// let [otherlangsMD, setOtherlangsMD] = React.useState({})
+
 	let [currentTool, setCurrentTool] = React.useState("PEN")
-	let [toolOptions, setToolOptions] = React.useState({"PEN": {width: 5, color: "#ff32ee", brush: null}, "ERAS": {width: 15, brush: null}, "HIGH": {width: 20, color: {r: 251, g: 247, b: 25}, brush: null}})
-	// let [openPenSettings, setOpenPenSettings] = React.useState(false);
-	// let [openErasSettings, setOpenErasSettings] = React.useState(false);
-	// let [openHighSettings, setOpenHighSettings] = React.useState(false);
+	let [toolOptions, setToolOptions] = React.useState({
+		"PEN": {width: 5, color: "#ff32ee", brush: null}, 
+		"ERAS": {width: 15, brush: null}, 
+		"HIGH": {width: 20, color: {r: 251, g: 247, b: 25}, brush: null}, 
+		"TEXT": {width: 30, color: "#000" }, 
+	})
+
+	let [nonfdTool, setNonfdTool] = React.useState(false)
+	let [nonfdToolName, setNonfdToolName] = React.useState("TEXT")
+
 	let [curOpenSettings, setCurOpenSettings] = React.useState("");
-	// let [penColor, setPenColor] = React.useState("#aabbcc")
-	// let [highColor, setHighColor] = React.useState("rgba(251,247,25,0.5)")
 	let [curColor, setCurColor] = React.useState(toolOptions[currentTool]["color"])
 	let [curWid, setCurWid] = React.useState(toolOptions[currentTool]["width"])
-	let [freedrawDisabled, setFreedrawDisabled] = React.useState(true)
+	let [freedrawDisabled, setFreedrawDisabled] = React.useState(false)
+	let [canvasDisabled, setCanvasDisabled] = React.useState(true)
 
 
 	const {show, nodeRef, triggerRef} = useDetectClickOut(false, setCurOpenSettings);
 	const {show: show2, nodeRef: nodeRef2, triggerRef: triggerRef2} = useDetectClickOut(false, setCurOpenSettings);
 	const {show: show3, nodeRef: nodeRef3, triggerRef: triggerRef3} = useDetectClickOut(false, setCurOpenSettings);
+
+
+	let freedrawTools = ["PEN", "ERAS", "HIGH"]
+	let nonfdTools = ["TEXT"]
 
 	// CANVAS - fabric js
 
@@ -44,7 +53,7 @@ function Canvas() {
 		let tmpKeys = ["width", "color"]
 
 		for (let key in toolOptions) {
-			if (toolOptions.hasOwnProperty(key)) {
+			if (toolOptions.hasOwnProperty(key) && freedrawTools.includes(key) ) {
 				for (let i =0; i < tmpKeys.length; i++) {
 					if (toolOptions[key][tmpKeys[i]]) {
 						let tmp2 = toolOptions[key][tmpKeys[i]]
@@ -66,7 +75,7 @@ function Canvas() {
 
 	React.useEffect(() => {
 		if (canvas != null) {
-			canvas.setWidth(document.body.clientWidth * 0.9)
+			canvas.setWidth(document.body.clientWidth)
 			canvas.setHeight(clientHeight)
 			canvas.calcOffset()
 		}
@@ -76,23 +85,20 @@ function Canvas() {
 
 	React.useEffect(() => {
 		if (canvas != undefined) {
+
 			canvas.freeDrawingBrush = toolOptions[currentTool]["brush"]
 			setCurColor(toolOptions[currentTool]["color"])
 			setCurWid(toolOptions[currentTool]["width"])
-			console.log("useefect currenttool", toolOptions[currentTool])
 		}
 	}, [currentTool])
 
 	React.useEffect(() => {
 		if (toolOptions[currentTool]["brush"] && currentTool != "ERAS") {
-			const tmp2 = {...toolOptions[currentTool], color: curColor} // (curColor[0] == "#") ? curColor : 
-			// "rgba(" + curColor["r"] + "," + curColor["g"] + "," + curColor["b"] + ",0.5)"}
-		const tmp1 = {...toolOptions}
-		tmp1[currentTool] = tmp2
-		setToolOptions(tmp1)
-
-		console.log(curColor)
-	}
+			const tmp2 = {...toolOptions[currentTool], color: curColor}
+			const tmp1 = {...toolOptions}
+			tmp1[currentTool] = tmp2
+			setToolOptions(tmp1)
+		}
 	}, [curColor])
 
 	React.useEffect(() => {
@@ -104,12 +110,7 @@ function Canvas() {
 	}
 	}, [curWid])
 
-	// React.useEffect(() => {
-	// 	if (toolOptions["HIGH"]["brush"]) {
-	// 		const tmp2 = {...toolOptions["HIGH"], color: "rgba(" + highColor["r"] + "," + highColor["g"] + "," + highColor["b"] + ",0.5)"}
-	// 		setToolOptions({...toolOptions, HIGH: tmp2})
-	// 	}
-	// }, [highColor])
+
 
 	React.useEffect(() => {
 		if (toolOptions["PEN"]["brush"]) {
@@ -118,7 +119,7 @@ function Canvas() {
 
 
 			for (let key in toolOptions) {
-				if (toolOptions.hasOwnProperty(key)) {
+				if (toolOptions.hasOwnProperty(key) && key != "TEXT") {
 					for (let i =0; i < tmpKeys.length; i++) {
 						if (toolOptions[key][tmpKeys[i]]) {
 						
@@ -128,10 +129,6 @@ function Canvas() {
 							toolOptions[key]["brush"][tmpKeys[i]] = tmp3 
 						}
 						else toolOptions[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]];
-
-
-
-							// toolOptions[key]["brush"][tmpKeys[i]] = toolOptions[key][tmpKeys[i]]
 						}
 					}
 				}
@@ -140,15 +137,86 @@ function Canvas() {
 	}, [toolOptions])
 
 
+	// text
+	function handlespecial(e) {
+		if (e.target.tagName == "IMG") return;
+
+		let tmp = false
+
+		setNonfdTool(nonfdTool => {
+			setNonfdToolName(nonfdToolName => {
+					if (nonfdTool) {
+						if (nonfdToolName == "TEXT") {
+							tmp = true
+						}
+					}
+				return nonfdToolName;
+			})
+			return false;
+			// workaround because react hooks don't work well in callbacks
+			// https://stackoverflow.com/questions/53845595/wrong-react-hooks-behaviour-with-event-listener
+		})
+
+		setCanvas(canvas => {
+			if (tmp) {
+				let text = new fabric.IText('', {
+					fontFamily: '-apple-system', 
+					left: e.offsetX, 
+					top: e.offsetY,
+					fontSize: toolOptions["TEXT"].width,
+					fill: toolOptions["TEXT"].color,
+					fontWeight: 'normal'
+				})
+				canvas.add(text).setActiveObject(text);
+				text.enterEditing();
+				setFreedrawDisabled(true)
+			}
+			return canvas
+		})
+		// we put this separate because apparently it gets called once per setState() it's nested in...? not sure lol
+	}
+
+	// delete objects
+	function deleteObject() {
+		let activeObjects = canvas.getActiveObjects();
+		for (let i in activeObjects) {
+			canvas.remove(activeObjects[i]);
+		}
+		canvas.renderAll()
+	}
+
+
+	React.useLayoutEffect(() => {
+		window.addEventListener("mousedown", handlespecial);
+	}, [])
+
+
 	// keybinds
 
-	const C_KEYS = ['67', 'c'];
+	const C_KEYS = ['67', 'c'], M_KEYS = ['77', 'm'], B_KEYS = ['66', 'b', '80', 'p'], E_KEYS = ['69', 'e'], H_KEYS = ['72', 'h'], T_KEYS = ['84', 't'], DEL_KEYS = ['68', 'd', '46', 'Delete', '8', 'Backspace'];
 	function handler(event) {
-		// enable/disable canvas
+		if (event.target.tagName == "TEXTAREA") return;
+
 		if (C_KEYS.includes(String(event.key))) {
-			canvas.selection = !canvas.selection
-			let el = document.getElementsByClassName('canvas-container')[0]
-			el.style.pointerEvents = (canvas.selection) ? 'auto' : 'none';
+			disableCanvas()
+		}
+		else if (M_KEYS.includes(String(event.key))) {
+			disableFreedraw()
+		}
+		else if (B_KEYS.includes(String(event.key))) {
+			tmpFunc("PEN")
+		}
+		else if (E_KEYS.includes(String(event.key))) {
+			tmpFunc("ERAS")
+		}
+		else if (H_KEYS.includes(String(event.key))) {
+			tmpFunc("HIGH")
+		}
+		else if (T_KEYS.includes(String(event.key))) {
+			tmpFunc2("TEXT")
+		}
+		else if (DEL_KEYS.includes(String(event.key))) {
+			deleteObject()
 		}
 	}
 
@@ -164,20 +232,11 @@ function Canvas() {
 
 
 
-	function tmpFunc(s) {
-		if (freedrawDisabled) {
-			setFreedrawDisabled(false)
-			document.getElementsByClassName('canvas-container')[0].style.pointerEvents = 'auto'
-			canvas.selection = true
+	function tmpFunc(s, a) {
+		setFreedrawDisabled(false)
+		setCanvasDisabled(false)
 
-			if (currentTool != s) {
-				setCurrentTool(s)
-			}
-			setCurOpenSettings("")
-			return
-		}
-
-		if (currentTool == s) {
+		if (currentTool == s && !nonfdTool && !canvasDisabled && !freedrawDisabled ) {
 			if (curOpenSettings != s) {
 				setCurOpenSettings(s);
 			}
@@ -188,54 +247,90 @@ function Canvas() {
 			setCurOpenSettings("");
 		}
 
+		setNonfdTool(false)
 
+		// disableCanvas()
+		document.getElementsByClassName('canvas-container')[0].style.pointerEvents = 'auto'
+		canvas.selection = true
+		canvas.isDrawingMode = true
+	}
+
+	function tmpFunc2(s) {
+		setNonfdTool(true)
+
+		// if (canvasDisabled || freedrawDisabled) {
+			setCanvasDisabled(false)
+			setFreedrawDisabled(false)
+
+			document.getElementsByClassName('canvas-container')[0].style.pointerEvents = 'auto'
+			canvas.selection = true
+			canvas.isDrawingMode = false
+		// }
+
+		setNonfdToolName(s)
+
+	// 	canvas.add(new fabric.IText('heyy', {fontFamily: 'arial black', left: 100, top: 100}))
 	}
 
 	function disableCanvas() {
-		setFreedrawDisabled(true)
-		document.getElementsByClassName('canvas-container')[0].style.pointerEvents = "none";
+		setCanvasDisabled(true)
+		setFreedrawDisabled(false)
+		setNonfdTool(false)
+		canvas.isDrawingMode = true
 		canvas.selection = false;
+		document.getElementsByClassName('canvas-container')[0].style.pointerEvents = "none";
 	}
 
+	function disableFreedraw() {
+		setFreedrawDisabled(true)
+		setCanvasDisabled(false)
+		setNonfdTool(false)
+		canvas.isDrawingMode = false;
+		document.getElementsByClassName('canvas-container')[0].style.pointerEvents = "auto";		
+		canvas.selection = true;
+	}
 
 	return (
 		<div>
 		<canvas id="over" style={{overflow: "auto", position: "absolute"}}></canvas>
-		{/*<button onClick={addTriangle} style={{float: 'right'}}>click</button>*/}
 
 		<div className="toolbar">
 		
 		{/* pointer to disable events */}
-		<button className={(freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={disableCanvas}><img src="/pointer.svg" /></button>
+		<button className={(canvasDisabled && !freedrawDisabled && !nonfdTool) ? "toolButton active" : "toolButton"} onClick={disableCanvas}><img src="/pointer.svg" /></button>
+
+		{/* move tool to disable freedraw */}
+		<button className={(freedrawDisabled && !canvasDisabled && !nonfdTool) ? "toolButton active" : "toolButton"} onClick={disableFreedraw}><img src="/move.png"/></button>
 
 		{/* pen tool */}
-		<div ref={triggerRef}><button className={(currentTool == "PEN" && !freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc("PEN")}/*{() =>*/
-			// (currentTool == "PEN") 
-			// 	? (curOpenSettings != "PEN") ? setCurOpenSettings("PEN") : setCurOpenSettings("")
-			// 	: setCurrentTool('PEN') && setCurOpenSettings("")}
-			><img src="/pen.svg"/></button></div>
+		<div ref={triggerRef}><button 
+			className={(currentTool == "PEN" && !canvasDisabled && !freedrawDisabled && !nonfdTool) ? "toolButton active" : "toolButton"} 
+			onClick={() => tmpFunc("PEN")}><img src="/pen.svg"/></button></div>
 		{/* pen settings/menu */}
-		{/*{openPenSettings ? <HexColorPicker color={penColor} onChange={setPenColor} /> : null}*/}
-			{/*{ openPenSettings ? <ToolbarModal /> : null}*/}
 		{show && curOpenSettings == "PEN" && <ToolbarModal name={currentTool} col={curColor} setCol={setCurColor} wid={curWid} setWid={setCurWid} ref={nodeRef} />}
 
 		{/* eraser tool */}
-		<div ref={triggerRef3}><button className={(currentTool == "ERAS" && !freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc("ERAS")}
-		// {() => setCurrentTool('ERAS')}
+		<div ref={triggerRef3}><button 
+			className={(currentTool == "ERAS" && !canvasDisabled && !freedrawDisabled && !nonfdTool) ? "toolButton active" : "toolButton"} 
+			onClick={() => tmpFunc("ERAS")}
 			><img src="/eraser.svg"/></button></div>
 		{show3 && curOpenSettings == "ERAS" && <ToolbarModal name={currentTool} col={curColor} setCol={setCurColor} wid={curWid} setWid={setCurWid} ref={nodeRef3} />}
 		
 
 		{/* highlighter tool */}
-		<div ref={triggerRef2}><button className={(currentTool == "HIGH" && !freedrawDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc("HIGH")}/*() =>*/ 
-		// (currentTool == "HIGH") 
-			// ? (curOpenSettings != "HIGH") ? setCurOpenSettings("HIGH") : setCurOpenSettings("") 
-			// : setCurrentTool('HIGH')}
+		<div ref={triggerRef2}><button 
+			className={(currentTool == "HIGH" && !canvasDisabled && !freedrawDisabled && !nonfdTool) ? "toolButton active" : "toolButton"} 
+			onClick={() => tmpFunc("HIGH")}
 			><img src="/highlighter.svg"/></button></div>
-		{/*{openHighSettings ? <RgbColorPicker color={highColor} onChange={setHighColor} /> : null}*/}
 		{show2 && curOpenSettings == "HIGH" && <ToolbarModal name={currentTool} col={curColor} setCol={setCurColor} wid={curWid} setWid={setCurWid} ref={nodeRef2} />}
 
 
+		{/* text tool */}
+		<div><button className={(nonfdTool && nonfdToolName == "TEXT" && !freedrawDisabled && !canvasDisabled) ? "toolButton active" : "toolButton"} onClick={() => tmpFunc2("TEXT")}><img src="/text.png"/></button></div>
+
+
+		{/* delete active selected */}
+		<button className="toolButton" onClick={deleteObject}><img src="/trash.svg"/></button>
 
 		</div>
 		</div>

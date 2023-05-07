@@ -89,7 +89,7 @@ function Search() {
 		<div className="home">
 			<form onSubmit={onFormSubmit} className="center margin-bottom-2">
 			<div className="left inline-block">
-			<input type="text" value={query} onChange={e => setQuery(e.currentTarget.value)} className="searchbar" />
+			<input autoFocus type="text" value={query} onChange={e => setQuery(e.currentTarget.value)} className="searchbar" />
 			<button type="button" className="searchToggle" onClick={()=>{setTagsOnly(!tagsOnly)}}>{tagsOnly ? "Search tags only":"Search everything"}</button>
 			<div className="searchResultsText">{(results.length >= 0) ? results.length : index.length} result{(results.length!= 1)?"s":""}</div>
 			</div>

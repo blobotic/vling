@@ -11,7 +11,7 @@ function MatchingAnswerBox({num,start,alpha,ks}) {
 			rows.push(<td><Answerbox /></td>)
 		}
 		return(
-			<table className="border-hidden width-800 no1Count no2Count"><tbody>
+			<table className="border-hidden width-1200 no1Count no2Count"><tbody>
 			<tr>{rows}</tr></tbody>
 			</table>
 		)
@@ -29,7 +29,7 @@ function MatchingAnswerBox({num,start,alpha,ks}) {
 			rows2.push(<td><Answerbox /></td>)
 		}
 
-		return (<table className="border-hidden width-800 no1Count no2Count"><tbody>
+		return (<table className="border-hidden width-1200 no1Count no2Count"><tbody>
 		<tr>{rows1}</tr>
 		<tr>{rows2}</tr>
 		</tbody></table>)
@@ -47,7 +47,7 @@ function MatchingAnswerBox({num,start,alpha,ks}) {
 			rows.push(tmprow)
 		}
 
-		return (<table className="border-hidden width-800 no1Count no2Count"><tbody>{rows.map((row, i) => <tr>{row}</tr>)}</tbody></table>)
+		return (<table className="border-hidden width-1200 no1Count no2Count"><tbody>{rows.map((row, i) => <tr>{row}</tr>)}</tbody></table>)
 	}
 }
 
