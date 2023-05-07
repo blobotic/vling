@@ -75,7 +75,7 @@ function Canvas() {
 
 	React.useEffect(() => {
 		if (canvas != null) {
-			canvas.setWidth(document.body.clientWidth * 0.95)
+			canvas.setWidth(document.body.clientWidth * 0.9)
 			canvas.setHeight(clientHeight)
 			canvas.calcOffset()
 		}
