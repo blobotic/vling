@@ -36,6 +36,9 @@ function Canvas() {
 	let freedrawTools = ["PEN", "ERAS", "HIGH"]
 	let nonfdTools = ["TEXT"]
 
+	let [tmpBool, setTmpBool] = React.useState(false)
+	let [mousEv, setMousEv] = React.useState({})
+
 	// CANVAS - fabric js
 
 	React.useEffect(() => {
@@ -68,6 +71,9 @@ function Canvas() {
 		}
 
 		canvas.freeDrawingBrush = tmp1[currentTool]["brush"]
+
+		tmp1["TEXT"] = {width: 30, color: "#000"}
+
 		setToolOptions(tmp1)
 	}, [])
 
@@ -139,15 +145,17 @@ function Canvas() {
 
 	// text
 	function handlespecial(e) {
+
 		if (e.target.tagName == "IMG") return;
 
-		let tmp = false
+		// setTmpBool(false)
 
 		setNonfdTool(nonfdTool => {
 			setNonfdToolName(nonfdToolName => {
 					if (nonfdTool) {
 						if (nonfdToolName == "TEXT") {
-							tmp = true
+							// setTmpBool(true)
+							setMousEv(e)
 						}
 					}
 				return nonfdToolName;
@@ -157,12 +165,28 @@ function Canvas() {
 			// https://stackoverflow.com/questions/53845595/wrong-react-hooks-behaviour-with-event-listener
 		})
 
-		setCanvas(canvas => {
-			if (tmp) {
+		// setCanvas(canvas => {
+		// 	if (tmpBool) {
+
+
+		// 	}
+		// 	return canvas
+		// })
+
+		// setTmpBool(false)
+		// we put this separate because apparently it gets called once per setState() it's nested in...? not sure lol
+	}
+
+	React.useLayoutEffect(() => {
+
+		if (mousEv && canvas && toolOptions) {
+
+			// setCanvas(canvas => {
+				// setToolOptions(toolOptions => {
 				let text = new fabric.IText('', {
 					fontFamily: '-apple-system', 
-					left: e.offsetX, 
-					top: e.offsetY,
+					left: mousEv.offsetX, 
+					top: mousEv.offsetY,
 					fontSize: toolOptions["TEXT"].width,
 					fill: toolOptions["TEXT"].color,
 					fontWeight: 'normal'
@@ -170,11 +194,15 @@ function Canvas() {
 				canvas.add(text).setActiveObject(text);
 				text.enterEditing();
 				setFreedrawDisabled(true)
-			}
-			return canvas
-		})
-		// we put this separate because apparently it gets called once per setState() it's nested in...? not sure lol
-	}
+				// return toolOptions
+
+				// })
+				// return canvas 
+			// })
+
+			setMousEv(null)
+		}
+	}, [mousEv])
 
 	// delete objects
 	function deleteObject() {
@@ -257,6 +285,8 @@ function Canvas() {
 
 	function tmpFunc2(s) {
 		setNonfdTool(true)
+
+		console.log("tmpFunc2")
 
 		// if (canvasDisabled || freedrawDisabled) {
 			setCanvasDisabled(false)

@@ -2,9 +2,6 @@
 	"name": "NACLO",
 	"site": "https://nacloweb.org/practice.php",
 	"yrs": [{
-		"yr": "2023",
-		"ps": ["O"]
-	}, {
 		"yr": "2022",
 		"ps": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R"]
 	}, {
