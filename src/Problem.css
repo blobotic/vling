@@ -14,6 +14,10 @@
 .toolbar img {
 	all: initial;
 	max-width: 100%;
+/*	user can't selecti mages */
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 .toolButton {
@@ -25,6 +29,7 @@
 	border-radius: 10px;
 	height: 3em;
 	width: 3em;
+
 }
 
 button.toolButton:hover {

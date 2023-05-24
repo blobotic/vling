@@ -1,0 +1,159 @@
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+/*!
+   * lunr.Builder
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.Index
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.Pipeline
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.Set
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.TokenSet
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.Vector
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.stemmer
+   * Copyright (C) 2020 Oliver Nightingale
+   * Includes code from - http://tartarus.org/~martin/PorterStemmer/js.txt
+   */
+
+/*!
+   * lunr.stopWordFilter
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.tokenizer
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.trimmer
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+   * lunr.utils
+   * Copyright (C) 2020 Oliver Nightingale
+   */
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*! Fabric.js Copyright 2008-2015, Printio (Juriy Zaytsev, Maxim Chernyak) */
+
+/**
+ * @license React
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @remix-run/router v1.3.2
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router DOM v6.8.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.8.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.9
+ * Copyright (C) 2020 Oliver Nightingale
+ * @license MIT
+ */
