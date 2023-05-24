@@ -7,7 +7,7 @@ tags:
 - kernow
 - kernewek
 - celtic
-- tenses tl
+- table
 ---
 
 Cornish (known in Cornish as Kernewek) is the Celtic language of the county of Cornwall (Kernow) in South

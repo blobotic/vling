@@ -3,7 +3,7 @@ title: Do I Care about Duikers?
 points: 10
 tags:
 - dagaare dagaaba ghana burkina faso 
-- tenses
+- table
 ---
 
 Below are some nouns in Dagaare in their singular, plural, and interrogative forms, as well as their definitions. (The interrogative form is used to form questions.) Note that some entries have been left blank.

@@ -2,9 +2,8 @@
 title: The Tortoise and the Rabbit
 points: 10
 tags:
-- malagasy
-- madagascar
-- tl
+- malagasy madagascar
+- rosetta
 ---
 
 Malagasy is a language with 25 million speakers, most of them living in Madagascar. Even though

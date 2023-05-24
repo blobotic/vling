@@ -1,21 +1,30 @@
+import * as React from "react"
 import { Outlet, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 let tagDescs = [
 	{"name": "script", "desc": "used for problems written in non-alphanumeric scripts"},
-	{"name": "tl", "desc": "used for problems that ask you to translate full sentences"},
+	{"name": "table", "desc": "used for problems with given phrases and their translations, usually with three or more columns (including English) [often includes problems like tense changes, active/passive voice, etc]"},
+	{"name": "sound", "desc": "used for problems that ask you to examine sound/word changes in languages/over time [could be considered a subset of table, but we keep it separate for the moment]"},
+	{"name": "morphology", "desc": "used for problems where the unknown script is a single word that can be subdivided into parts"},
+	{"name": "rosetta", "desc": "used for problems with given sentences and their translations"},
+	{"name": "match", "desc": "used for problems that ask you to match phrases in another language and English, given two lists"},
 	{"name": "comp", "desc": "used for computational linguistics-related problems (mostly from NACLO)"},
 	{"name": "number", "desc": "used for problems that ask you to solve for a number system"},
-	{"name": "match", "desc": "used for problems that ask you to match phrases in another language and English, given two lists"},
-	{"name": "tenses", "desc": "used for problems that ask you to cross-reference given phrases and TLs to write phrases in different tenses/forms in the given language"},
-	{"name": "sound", "desc": "used for problems that ask you to examine sound/word changes in languages/over time"},
-	{"name": "family", "desc": "used for problems that involve familial terms/family trees"}
+	{"name": "family", "desc": "used for problems that involve familial terms/family trees"},
+	{"name": "tone", "desc": "used for problems that involve tones"},
+	{"name": "stress", "desc": "used for problems that involve stress"}
 ]
 
 function Probs() {
 	var data = require("./problem_index.json");
 
 	let navigate = useNavigate()
+
+	// page title
+	React.useLayoutEffect(() => {
+		document.title = "vling | Browse problems"
+	}, [])
 
 	return (
 		<div className="home">

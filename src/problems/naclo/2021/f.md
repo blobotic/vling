@@ -2,12 +2,12 @@
 title: The Wiles of Reptiles 
 points: 15 
 tags:
-- dime ethiopia tl
+- dime ethiopia 
+- rosetta
 ---
 
 Here are eight sentences in Dime.[^1]
 The first seven are given along with their English translations.
-
 
 :::div{.no2Count}
 | Dime | English |

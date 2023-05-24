@@ -3,7 +3,7 @@ title: Je me frotte la tête
 points: 100
 tags:
 - guarani paraguay 
-- tl
+- morphology
 ---
 
 Guarani is one of the official languages of Paraguay, spoken by approximately 7 million people in this and neighboring countries. As you will see in this problem, in Guarani a single word can mean a complete sentence.

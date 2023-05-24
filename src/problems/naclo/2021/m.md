@@ -3,7 +3,7 @@ title: The Speech Has No End
 points: 15
 tags:
 - tawala papa new guinea
-- tl
+- rosetta
 ---
 
 Tawala is an Oceanic language spoken in Papua New Guinea by 20,000 people who live in small villages on

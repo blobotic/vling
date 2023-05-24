@@ -6,7 +6,7 @@ tags:
 - polynesian
 - niue 
 - new zealand
-- tl
+- rosetta
 ---
 
 Niuean is a Polynesian language spoken by nearly 8,000 people around the world. It is the official language of Niue, a

@@ -3,7 +3,7 @@ title: Jaguar, crapaud, tamanoir, tinamou
 points: 100
 tags:
 - mebengokre mẽbêngôkre brazil
-- tl
+- rosetta
 ---
 
 This short text is a slightly simplified excerpt from a story told to the author of the problem by an elder

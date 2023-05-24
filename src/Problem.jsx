@@ -91,7 +91,6 @@ function Problem() {
 	let [currentLang, setCurrentLang] = React.useState("en")
 
 
-
 	// this exists in Stats.jsx
 	// reference:
 	// https://stackoverflow.com/questions/60688411/assign-local-storage-to-react-state-react-hooks
@@ -209,6 +208,11 @@ function Problem() {
 		return () => { window.removeEventListener("keydown", eventListener);}
 	}, ["keydown", window]);
 
+
+	// set page title
+	React.useLayoutEffect(() => {
+		document.title = "vling | " + comp.toUpperCase() + " " + year + " " + problem.toUpperCase() + ": " + metaData.title
+	}, [metaData])
 
 	if (temp) return <Probs />
 

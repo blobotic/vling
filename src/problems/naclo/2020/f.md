@@ -3,7 +3,7 @@ title: Coming Into Focus
 points: 15
 tags:
 - paiwan taiwan 
-- tl
+- rosetta
 ---
 
 Paiwan is an Austronesian language spoken by around 66,000 people in southern Taiwan. One of the major

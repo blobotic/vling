@@ -3,7 +3,7 @@ title: Doubling Up on Nakanai
 points: 15
 tags:
 - nakanai lakalai papa new guinea
-- tenses
+- table
 ---
 
 Nakanai (*Lakalai*) is a language spoken by around 13,000 people of the Nakanai tribe in West New Britain,

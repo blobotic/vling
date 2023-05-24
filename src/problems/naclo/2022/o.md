@@ -5,7 +5,7 @@ tags:
 - chorote
 - iyoawajwa iyo'awujwa' iyo’awujwa’
 - paraguay
-- tl
+- morphology
 ---
 
 The Chorote Iyo’awujwa’ are a Matacoan people living in the Chaco region of Argentina and Paraguay. A

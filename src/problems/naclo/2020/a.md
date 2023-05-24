@@ -3,7 +3,7 @@ title: Let That Mongo!
 points: 5
 tags:
 - mongo nkundo lomongo congo
-- tenses
+- table
 ---
 
 Mongo (also known as Nkundo or Lomongo) is a Bantu language spoken by the Mongo Peoples of the central

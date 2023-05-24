@@ -15,6 +15,11 @@ function Stats() {
 	// let [showSol, setShowSol] = React.useState();
 	console.log(showSol)
 
+	// page title
+	React.useLayoutEffect(() => {
+		document.title = "vling | Stats/settings"
+	})
+
 
 	return (
 		<div className="home">

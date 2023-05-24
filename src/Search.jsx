@@ -42,7 +42,7 @@ function Search() {
 	const [sortBy, setSortBy] = useState("date")
 
 
-	const [searchParams] = useSearchParams()
+	const [searchParams, setSearchParams] = useSearchParams()
 	// setQuery(searchParams.get('q'))
 	// console.log(searchParams.get('q'))
 
@@ -51,10 +51,17 @@ function Search() {
 	}, [])
 
 	React.useEffect(() => {
+		setSearchParams(searchParams => {searchParams.set("q", query); return searchParams;})
 		if (searchParams.get('q') && !query ) {return; }
 		let d = {preventDefault: () => console.log("hi")}
 		onFormSubmit(d)
-	}, [query])
+		// console.log(searchParams)
+	}, [query, tagsOnly])
+
+	// page title
+	React.useLayoutEffect(() => {
+		document.title = "vling | Search"
+	}, [])
 
 	// console.log(idx.search("match"))
 
@@ -62,17 +69,6 @@ function Search() {
 
 	const onFormSubmit = async (e) => {
 		e.preventDefault();
-
-		// console.log(idx.search(query))
-		// console.log(query)
-		// console.log(tagsOnly)
-		// console.log(idx.search(query))
-
-		// let tmpResults = idx.search(query)
-
-		// if (sortBy == "date") {
-		// 	tmpResults = sortResults(tmpResults)
-		// }
 
 		// sort
 		if (!tagsOnly) {
@@ -90,7 +86,7 @@ function Search() {
 			<form onSubmit={onFormSubmit} className="center margin-bottom-2">
 			<div className="left inline-block">
 			<input autoFocus type="text" value={query} onChange={e => setQuery(e.currentTarget.value)} className="searchbar" />
-			<button type="button" className="searchToggle" onClick={()=>{setTagsOnly(!tagsOnly)}}>{tagsOnly ? "Search tags only":"Search everything"}</button>
+			<button type="button" className="searchToggle" onClick={()=>setTagsOnly(!tagsOnly)}>{tagsOnly ? "Search tags only":"Search everything"}</button>
 			<div className="searchResultsText">{(results.length >= 0) ? results.length : index.length} result{(results.length!= 1)?"s":""}</div>
 			</div>
 			</form>

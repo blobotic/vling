@@ -3,7 +3,7 @@ title: Peace Only
 points: 15
 tags:
 - jamsay mali burkina faso
-- tl
+- rosetta
 ---
 
 Jamsay is a Dogon language spoken in Mali and Burkina Faso by around 130,000 people. Its name derives

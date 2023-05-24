@@ -7,7 +7,7 @@ tags:
 - icetod
 - icétôd
 - match
-- tl
+- match
 ---
 
 The data in this problem are drawn from Ik, the native language of the Ik people who live on a narrow swath of land in the northeastern corner of Uganda, East Africa. (A map is provided on the next page.) The people call their language Icétôd, which means ‘Ik-speech’ or ‘Ik-talk’ and is pronounced ee-CHAY-TOad or [ītʃétôd] in phonetic symbols. Approximately 7,500 people are native speakers of Ik.

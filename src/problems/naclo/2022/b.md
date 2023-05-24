@@ -4,7 +4,7 @@ points: 10
 tags:
 - turkish
 - turkey
-- tl
+- rosetta
 ---
 
 Turkish is the national language of Turkey, spoken by approximately 80 million people in Turkey and

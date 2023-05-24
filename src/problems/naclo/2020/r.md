@@ -3,7 +3,7 @@ title: The Obviative Solution
 points: 10
 tags:
 - arapaho algonquian
-- tenses
+- table
 ---
 
 Arapaho is an Algonquian language spoken by about 1,000 people in Wyoming and Oklahoma. Here are some

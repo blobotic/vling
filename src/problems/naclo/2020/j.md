@@ -3,12 +3,13 @@ title: You Made Me See
 points: 15
 tags:
 - inapari arawakan peru bolivia brazil iñapari
-- tl
+- morphology
 ---
 
 Iñapari is a critically endangered language of the Arawakan family, spoken by only 4 people in the town of
 the same name on the border of Peru, Bolivia and Brazil. Below are some verbs in Iñapari with their translations into English. Note that (sg., pl., m., f.) after pronouns represent the singular, plural, masculine, and feminine versions of those pronouns, respectively.
 
+:::div{.no1Count .no2Count .width-800 .center}
 | Iñapari | English |
 |-|-|
 | awunahamanahari | We saw him again.
@@ -25,6 +26,7 @@ the same name on the border of Peru, Bolivia and Brazil. Below are some verbs in
 | punahamanaharo | You (sg.) see her again.
 | aanopinipirai | I do not want to heal you (sg.)
 | rupinimanahanana | They (f.) healed them (m.) again.
+:::
 
 **J1.** Translate the following Iñapari verbs into English.
 

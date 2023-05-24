@@ -5,7 +5,7 @@ tags:
 - tseltal
 - mayan
 - chiapas
-- tl
+- rosetta
 ---
 
 Tseltal is a Mayan language spoken by about 590,000 people in the Mexican state of Chiapas. Below are

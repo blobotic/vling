@@ -3,7 +3,7 @@ title: The Pimpled Toad
 points: 10
 tags:
 - flowery miao china pollard miao pinyin
-- script tl
+- script match
 ---
 
 Below is a famous Miao folk tale, “The Pimpled Toad who was Wise,” written in the Large Flowery Miao

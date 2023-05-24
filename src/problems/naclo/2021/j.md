@@ -3,7 +3,7 @@ title: A Vintage Sound System
 points: 10 
 tags: 
 - chinese china
-- sound
+- sound tone
 ---
 
 The Chinese language was first spoken in a small area in Henan, China, around 1000 BCE, during the Zhou

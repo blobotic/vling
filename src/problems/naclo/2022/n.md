@@ -6,7 +6,7 @@ tags:
 - niolotic
 - sudan
 - agar
-- tenses
+- table tone
 ---
 
 Dinka is a Nilotic dialect cluster with about 1.3 million native speakers, mostly ethnic Dinka people in South Sudan.
