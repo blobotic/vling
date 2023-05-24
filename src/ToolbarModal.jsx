@@ -63,7 +63,7 @@ const ToolbarModal = React.forwardRef((props, ref) => {
 
     		{(props.wid) 
     		? <div className="tmfield">Width: {props.wid} 
-    			<Slider progress onChange={props.setWid} max={50} defaultValue={props.wid} 
+    			<Slider progress onChange={props.setWid} min={1} max={50} defaultValue={props.wid} 
     				style={{ width: 110, display: "inline-block", marginLeft: "1em" }} />
     		</div>
     		: null}

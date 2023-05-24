@@ -5,6 +5,9 @@ function Table() {
 	// table rows split by \\ 
 	// table title separated by ---
 
+	// possible?
+	// https://codesandbox.io/s/brave-alex-o707r6?file=/index.js
+
 	return ()
 }
 
