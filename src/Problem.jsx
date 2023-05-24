@@ -1,94 +1,24 @@
 import * as  React from "react";
 import { useParams, Outlet, Link, useNavigate } from "react-router-dom";
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkDirective from 'remark-directive';
-import remarkDirectiveRehype from 'remark-directive-rehype';
-import remarkMath from 'remark-math';
-import rehypeRaw from "rehype-raw";
-import rehypeKatex from 'rehype-katex';
 import { visit } from "unist-util-visit";
-import Answerbox from "./Answerbox";
-import ExplBox from "./ExplBox";
-import MatchingAnswerBox from "./MatchingAnswerBox";
 import Probs from "./Probs";
-import SolText from "./SolText";
 import "./Problem.css"
 import Canvas from "./Canvas";
 
+import ProblemText from "./ProblemText";
+import SolutionText from "./SolutionText";
 
-import 'katex/dist/katex.min.css'
-
-// import raw from "raw.macro";
-
-function extractMetaData(text) {
-    let metaData = {};
-
-    const metaRegExp = RegExp(/^---[\r\n](((?!---).|[\r\n])*)[\r\n]---$/m);
-    // get metadata
-    const rawMetaData = metaRegExp.exec(text);
-
-    let keyValues;
-
-    if (rawMetaData) {
-      // rawMeta[1] are the stuff between "---"
-      keyValues = rawMetaData[1].split("\n");
-
-      // which returns a list of key values: ["key1: value", "key2: value"]
-      keyValues.forEach((keyValue) => {
-        // split each keyValue to keys and values
-        if (keyValue.includes(":")) {
-	        const [key, value] = keyValue.split(":");
-	        metaData[key] = value.trim();
-	    }
-
-      });
-    }
-    return [rawMetaData, metaData];
-}
-
-// reference: https://github.com/remarkjs/react-markdown/issues/585
-// function ReactMarkdownRemarkDirective() {
-// 	return (tree) => {
-// 		visit(
-// 			tree,
-// 			["leafDirective", "containerDirective"],
-// 			(node) => {
-// 				node.data = {
-// 					hName: node.name,
-// 					hProperties: node.attributes,
-// 					...node.data
-// 				};			
-
-// 				return node;
-// 			}
-// 		);
-// 	};
-// }
-
-// function MyDirective({ attributes, children }) {
-// 	console.log(attributes);
-// 	return (
-// 		<Answerbox className="doSomethingCustom" {...attributes}>
-// 			{children}
-// 		</Answerbox>
-// 	);
-// }
-
-const MatchBox = ({num, start, alpha=false, cl}) => {
-	return <MatchingAnswerBox num={num} start={start} alpha={alpha} className={cl}/>
-}
 
 function Problem() {
 	const { comp, year, problem } = useParams();
 
 	let data = require("./problem_index.json");
 
-	let [readable, setReadable] = React.useState({md: ""});
-	let [solution, setSolution] = React.useState({md: ""});
 	let [metaData, setMetadata] = React.useState({metadata: {}});
 	let [otherlangs, setOtherlangs] = React.useState({})
 	let [currentLang, setCurrentLang] = React.useState("en")
+	let [problemNexists, setProblemNexists] = React.useState(false);
+	let [hasSol, setHasSol] = React.useState(true);
 
 
 	// this exists in Stats.jsx
@@ -103,64 +33,7 @@ function Problem() {
 
 	let navigate = useNavigate();
 
-	let langs = ["fr"]
-
-	// Reference: https://stackoverflow.com/questions/71039926/how-to-import-md-file-when-i-use-create-react-app-with-javascript
-		// let path = "../"+comp+"/"+year+"/"+problem+".md";
-	let post, post2;
-	let temp = false, hasSol = true;
-	try { 
-			post = require(`./problems/${comp}/${year}/${problem}.md`);//"./naclo/2022/j.md");
-  	} catch(e) {
-  		temp = true;
-  	}
-
-	try {
-		post2 = require(`./problems/${comp}/${year}/${problem}-sol.md`);
-	} catch(e) {
-		hasSol = false;
-	}
-
-
-	React.useLayoutEffect(() => {
-    	fetch(post)
-		      .then((res) => res.text())
-		      .then((md) => { 
-		      	// extract metadata
-		      	const [rawMeta, metaData] = extractMetaData(md);
-		      	setMetadata(metaData);
-		      	md = md.replace(rawMeta[0], "");
-
-		      	// set raw markdown
-		      	setReadable({ md }); 
-		      }
-		);
-
-		fetch(post2)
-			.then((res) => res.text())
-			.then((md) => {
-				setSolution({md});
-			})
-
-
-		//  other languages!!!
-		for (let i = 0; i < langs.length; i++) {
-			try {
-				let posti = require(`./problems/${comp}/${year}/${problem}-${langs[i]}.md`);
-				// console.log(langs[i])
-				// console.log("hii?")
-				// if (!otherlangs.includes(langs[i])) {otherlangs.push(langs[i])}
-				// console.log(otherlangs)
-				fetch(posti).then((res)=>res.text()).then((md)=>{otherlangs[langs[i]] = md})
-				// console.log(otherlangs)
-			} catch(e) {}
-		}
-
-	}, []);
  
-
-
-	// console.log(otherlangs)
 	// eventlistener
 	// hotKEYS!!!
 	// reference: 
@@ -214,27 +87,10 @@ function Problem() {
 		document.title = "vling | " + comp.toUpperCase() + " " + year + " " + problem.toUpperCase() + ": " + metaData.title
 	}, [metaData])
 
-	if (temp) return <Probs />
 
+	if (problemNexists) return <Probs />
 
 	let result = data.find(obj => { return obj.name.toLowerCase()==comp.toLowerCase()})["yrs"].find(obj => {return obj.yr == year})["ps"];
-
-	// https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react
-	// const childRef = useRef();
-	// const handleSubmit = (event) => {
-	// 	// call the child function
-	// 	childRef.current.checkAnswer(event);
-	// }
-
-
-	// LANGUAGES AGAIN!!
-	// we're doing um something?
-	
-	// add english to thing
-	otherlangs["en"] = readable.md
-	// console.log(Object.entries(otherlangs))
-
-
 
 
 	return (
@@ -244,50 +100,30 @@ function Problem() {
 
 		<h1 className="center">{comp.toUpperCase()} {year} {problem.toUpperCase()}: {metaData.title} ({metaData.points} points)</h1>
 		
-
 		<div className="languageBar">
-{/*answer validation: https://stackoverflow.com/questions/55456604/how-to-call-a-child-method-on-parent-events-with-react */}
-		<a className={(problem == result[0].toLowerCase()) ? 'disabled linkbutton float-left' : 'linkbutton float-left'} href={(problem == result[0].toLowerCase()) ? "" : "/"+comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return problem ==obj.toLowerCase()})-1].toLowerCase()}>Previous</a>
-		<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton float-right' : 'linkbutton float-right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
+			<a className={(problem == result[0].toLowerCase()) ? 'disabled linkbutton float-left' : 'linkbutton float-left'} href={(problem == result[0].toLowerCase()) ? "" : "/"+comp.toLowerCase() + "/" + year + "/" + result[result.findIndex(obj => {return problem ==obj.toLowerCase()})-1].toLowerCase()}>Previous</a>
+			<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton float-right' : 'linkbutton float-right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
 
-		{/* language buttons !! */}
-		<div style={{marginLeft: "5em"}}>
-		{(Object.keys(otherlangs).length > 1) ? 
-					Object.entries(otherlangs).map(([key, value]) => <button onClick={() => setCurrentLang(key)}>{key}</button>)
-				 : false}</div>
+			{/* language buttons !! */}
+			<div style={{marginLeft: "5em"}}>
+			{(Object.keys(otherlangs).length > 1) ? 
+						Object.entries(otherlangs).map(([key, value]) => <button onClick={() => setCurrentLang(key)}>{key}</button>)
+					 : false}
+			</div>
 		</div>
 
 		{/*actual markdown O_O*/}
 
-{/*		<form onSubmit={handleSubmit}>
-*/}		<ReactMarkdown 
-			children={otherlangs[currentLang]} 
-			components={{'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox}}
-			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
-			rehypePlugins={[rehypeRaw, rehypeKatex]} 
-			className="lmargin2 rmargin2"
-		/>
+		{/* problem text */}
+		<ProblemText comp={comp} year={year} problem={problem} metaData={metaData} setMetadata={setMetadata} setProblemNexists={setProblemNexists}
+			otherlangs={otherlangs} setOtherlangs={setOtherlangs} currentLang={currentLang} />
 
-		{/* Reference FOR FUTURE: */}
-		{/* https://stackoverflow.com/questions/48356854/storing-data-in-react */}
-		{/*<input type="submit" />*/}
-		{/*</form>*/}
-
+		{/* show/hide solution button */}
 		<div style={{marginBottom: '6em', marginLeft: '2em'}}><button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button" style={{position: 'absolute'}}>{hasSol && showSol ? "Hide solution" : "Show solution"}</button></div>
 
 		{/* solution: */}
-		{hasSol && showSol ? <div className="solutionbox lmargin2 rmargin2"><ReactMarkdown
-			children={solution.md}
-			components = {{'sol': SolText}}
-			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
-			rehypePlugins={[rehypeRaw, rehypeKatex]}
-			// className="lmargin3 rmargin3" 		
-		/></div> : null}
+		<SolutionText comp={comp} year={year} problem={problem} hasSol={hasSol} setHasSol={setHasSol} showSol={showSol}/>
 
-
-		{/*<a className={(hasSol ? 'linkbutton' : 'linkbutton disabled')} href="/">Show solution</a>*/}
-
-		{/* Reference: https://www.w3schools.com/react/react_forms.asp */}
 		</div>
 	);
 }

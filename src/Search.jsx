@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import { Outlet, Link, useSearchParams } from "react-router-dom";
+import Preview from "./Preview"
 import lunr from "lunr"
 import index from "./lunr_index.json"
 import index2 from "./lunr_tag_index.json"
@@ -94,7 +95,7 @@ function Search() {
 			</div>
 			</form>
 
-			{results.map(res => <div key={res["ref"]}><Link to={"../"+res["ref"].split(":")[0].replaceAll(" ", "/").toLowerCase()}>{res["ref"]}</Link></div>)}
+			{results.map(res => <div key={res["ref"]}><Preview to={"../"+res["ref"].split(":")[0].replaceAll(" ", "/").toLowerCase()}>{res["ref"]}</Preview></div>)}
 		</div>)
 }
 

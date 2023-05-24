@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Outlet, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Preview from "./Preview.jsx"
 
 let tagDescs = [
 	{"name": "script", "desc": "used for problems written in non-alphanumeric scripts"},
@@ -38,7 +39,7 @@ function Probs() {
 						<div>
 							<b>{yr["yr"]}: </b>
 							{yr["ps"].map(prob => (
-								<a className="probButton" href={"../../../"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+prob.toLowerCase()}>{prob}</a> 
+								<Link className="probButton" to={"../../../"+comp["name"].toLowerCase()+"/"+yr["yr"]+"/"+prob.toLowerCase()}>{prob}</Link> 
 							))}
 						</div>
 					))}
