@@ -40,6 +40,7 @@ function Search() {
 	const [results, setResults] = useState([])
 	const [tagsOnly, setTagsOnly] = useState(false)
 	const [sortBy, setSortBy] = useState("date")
+	const [isStart, setStart] = useState(true)
 
 
 	const [searchParams, setSearchParams] = useSearchParams()
@@ -48,10 +49,12 @@ function Search() {
 
 	React.useEffect(() => {
 		setQuery(searchParams.get('q'))
+		if (searchParams.has('tags')) setTagsOnly(true)
+		setStart(false)
 	}, [])
 
 	React.useEffect(() => {
-		setSearchParams(searchParams => {searchParams.set("q", query); return searchParams;})
+		setSearchParams(searchParams => {if (!isStart) searchParams.set("q", query); if (tagsOnly) searchParams.set("tags", 'true'); else searchParams.delete("i"); return searchParams;})
 		if (searchParams.get('q') && !query ) {return; }
 		let d = {preventDefault: () => console.log("hi")}
 		onFormSubmit(d)

@@ -67,7 +67,7 @@ function Probs() {
 			<p>Tags for types of problems:</p>
 
 			<ul>
-			{tagDescs.map(function(item, i) {return <li><b><Link to={"/search?q="+item["name"]}>{item["name"]}</Link></b>, {item["desc"]}</li>})}
+			{tagDescs.map(function(item, i) {return <li><b><Link to={"/search?q="+item["name"]+"&tags=true"}>{item["name"]}</Link></b>, {item["desc"]}</li>})}
 			</ul>
 
 		</div>
