@@ -1,0 +1,45 @@
+/*.navbar {
+border-bottom: #c0c0c0 2px solid;
+	width: 100%;
+	margin: 0;
+	z-index: 100;
+}*/
+
+
+nav {
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+	max-width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 0.5em;
+    height: 3em;
+}
+
+
+nav ul {
+    display: flex;
+    float: right;
+    padding-right: 5vw;
+}
+
+nav li {
+    list-style: none;
+    margin: 0.5em;
+}
+
+/*nav a {
+	color: #4a4a4a;
+}
+
+nav a:hover {
+}
+
+nav a.onLink {
+	color: #FF5733;
+}
+
+nav a.onLink:hover {
+	border-color: #ff5733;
+}*/

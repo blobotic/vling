@@ -1,0 +1,25 @@
+.card {
+	box-shadow: 0 30px 90px -20px rgba(0,0,0,0.3), 0 0 1px 1px rgba(0,0,0,0.05);
+	width: 70vw;
+	height: 50vh;
+	position: absolute;
+	background-color: white;
+	border-radius: 0.25rem;
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	padding: 1.5rem;
+	z-index: 5;
+}
+
+.card::-webkit-scrollbar {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.displaynone {
+	display: none;
+}
