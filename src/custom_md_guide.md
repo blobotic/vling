@@ -28,10 +28,10 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 ### Table
 
 \:::table{.border-hidden .width-800 .no1Count .no2Count}
-<br>\::tr[\:td[row1] \:td[\:ans]]
-<br>\::tr[\:td[row1] \:td[\:ans]]
-<br>\::tr[\:td[row1] \:td[\:ans]]
-<br>\::tr[\:td[row1] \:td[\:ans]]
+<br>\:\:tr[\:td[row1] \:td[\:ans]]
+<br>\:\:tr[\:td[row1] \:td[\:ans]]
+<br>\:\:tr[\:td[row1] \:td[\:ans]]
+<br>\:\:tr[\:td[row1] \:td[\:ans]]
 <br>\:::
 :::table{.border-hidden .width-800 .no1Count .no2Count}
 ::tr[:td[row1] :td[:ans]]
@@ -42,8 +42,8 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 
 
 \:::table{.border-hidden}
-<br>\::tr[\:td[row1] \:td[\:ans]]
-<br>\::tr[\:td[row2] \:td[\:ans]]
+<br>\:\:tr[\:td[row1] \:td[\:ans]]
+<br>\:\:tr[\:td[row2] \:td[\:ans]]
 <br>\:::
 :::table{.border-hidden}
 ::tr[:td[row1] :td[:ans]]

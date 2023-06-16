@@ -398,6 +398,10 @@ table td:nth-child(2):nth-last-child(1)::before {
     max-width: 600px;
 }
 
+.width-1000 {
+    max-width: 1000px;
+}
+
 .width-1200 {
     max-width: 1200px;
 }
