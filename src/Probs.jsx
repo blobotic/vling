@@ -49,17 +49,7 @@ function Probs() {
 				</div>
 			))}
 
-			<h1>Notes</h1>
-			<p>If anyone has non-official contest problems written and would like me to add them here, please create a pull request or DM me!</p>
-
-			<p>In the meantime, I'll slowly be adding existing NACLO, IOL, and APLO problems with solutions—solutions will likely come out at a <i>much</i> slower rate than problem statements.</p>
-
-			<h3>Contributing</h3>
-			<p><b>Adding questions:</b> All pull requests to add questions are welcome! The only guideline is to ensure that everything in the <i>original question statement/PDF</i> exists in the <code>.md</code> file you create; as long as it reasonably mimics the original and is readable, we will accept it.</p>
-			<p><b>Adding solutions:</b> If you are adding a solution to a problem <i>without</i> a solution, create a file called <code>[problem]-sol.md</code> and write up your solution! Make sure to use the sol directive and ensure that everything in the <i>original answer key</i> is contained in your solution somewhere. If the problem already has a solution but you'd like to add a <i>different</i> solution, add a heading labeling each solution with the writer. If you'd like to update/expand on an existing solution, ensure that you are not deleting significant parts of it and submit a pull request!</p>
-			<p>Custom markdown reference <Link to="../cust">here</Link>.</p>
-			<p><b>Typos/issues/bugs/problems:</b> Please submit a pull request or DM me!</p>
-
+			<h1 className="center">Notes</h1>
 
 			<h3>Search</h3>
 			<p>The search is built with <a href="https://lunrjs.com/guides/searching.html" taget="_blank">lunr</a>, so you can try wildcards (*), fuzzy matches (~), and term presences (+/-).</p> 
@@ -70,6 +60,16 @@ function Probs() {
 			<ul>
 			{tagDescs.map(function(item, i) {return <li><b><Link to={"/search?q="+item["name"]+"&tags=true"}>{item["name"]}</Link></b>, {item["desc"]}</li>})}
 			</ul>
+
+			<h3>Requests/Feedback</h3>
+			<p>If you have any requests for specific problems/solutions/features or feedback, please fill out the following form!</p>
+			<iframe style={{display: 'block', margin: '0 auto'}} src="https://docs.google.com/forms/d/e/1FAIpQLSevtKC8BC7aofnNbA3bLTITAVKJET2HdpEqwdujFDY6aJBHlw/viewform?embedded=true" width="1000" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+			<h3>Contributing</h3>
+			<p><b>Adding questions:</b> All pull requests to add questions are welcome! The only guideline is to ensure that everything in the <i>original question statement/PDF</i> exists in the <code>.md</code> file you create; as long as it reasonably mimics the original and is readable, we will accept it.</p>
+			<p><b>Adding solutions:</b> If you are adding a solution to a problem <i>without</i> a solution, create a file called <code>[problem]-sol.md</code> and write up your solution! Make sure to use the sol directive and ensure that everything in the <i>original answer key</i> is contained in your solution somewhere. If the problem already has a solution but you'd like to add a <i>different</i> solution, add a heading labeling each solution with the writer. If you'd like to update/expand on an existing solution, ensure that you are not deleting significant parts of it and submit a pull request!</p>
+			<p>You can access our custom markdown reference <Link to="../cust">here</Link>.</p>
+			<p><b>Typos/issues/bugs/problems:</b> Please submit a pull request or DM me!</p>
 
 		</div>
 		)
