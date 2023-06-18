@@ -8,6 +8,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeKatex from 'rehype-katex';
 
 import SolText from "./SolText";
+import NTable from "./NTable";
 
 function SolutionText({comp, year, problem, hasSol, setHasSol, showSol}) {
 	let [solution, setSolution] = React.useState({md: ""});
@@ -32,7 +33,7 @@ function SolutionText({comp, year, problem, hasSol, setHasSol, showSol}) {
 		<div>
 			{hasSol && showSol ? <div className="solutionbox lmargin2 rmargin2"><ReactMarkdown
 				children={solution.md}
-				components = {{'sol': SolText}}
+				components = {{'sol': SolText, 'ntable': NTable}}
 				remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 				rehypePlugins={[rehypeRaw, rehypeKatex]}
 			/></div> : null}

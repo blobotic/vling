@@ -55,7 +55,7 @@ function Search() {
 	}, [])
 
 	React.useEffect(() => {
-		setSearchParams(searchParams => {if (!isStart) searchParams.set("q", query || ""); if (tagsOnly) searchParams.set("tags", 'true'); else searchParams.delete("i"); return searchParams;})
+		setSearchParams(searchParams => {if (!isStart) searchParams.set("q", query || ""); if (tagsOnly) searchParams.set("tags", 'true'); else searchParams.delete("tags"); return searchParams;})
 		if (searchParams.get('q') && !query ) {return; }
 		let d = {preventDefault: () => console.log("hi")}
 		onFormSubmit(d)

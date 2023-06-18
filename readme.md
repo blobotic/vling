@@ -1,6 +1,8 @@
 # vling
 
-A portal for linguistic competitions practice, (i.e. NACLO/IOL), built with React. 
+A portal for linguistic competitions practice, (i.e. NACLO/IOL), built with React. It is currently hosted on:
+- [Cloudflare pages](https://pages.cloudflare.com/) at [vling.pages.dev](https://vling.pages.dev/)
+- [Netlify](https://www.netlify.com/) at [vling.netlify.app](https://vling.netlify.app/)
 
 Contains problems (retyped into markdown format) and solutions/walkthroughs: my intent is to contribute a resource to any aspiring linguist-er interested in competitions, particularly since in my own prep I found resources scarce and intuition nonexistent. You are also able to freely draw on our overlaid canvas, which will (hopefully!) be saved to your browser's localStorage for permanent access, so you can work on linguistics problems without ever leaving the tab or having to download/print a file. I've also taken the liberty to translate some non-English linguistics problems into English for greater accessibility, i.e. [OLCF](https://kaitire.rdc.uottawa.ca/OLCF/). 
 

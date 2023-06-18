@@ -15,7 +15,7 @@ code {
     monospace;
 }
 
-html,body {
+body {
   max-width: 100%;
   overflow-x: hidden;
   height: auto !important;
