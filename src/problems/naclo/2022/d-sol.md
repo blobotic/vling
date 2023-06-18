@@ -1,4 +1,4 @@
-The text said this text made it easier for students to do math, and by looking at the first equation, we can reasonably assume smaller numbers use number of strokes. Particularly, the first line translates to "4-3=1".
+The text said this text made it easier for students to do math, and by looking at the first equation, we can reasonably assume smaller numbers use the number of strokes to determine its magnitude. Particularly, the first line translates to "4-3=1".
 Many scripts use special symbols for "5", so we can assume the markings on top represent groups of 5.
 Line 3 confirms our hypothesis that 5 is denoted in a special fashion, above the number, giving us 4+8=12.
 The first symbol on line 6 represents 7\*8=56. We also know they use positional notation as they are using multiple "blocks" to denote numbers. Here, we have 2(16)_b=56, or b=20.
