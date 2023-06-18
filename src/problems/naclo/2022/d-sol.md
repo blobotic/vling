@@ -34,3 +34,6 @@ This is enough information to complete D2 and D3 as shown in the table:
 We can first recognize there are three numerals of the top left corner. Using our base 20 system we can decipher each, giving us  5\*20<sup>2</sup> + 1 \* 20 + 2 - 1 - (1 \* 20 + 7) = 2022, 1, and 27. Alternatively, it could be referring to a date, January 27, 2022.
 
 Translating 27 into Iñupiaq, we have *iñuiññaq tallimat malġuk,* the second phrase on the board. We can infer the people uses a Month-Day-Year calendar, so *tallimaagliaq iñuiññaq malġuk* represents 2022. We already know *iñuiññaq malġuk* translates to 22, so the remaining word, tallimaagliaq, means 2000. "Tallima" could be following a suffix for large numbers, as "-agliaq" also appears in the prompt for D4. We notice 2000 = 400 * 5, and "tallima" represents 5. As a result, we now know what the suffix "-agliaq" does: multiply by 400. This makes sense because the Iñupiaq uses a base 20 system and 400 = 20<sup>2</sup>. Finally, quliagiaq has the root quli, which looks similar to 10, and our suffix "agliaq", giving us 10\* 400 = 4000.
+
+
+Solution by Allen Yang
