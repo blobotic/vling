@@ -2,7 +2,11 @@ function NTable({children, className, fmt}) {
 	// if (children[0]["props"]["children"].length > 1) return children[0]["props"]["children"];
 	let rawText = children[0]["props"]["children"];
 
-	console.log(rawText)
+	let hasTH = rawText[0][0] == '|';
+	// if (hasTH) rawText[0] = rawText[0].substring(1);
+	// console.log(hasTH)
+
+	// console.log(rawText)
 
 	let tmpTableData = [[]], crc = 0;
 
@@ -69,9 +73,10 @@ function NTable({children, className, fmt}) {
 
 	if (fmt == "1")  dfltCl = " padding-none width-800 center border-hidden mb2 ";
 
+	// console.log(tableData)
 	return (
 		<table className={dfltCl + className}>
-		{tableData.map((row,i) => <tr>{row.map((el, j) => <td>{el}</td>)}</tr>)}
+		{tableData.map((row,i) => <tr>{row.map((el, j) => (i==0 && hasTH)?<th>{el[0][0] == "|"?el[0].substring(1):el}</th>:<td>{el}</td>)}</tr>)}
 		{/*<tr>{tmpTableData}</tr>*/}
 		</table>
 	);

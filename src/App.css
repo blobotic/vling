@@ -72,6 +72,10 @@ input {
     max-width: 10vw;
 }
 
+table input {
+    margin: 0;
+}
+
 textarea {
 /*    rows: 5;*/
     height: 10em;

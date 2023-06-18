@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d49d8a4e.css",
-    "main.js": "/static/js/main.e75d751f.js",
+    "main.css": "/static/css/main.ce9e3439.css",
+    "main.js": "/static/js/main.8cc9081e.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -98,22 +98,23 @@
     "static/media/b.md": "/static/media/b.24aa8333abddfea65ef1.md",
     "static/media/3.md": "/static/media/3.e433c939c93afee56a3c.md",
     "static/media/search.svg": "/static/media/search.0b7fc401ecd36981b300.svg",
-    "static/media/i1.md": "/static/media/i1.0d27718c126858c4f24a.md",
-    "static/media/i3.md": "/static/media/i3.fe1c0f2b27e2803b7145.md",
+    "static/media/i1-oldd.md": "/static/media/i1-oldd.a224ef0fccc17f53181b.md",
+    "static/media/i3.md": "/static/media/i3.e284e082ced00027b7c5.md",
     "static/media/i2.md": "/static/media/i2.06a133e727a6cddf5a4b.md",
     "static/media/b-fr.md": "/static/media/b-fr.7f2cb9148b07a579bd63.md",
-    "static/media/custom_md_guide.md": "/static/media/custom_md_guide.1b0f92a526b8339bffd6.md",
+    "static/media/i1.md": "/static/media/i1.0d27718c126858c4f24a.md",
+    "static/media/custom_md_guide.md": "/static/media/custom_md_guide.ea0452030100b2be3fa4.md",
     "static/media/a-fr.md": "/static/media/a-fr.a501427ca8068f91e295.md",
     "static/media/e-fr.md": "/static/media/e-fr.56f17294f6ee8f8761d4.md",
     "static/media/a-sol.md": "/static/media/a-sol.b7d661824d5e8c0ded09.md",
     "static/media/r-sol.md": "/static/media/r-sol.aad1f89650a9a9c474b1.md",
     "static/media/b-sol.md": "/static/media/b-sol.b0847d23a0971743a37b.md",
     "index.html": "/index.html",
-    "main.d49d8a4e.css.map": "/static/css/main.d49d8a4e.css.map",
-    "main.e75d751f.js.map": "/static/js/main.e75d751f.js.map"
+    "main.ce9e3439.css.map": "/static/css/main.ce9e3439.css.map",
+    "main.8cc9081e.js.map": "/static/js/main.8cc9081e.js.map"
   },
   "entrypoints": [
-    "static/css/main.d49d8a4e.css",
-    "static/js/main.e75d751f.js"
+    "static/css/main.ce9e3439.css",
+    "static/js/main.8cc9081e.js"
   ]
 }
