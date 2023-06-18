@@ -15,6 +15,12 @@ code {
     monospace;
 }
 
+html,body {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: auto !important;
+}
+
 /* below is from sakura */
 /* https://github.com/oxalorg/sakura/blob/master/css/sakura.css  */
 

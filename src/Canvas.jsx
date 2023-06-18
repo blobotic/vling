@@ -85,7 +85,7 @@ function Canvas() {
 			canvas.setHeight(clientHeight)
 			canvas.calcOffset()
 		}
-	}, [clientHeight])
+	}, [document.body.clientHeight])
 
 
 
