@@ -25,4 +25,4 @@ From sentence 6 in B1, we can deduce :sol["ayı"=bear]. We can now do part b wit
 
 We recognize "whom" is our object and "bee" is our subject on line 6, giving us kimi for whom (object). Finally, our response becomes Ayı kimi gördü?
 
-Solution written by Allen Yang
+Solution by Allen Yang
