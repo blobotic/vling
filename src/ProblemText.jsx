@@ -11,6 +11,7 @@ import rehypeKatex from 'rehype-katex';
 import MatchingAnswerBox from "./MatchingAnswerBox";
 import Answerbox from "./Answerbox";
 import ExplBox from "./ExplBox";
+import NTable from "./NTable";
 
 function extractMetaData(text) {
     let metaData = {};
@@ -106,7 +107,7 @@ function ProblemText({comp, year, problem, metaData={}, setMetadata=df, setProbl
 
 			<ReactMarkdown 
 				children={otherlangs[currentLang]} 
-				components={{'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox}}
+				components={{'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox, 'ntable': NTable}}
 				remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 				rehypePlugins={[rehypeRaw, rehypeKatex]} 
 				className="lmargin2 rmargin2"

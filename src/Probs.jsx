@@ -63,7 +63,7 @@ function Probs() {
 
 			<h3>Requests/Feedback</h3>
 			<p>If you have any requests for specific problems/solutions/features or feedback, please fill out the following form!</p>
-			<iframe style={{display: 'block', margin: '0 auto'}} src="https://docs.google.com/forms/d/e/1FAIpQLSevtKC8BC7aofnNbA3bLTITAVKJET2HdpEqwdujFDY6aJBHlw/viewform?embedded=true" width="1000" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+			<iframe style={{display: 'block', margin: '0 auto', maxWidth: '80%'}} src="https://docs.google.com/forms/d/e/1FAIpQLSevtKC8BC7aofnNbA3bLTITAVKJET2HdpEqwdujFDY6aJBHlw/viewform?embedded=true" width="1000" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 			<h3>Contributing</h3>
 			<p><b>Adding questions:</b> All pull requests to add questions are welcome! The only guideline is to ensure that everything in the <i>original question statement/PDF</i> exists in the <code>.md</code> file you create; as long as it reasonably mimics the original and is readable, we will accept it.</p>

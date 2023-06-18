@@ -4,6 +4,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./Layout.css"
 // import * as data from "./problem_index.json";
 
+var data = require("./problem_index.json");
+
 
 function Layout() {
 	let navigate = useNavigate();
@@ -13,7 +15,6 @@ function Layout() {
 
 
 	function randRouteChange() {
-		var data = require("./problem_index.json");
 
 		let comp = data.random(), 
 			yr = comp["yrs"].random(), 
@@ -35,6 +36,13 @@ function Layout() {
 		// return path;
 	}
 
+	function randRouteChange2() {
+		let comp = data.random(),
+			yr = comp["yrs"].random(),
+			ps = yr["ps"].random();
+		return "/" + comp["name"].toLowerCase() + "/" + yr["yr"] + "/" + ps.toLowerCase();
+	}
+
 
 	return (
 		<div>
@@ -42,6 +50,8 @@ function Layout() {
 				<ul>
 					<li><Link className="onLink" to="/">Home</Link></li>
 					<li><Link to="/probs">Browse</Link></li>
+					{/*<li><Link to={randRouteChange2()}>Random</Link></li>*/}
+					{/*<li><Link to="../../../aplo/2020/3">Random</Link></li>*/}
 					<li><a onClick={randRouteChange}>Random</a></li>
 					<li><Link to="/stats">Stats</Link></li>
 					<li><Link to="/search">Search</Link></li>

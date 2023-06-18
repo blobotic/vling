@@ -1,14 +1,7 @@
-.App {
-/*    text-align: center;*/
-}
-
 li ul {
     margin-bottom: 0;
 }
 
-p + ul, p+ol {
-    margin-top: -2rem;
-}
 
 table {
     margin-bottom: 1em;
@@ -54,6 +47,13 @@ input:focus {
     overflow-wrap: anywhere;
 }
 
+@media (max-width: 684px) {
+    .home {
+        padding: 5rem 5%;
+/*        font-size: 0.6rem;*/
+    }
+}
+
 .center {
     text-align: center;
 }
@@ -65,10 +65,11 @@ input:focus {
 
 /* .small  */
 input {
-    width: 7rem;
-    margin: 0 1em 0 1em;
+    width: 3rem;
+    margin: 0 0.5em 0 0.5em;
     height: 1.5em;
     padding: 0.5em;
+    max-width: 10vw;
 }
 
 textarea {
@@ -83,10 +84,12 @@ textarea {
 
 .med {
     width: 28rem;
+    max-width: 20vw;
 }
 
 .sm {
     width: 14rem;
+    max-width: 15vw;
 }
 
 .table {
@@ -251,6 +254,7 @@ position: absolute;
 
 .searchbar {
     width: 100%;
+    max-width: 100%;
     height: 2em;
     border-bottom: 2px solid;
     border-radius: 0;
@@ -383,7 +387,7 @@ table td:nth-child(2):nth-last-child(1)::before {
 }
 
 .m2n2 {
-    margin-top: -2em;
+/*    margin-top: -2em;*/
 }
 
 .lh1 {
@@ -472,6 +476,7 @@ table td:nth-child(2):nth-last-child(1)::before {
     position: absolute !important;
     z-index: 5;
     top: 2em;
+    left: 0;
 }
 
 a, button {

@@ -105,7 +105,7 @@ function Problem() {
 			<a className={(problem == result[result.length-1].toLowerCase()) ? 'disabled linkbutton float-right' : 'linkbutton float-right'} href={(problem == result[result.length-1].toLowerCase()) ? "" : "/"+comp.toLowerCase()+"/" + year + "/" + result[result.findIndex(obj => {return obj.toLowerCase()==problem})+1].toLowerCase()}>Next </a>
 
 			{/* language buttons !! */}
-			<div style={{marginLeft: "5em"}}>
+			<div style={{marginLeft: "6em"}}>
 			{(Object.keys(otherlangs).length > 1) ? 
 						Object.entries(otherlangs).map(([key, value]) => <button onClick={() => setCurrentLang(key)}>{key}</button>)
 					 : false}

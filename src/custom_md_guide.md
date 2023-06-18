@@ -27,13 +27,35 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 
 ### Table
 
-\:::table{.border-hidden .width-800 .no1Count .no2Count}
-<br>\:\:tr[\:td[row1] \:td[\:ans]]
-<br>\:\:tr[\:td[row1] \:td[\:ans]]
-<br>\:\:tr[\:td[row1] \:td[\:ans]]
-<br>\:\:tr[\:td[row1] \:td[\:ans]]
-<br>\:::
-:::table{.border-hidden .width-800 .no1Count .no2Count}
+#### New table component
+
+```
+:::ntable{fmt=1}
+r1c1 & r1c2 & r1c3
+r2c1 & r2c2 & r2c3
+r3c1 & r3c2 & r3c3
+:::
+```
+
+:::ntable{fmt=1}
+r1c1 & r1c2 & r1c3
+r2c1 & r2c2 & r2c3
+r3c1 & r3c2 & r3c3
+:::
+
+#### HTML table
+
+```
+:::table{.border-hidden .width-400 .no1Count .no2Count}
+::tr[:td[row1] :td[:ans]]
+::tr[:td[row1] :td[:ans]]
+::tr[:td[row1] :td[:ans]]
+::tr[:td[row1] :td[:ans]]
+:::
+```
+
+
+:::table{.border-hidden .width-400 .no1Count .no2Count}
 ::tr[:td[row1] :td[:ans]]
 ::tr[:td[row1] :td[:ans]]
 ::tr[:td[row1] :td[:ans]]
@@ -41,36 +63,23 @@ Note that LaTeX uses [KaTeX](https://talk.commonmark.org/t/generic-directives-pl
 :::
 
 
-\:::table{.border-hidden}
-<br>\:\:tr[\:td[row1] \:td[\:ans]]
-<br>\:\:tr[\:td[row2] \:td[\:ans]]
-<br>\:::
+```
+:::table{.border-hidden}
+::tr[:td[row1] :td[:ans]]
+::tr[:td[row2] :td[:ans]]
+:::
+```
+
 :::table{.border-hidden}
 ::tr[:td[row1] :td[:ans]]
 ::tr[:td[row2] :td[:ans]]
 :::
 
-Note: tables with 2 columns automatically number the first column (1-26) and the second column alphanumerically (A-Z). 
+Note: tables with 2 columns automatically number the first column (1-26) and the second column alphanumerically (A-Z). To disable this, use the classes `.no1Count` and `.no2Count`.
 
-### Border/Bounding Box
+### Border/Bounding box
 
-<div>
-:::div{.border}
-<br>:::table{.no1Count .no2Count .border-hidden .padding-none .margin-bottom-none}
-<br>::tr[:td[row1] :td[row1]]
-<br>::tr[:td[row2] :td[row2]]
-<br>::tr[:td[row3] :td[row3]]
-<br>::tr[:td[row4] :td[row4]]
-<br>:::
-</div>
-
-:::div{.border}
-:::table{.no1Count .no2Count .border-hidden .padding-none .margin-bottom-none}
-::tr[:td[row1] :td[row1]]
-::tr[:td[row2] :td[row2]]
-::tr[:td[row3] :td[row3]]
-::tr[:td[row4] :td[row4]]
-:::
+:div[\:div[this has a border]{.border}]{.border}
 
 ## Answer boxes
 
@@ -88,3 +97,9 @@ Note: tables with 2 columns automatically number the first column (1-26) and the
 
 \:match{num=10}
 :match{num=10}
+
+\:match{num=10, start=5}
+:match{num=10, start=5}
+
+\:match{num=10, alpha=true, start=2}
+:match{num=10, alpha=true, start=2}

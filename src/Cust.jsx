@@ -13,6 +13,7 @@ import ExplBox from "./ExplBox";
 import MatchingAnswerBox from "./MatchingAnswerBox";
 import Probs from "./Probs";
 import SolText from "./SolText";
+import NTable from "./NTable";
 
 import customMD from "./custom_md_guide.md"
 
@@ -34,7 +35,7 @@ function Cust() {
 		<div className="home">
 		<ReactMarkdown 
 			children={md}
-			components={{'sol': SolText, 'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox}}
+			components={{'sol': SolText, 'expl': ExplBox, 'ans': Answerbox, 'match': MatchBox, 'ntable': NTable}}
 			remarkPlugins={[remarkGfm, remarkDirective, remarkDirectiveRehype, remarkMath]} 
 			rehypePlugins={[rehypeRaw, rehypeKatex]}
 		/>

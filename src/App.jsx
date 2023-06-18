@@ -12,10 +12,10 @@ import Cust from "./Cust";
 
 function App() {
     return (
-    <div className="App">
+    <BrowserRouter>
+        <div className="App">
 
         {/* Reference: https://www.w3schools.com/react/react_router.asp */}
-        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
@@ -29,8 +29,8 @@ function App() {
                     <Route path="/*" element={<Home />} />
                 </Route>
             </Routes>
+        </div>
         </BrowserRouter>
-    </div>
     );
 }
 

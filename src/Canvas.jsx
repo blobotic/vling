@@ -81,7 +81,7 @@ function Canvas() {
 
 	React.useEffect(() => {
 		if (canvas != null) {
-			canvas.setWidth(document.body.clientWidth * 0.9)
+			canvas.setWidth(document.body.clientWidth)
 			canvas.setHeight(clientHeight)
 			canvas.calcOffset()
 		}
@@ -223,7 +223,7 @@ function Canvas() {
 
 	const C_KEYS = ['67', 'c'], M_KEYS = ['77', 'm'], B_KEYS = ['66', 'b', '80', 'p'], E_KEYS = ['69', 'e'], H_KEYS = ['72', 'h'], T_KEYS = ['84', 't'], DEL_KEYS = ['68', 'd', '46', 'Delete', '8', 'Backspace'];
 	function handler(event) {
-		if (event.target.tagName == "TEXTAREA") return;
+		if (event.target.tagName == "TEXTAREA" || event.target.tagName == "INPUT") return;
 
 		if (C_KEYS.includes(String(event.key))) {
 			disableCanvas()
