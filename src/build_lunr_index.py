@@ -3,6 +3,7 @@ import sys
 import frontmatter
 import json
 import string
+import re
 
 with open("./lunr_index.json", "w") as list_file:
 	with open("./lunr_tag_index.json", "w") as lf2:
@@ -14,8 +15,6 @@ with open("./lunr_index.json", "w") as list_file:
 			if len(files) == 0:
 				continue
 
-			# print(files)
-
 			def my_key(word):
 				print(word)
 				return [alphabet.index(c) for c in word]				
@@ -25,7 +24,7 @@ with open("./lunr_index.json", "w") as list_file:
 			# print(sorted(files, key=my_key))
 
 			for problem in sorted(files, key=lambda word: [alphabet.index(c) for c in word]):
-				# print(problem)
+				# print(root[root.find("/"),root.find("\\")])
 				if "sol" not in problem:
 					er = root.split("\\")
 					# print(er)
@@ -55,6 +54,9 @@ with open("./lunr_index.json", "w") as list_file:
 
 
 					tmp["text"] += " " + post.content.translate({ord(c): " " for c in '#|[]—\n*,()'})
+
+					# add contest, year, problem to search
+					tmp["text"] += " " + er[1] + " " + er[2] + " " + problem2[0] + " "
 
 					# print(tmp)
 
