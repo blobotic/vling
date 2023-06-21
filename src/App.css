@@ -307,6 +307,10 @@ position: absolute;
     padding: 0;
 }
 
+.tpn td {
+    padding: 0;
+}
+
 .margin-none {
     margin: 0;
 }
@@ -315,13 +319,10 @@ position: absolute;
     margin-bottom: 0;
 }
 
-.margin-bottom-2, .mb2 {
-    margin-bottom: 2rem;
-}
+.margin-bottom-2, .mb2 {margin-bottom: 2rem;}
+.mb0 {margin-bottom: 0rem;}
 
-.m2n2 {
-    margin-top: -2em;
-}
+.m2n2 {margin-top: -2em;}
 
 /* number table rows */
 /* https://stackoverflow.com/questions/17012421/auto-number-table-rows */
@@ -344,10 +345,14 @@ th, td {
 
 .cs6 {counter-set: rowNumber 5;}
 .cs9 {counter-set: rowNumber 8;}
+.cs10 {counter-set: rowNumber 9;}
 .cs13 {counter-set: rowNumber 12;}
+.cs14 {counter-set: rowNumber 13;}
 .cs16 {counter-set: rowNumber 15;}
 .cs17 {counter-set: rowNumber 16;}
+.cs18 {counter-set: rowNumber 17;}
 .cs19 {counter-set: rowNumber 18;}
+.cs21 {counter-set: rowNumber 20;}
 .cs24 {counter-set: rowNumber 23;}
 .cs28 {counter-set: rowNumber 27;}
 .cs33 {counter-set: rowNumber 32;}
@@ -435,9 +440,16 @@ table td:nth-child(2):nth-last-child(1)::before {
     padding: 0.25em;
 }
 
+.pvf td {padding: 0.25em 0}
 /* column 3 margin-left 2 */
-.c3ml2 td:nth-child(3) {padding-left: 2rem;}
+.c3ml2 td:nth-child(3), .c3ml2 th:nth-child(3) {padding-left: 2rem;}
+.c3ml4 td:nth-child(3), .c3ml4 th:nth-child(3) {padding-left: 4rem;}
 
+
+/* column 1 BIG */
+.c1big td:first-child {font-size: 2rem;}
+
+.bigscript {font-size: 2rem;}
 
 /* typewriter effect */
 /* reference: https://www.sitepoint.com/css-typewriter-effect/ */

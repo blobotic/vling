@@ -73,6 +73,7 @@ function NTable({children, className, fmt}) {
 
 	if (fmt == "1")  dfltCl = " padding-none width-800 center border-hidden mb2 ";
 	else if (fmt == "10") dfltCl = " width-1000 center border-hidden mb2 padding-fourth ";
+	else if (fmt == "18") dfltCl = " width-800 center border-hidden mb2 padding-fourth ";
 	else if (fmt == "2") dfltCl = " width-600 border-hidden padding-fourth mb2 "
 
 	// console.log(tableData)
