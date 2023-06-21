@@ -249,6 +249,13 @@ position: absolute;
     float: right;
 }
 
+.display-block {
+    display: block;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
 
 .searchbar {
     width: 100%;
@@ -337,8 +344,10 @@ th, td {
 
 .cs6 {counter-set: rowNumber 5;}
 .cs9 {counter-set: rowNumber 8;}
+.cs13 {counter-set: rowNumber 12;}
 .cs16 {counter-set: rowNumber 15;}
 .cs17 {counter-set: rowNumber 16;}
+.cs19 {counter-set: rowNumber 18;}
 .cs24 {counter-set: rowNumber 23;}
 .cs28 {counter-set: rowNumber 27;}
 .cs33 {counter-set: rowNumber 32;}
@@ -390,9 +399,12 @@ table td:nth-child(2):nth-last-child(1)::before {
     width: 0;
 }
 
+
+
 .lh1 {line-height: 1em;}
 
-
+.width-30 {max-width: 30%;}
+.width-40 {max-width: 40%;}
 .width-50 {max-width: 50%;}
 .width-80 {max-width: 80%;}
 .width-200 {max-width: 200px;}
@@ -422,6 +434,10 @@ table td:nth-child(2):nth-last-child(1)::before {
 .padding-fourth td, .pf td {
     padding: 0.25em;
 }
+
+/* column 3 margin-left 2 */
+.c3ml2 td:nth-child(3) {padding-left: 2rem;}
+
 
 /* typewriter effect */
 /* reference: https://www.sitepoint.com/css-typewriter-effect/ */
