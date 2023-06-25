@@ -57,7 +57,7 @@ function Stats() {
 
 			<h1 className="center">Settings</h1>
 			<p><b>Show/hide answers by default:</b> <button onClick={() => {changeSetting("showSol", !showSol); setShowSol(!showSol); }}>{showSol ? "Show answers (by default)" : "Hide answers (by default)"}</button></p>
-			<p><b>Show rating bar at the bottom/top/nowhere: </b><button onClick={() => {changeSetting("ratingBarPos", (ratingBarPos+1)%3); setRatingBarPos((ratingBarPos+1)%3); }}>{ratingBarPos==0?"Top":ratingBarPos==1?"Bottom":"Nowhere"}</button></p>
+			<p><b>Show rating bar at the bottom/top/nowhere: </b><button onClick={() => {changeSetting("ratingBarPos", (ratingBarPos+1)%3); setRatingBarPos((ratingBarPos+1)%3); }}>{ratingBarPos==0?"Bottom":ratingBarPos==1?"Top":"Nowhere"}</button></p>
 			<p><b>/Random/ set: (WIP)</b> <button>All / Incomplete only</button> </p>
 
 
