@@ -67,7 +67,7 @@ function NTable({children, className, fmt}) {
 	// 	tmpTableData[i] = tmpTableData[i].split("&");
 	// }
 
-	console.log(fmt)
+	// console.log(fmt)
 
 	let dfltCl = "";
 
@@ -76,10 +76,9 @@ function NTable({children, className, fmt}) {
 	else if (fmt == "18") dfltCl = " width-800 center border-hidden mb2 padding-fourth ";
 	else if (fmt == "2") dfltCl = " width-600 border-hidden padding-fourth mb2 "
 
-	// console.log(tableData)
 	return (
 		<table className={dfltCl + className}>
-		{tableData.map((row,i) => <tr>{row.map((el, j) => (i==0 && hasTH)?<th>{el[0][0] == "|"?el[0].substring(1):el}</th>:<td>{el}</td>)}</tr>)}
+		{tableData.map((row,i) => <tr>{row.map((el, j) => (i==0 && hasTH)?<th >{el[0][0] == "|"?el[0].substring(1):el}</th>:<td className={el[0]&&el[0] == " SHADED "?"bg-grey":""}>{el[0]&&el[0] == " SHADED " ?"":el}</td>)}</tr>)}
 		{/*<tr>{tmpTableData}</tr>*/}
 		</table>
 	);

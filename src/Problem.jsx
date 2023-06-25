@@ -5,6 +5,8 @@ import Probs from "./Probs";
 import "./Problem.css"
 import Canvas from "./Canvas";
 
+import StarRating from "./StarRating";
+
 import ProblemText from "./ProblemText";
 import SolutionText from "./SolutionText";
 
@@ -20,6 +22,51 @@ function Problem() {
 	let [problemNexists, setProblemNexists] = React.useState(false);
 	let [hasSol, setHasSol] = React.useState(true);
 
+	let [problemSettings, setProblemSettings] = React.useState(() => {
+		let localData = JSON.parse(localStorage.getItem('problemSettings'));
+		return localData || {};
+	});
+
+	React.useLayoutEffect(() => {
+
+		// console.log(document.query)
+		// let problemSettings = localStorage.getItem('problemSettings');
+		// problemSettings[comp] = problemSettings[comp] || {};
+		// problemSettings[comp][year] = problemSettings[comp][year] || {};
+		// problemSettings[comp][year][problem] = problemSettings[comp][year][problem] || {};
+		// problemSettings[comp][year][problem] = "test"
+		console.log(problemSettings, "hiii")
+		localStorage.setItem('problemSettings', JSON.stringify(problemSettings));
+		// console.log(getProblemProperty("complete"))
+		// if (!problemSettings) {
+
+		// }
+
+		// if (isComplete == "") {
+
+		// }
+	}, [problemSettings]);
+
+	function setProblemProperty(property, value) {
+		setProblemSettings(prevState => {
+			let tmp = Object.assign({}, prevState);
+			tmp[comp] = tmp[comp] || {};
+			tmp[comp][year] = tmp[comp][year] || {};
+			tmp[comp][year][problem] = tmp[comp][year][problem] || {};
+			tmp[comp][year][problem][property] = value;
+			return tmp;
+		});
+		// console.log("hmm")
+		// setProblemSettings(tmp);
+	}
+
+	function getProblemProperty(property) {
+		let tmp = problemSettings;
+		tmp[comp] = tmp[comp] || {};
+		tmp[comp][year] = tmp[comp][year] || {};
+		tmp[comp][year][problem] = tmp[comp][year][problem] || {};
+		return problemSettings[comp][year][problem][property] || false;
+	}
 
 	// this exists in Stats.jsx
 	// reference:
@@ -29,6 +76,11 @@ function Problem() {
 		const localData = JSON.parse(localStorage.getItem('settings'));
 		return localData ? localData["showSol"] || false : false;
 	});
+
+	let [ratingBarPos, setRatingBarPos] = React.useState(() => {
+		const localData = JSON.parse(localStorage.getItem('settings'));
+		return localData ? localData["ratingBarPos"] || 0 : 0;
+	})
 
 
 	let navigate = useNavigate();
@@ -112,17 +164,44 @@ function Problem() {
 			</div>
 		</div>
 
+		{/* completed/rating: TOP */}
+		{ ratingBarPos==1?
+			<div className="rateBar">
+				<button className={"completed-button " + (getProblemProperty("complete")?"blue-button":"red-button")} onClick={() => setProblemProperty("complete", !getProblemProperty("complete"))}>{getProblemProperty("complete")?"Complete":"Incomplete"}</button>
+			
+				<div className="break"></div>
+				<StarRating label="Difficulty:" idpre="difficulty" setprop={setProblemProperty} av={getProblemProperty("difficulty")}/>
+				<div className="break"></div>
+				<StarRating label="Quality:" idpre="quality" setprop={setProblemProperty} av={getProblemProperty("quality")}/>
+			</div>:false
+		}
+
 		{/*actual markdown O_O*/}
 
 		{/* problem text */}
 		<ProblemText comp={comp} year={year} problem={problem} metaData={metaData} setMetadata={setMetadata} setProblemNexists={setProblemNexists}
 			otherlangs={otherlangs} setOtherlangs={setOtherlangs} currentLang={currentLang} />
 
+
+
 		{/* show/hide solution button */}
 		<div style={{marginBottom: '6em', marginLeft: '2em'}}><button disabled={!hasSol} onClick={() => setShowSol(!showSol)} type="button" style={{position: 'absolute'}}>{hasSol && showSol ? "Hide solution" : "Show solution"}</button></div>
 
 		{/* solution: */}
 		<SolutionText comp={comp} year={year} problem={problem} hasSol={hasSol} setHasSol={setHasSol} showSol={showSol}/>
+
+		{/* completed/rating: BOTTOM */}
+		{ ratingBarPos==0?
+			<div className="rateBar">
+				<button className={"completed-button " + (getProblemProperty("complete")?"blue-button":"red-button")} onClick={() => setProblemProperty("complete", !getProblemProperty("complete"))}>{getProblemProperty("complete")?"Complete":"Incomplete"}</button>
+			
+				<div className="break"></div>
+				<StarRating label="Difficulty:" idpre="difficulty" setprop={setProblemProperty} av={getProblemProperty("difficulty")}/>
+				<div className="break"></div>
+				<StarRating label="Quality:" idpre="quality" setprop={setProblemProperty} av={getProblemProperty("quality")}/>
+			</div>:false
+		}
+		
 
 		</div>
 	);

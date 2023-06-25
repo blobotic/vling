@@ -199,7 +199,7 @@ textarea {
   cursor: default;
   opacity: 0.5;
 }
-.button:focus:enabled, .button:hover:enabled, button:focus:enabled, button:hover:enabled, input[type=submit]:focus:enabled, input[type=submit]:hover:enabled, input[type=reset]:focus:enabled, input[type=reset]:hover:enabled, input[type=button]:focus:enabled, input[type=button]:hover:enabled {
+.button:focus:enabled, .button:hover:enabled, button:active:focus:enabled, button:hover:enabled, input[type=submit]:focus:enabled, input[type=submit]:hover:enabled, input[type=reset]:focus:enabled, input[type=reset]:hover:enabled, input[type=button]:focus:enabled, input[type=button]:hover:enabled {
   background-color: #982c61;
   border-color: #982c61;
   color: #f9f9f9;
